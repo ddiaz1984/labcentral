@@ -1,0 +1,182 @@
+table "public"."colera" {
+  primaryKey = {
+    columns = [
+      "nronotif"
+    ]
+    name = "pk_colera"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "nronotif" {
+      type = numeric(10,0)
+      null = NOT NULL
+    }
+    column "nordentra" {
+      type = character varying(20)
+    }
+    column "nomyape" {
+      type = character varying(150)
+    }
+    column "edada" {
+      type = numeric(3,0)
+    }
+    column "edadm" {
+      type = numeric(3,0)
+    }
+    column "edadd" {
+      type = numeric(3,0)
+    }
+    column "sexo" {
+      type = numeric(1,0)
+    }
+    column "cedula" {
+      type = character varying(15)
+    }
+    column "dccion" {
+      type = character varying(200)
+    }
+    column "coddptor" {
+      type = character varying(2)
+    }
+    column "coddistr" {
+      type = character varying(3)
+    }
+    column "barrio" {
+      type = character varying(100)
+    }
+    column "tipoloc" {
+      type = numeric(1,0)
+    }
+    column "pais" {
+      type = character varying(100)
+    }
+    column "telefonor" {
+      type = character varying(30)
+    }
+    column "ocupacion" {
+      type = character varying(150)
+    }
+    column "dcciontraesc" {
+      type = character varying(200)
+    }
+    column "aguadentro" {
+      type = numeric(1,0)
+    }
+    column "aguaterreno" {
+      type = numeric(1,0)
+    }
+    column "aguafuera" {
+      type = numeric(1,0)
+    }
+    column "aguared" {
+      type = numeric(1,0)
+    }
+    column "aguapozo" {
+      type = numeric(1,0)
+    }
+    column "aguabomba" {
+      type = numeric(1,0)
+    }
+    column "agualluvia" {
+      type = numeric(1,0)
+    }
+    column "banio" {
+      type = numeric(1,0)
+    }
+    column "letrina" {
+      type = numeric(1,0)
+    }
+    column "contpers" {
+      type = numeric(1,0)
+    }
+    column "lugarcont" {
+      type = numeric(1,0)
+    }
+    column "trabsalud" {
+      type = numeric(1,0)
+    }
+    column "establecimt" {
+      type = character varying(150)
+    }
+    column "fecinisint" {
+      type = date
+    }
+    column "fec1racons" {
+      type = date
+    }
+    column "establecons" {
+      type = character varying(150)
+    }
+    column "deshidra" {
+      type = numeric(1,0)
+    }
+    column "forma" {
+      type = numeric(1,0)
+    }
+    column "cantevac" {
+      type = numeric(2,0)
+    }
+    column "consistencia" {
+      type = numeric(1,0)
+    }
+    column "fechosp" {
+      type = date
+    }
+    column "rehidra" {
+      type = numeric(1,0)
+    }
+    column "formamtra" {
+      type = numeric(1,0)
+    }
+    column "tratantibio" {
+      type = numeric(1,0)
+    }
+    column "tipoantibio" {
+      type = numeric(1,0)
+    }
+    column "matfecal" {
+      type = numeric(1,0)
+    }
+    column "fecmuestra" {
+      type = date
+    }
+    column "resmfecal" {
+      type = character varying(200)
+    }
+    column "tipoprueba" {
+      type = numeric(1,0)
+    }
+    column "vivrium" {
+      type = numeric(1,0)
+    }
+    column "fecegreso" {
+      type = date
+    }
+    column "tipoegreso" {
+      type = numeric(1,0)
+    }
+    column "establecim" {
+      type = character varying(150)
+    }
+    column "fechanotif" {
+      type = date
+    }
+    column "nomyapenot" {
+      type = character varying(150)
+    }
+    column "codreg" {
+      type = character varying(2)
+    }
+    column "subcreg" {
+      type = character varying(3)
+    }
+    column "coddist" {
+      type = character varying(3)
+    }
+    column "codserv" {
+      type = character varying(3)
+    }
+  )
+}
+

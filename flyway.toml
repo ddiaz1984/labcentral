@@ -1,0 +1,33 @@
+databaseType = "PostgreSql"
+id = "a4f68183-01c1-407b-a5b7-c413a25f94f1"
+name = "silcsp"
+
+[flyway]
+locations = [ "filesystem:migrations" ]
+mixed = true
+outOfOrder = true
+schemaModelLocation = "schema-model"
+validateMigrationNaming = true
+
+  [flyway.check]
+  majorTolerance = 0
+
+[flywayDesktop]
+developmentEnvironment = "development"
+shadowEnvironment = "shadow"
+enableMigrations = false
+
+[redgateCompare]
+filterFile = "filter.rgf"
+
+[redgateCompare.postgresql.options.ignores]
+ignoreNewlinesInTextObjects = "off"
+
+[environments.target1]
+url = "jdbc:postgresql://localhost:5432/labcentral"
+schemas = [ "public" ]
+
+[environments.development]
+url = "jdbc:postgresql://localhost:5432/labcentral"
+schemas = [ "public" ]
+displayName = "Development database"
