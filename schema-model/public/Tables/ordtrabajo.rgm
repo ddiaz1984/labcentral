@@ -1,0 +1,100 @@
+table "public"."ordtrabajo" {
+  primaryKey = {
+    columns = [
+      "nordentra"
+    ]
+    name = "pk_nordentra"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "nordentra" {
+      type = integer
+      null = NOT NULL
+      default = nextval('public.seq_ordtrabajo'::regclass)
+    }
+    column "codservicio" {
+      type = character varying(10)
+      null = NOT NULL
+    }
+    column "codusu" {
+      type = character varying(20)
+    }
+    column "nropaciente" {
+      type = numeric(10,0)
+    }
+    column "fecharec" {
+      type = date
+    }
+    column "horarec" {
+      type = character varying(8)
+    }
+    column "fechasal" {
+      type = date
+    }
+    column "horasal" {
+      type = character varying(8)
+    }
+    column "urgente" {
+      type = numeric(1,0)
+    }
+    column "nroturno" {
+      type = character varying(10)
+    }
+    column "codorigen" {
+      type = character varying(10)
+    }
+    column "codservrem" {
+      type = character varying(10)
+    }
+    column "codservder" {
+      type = character varying(10)
+    }
+    column "codmedico" {
+      type = character varying(10)
+    }
+    column "recitacion" {
+      type = numeric(1,0)
+    }
+    column "retira" {
+      type = numeric(1,0)
+    }
+    column "obs" {
+      type = character varying(250)
+    }
+    column "atendido" {
+      type = numeric(1,0)
+    }
+    column "cod_dgvs" {
+      type = bigint
+    }
+    column "nro_toma" {
+      type = character varying
+    }
+    column "nom_servicio" {
+      type = character varying(500)
+    }
+    column "laboratorio" {
+      type = bigint
+    }
+    column "orden_dgvs" {
+      type = character varying(20)
+    }
+    column "nom_proceso" {
+      type = character(300)
+    }
+    column "nroficha" {
+      type = integer
+    }
+    column "idlab" {
+      type = integer
+    }
+    column "id_secciones_ficha" {
+      type = integer
+    }
+    column "cod_dgvs2" {
+      type = integer
+    }
+  )
+}
+
