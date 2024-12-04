@@ -1,0 +1,29 @@
+table "public"."medicos" {
+  primaryKey = {
+    columns = [
+      "codmedico"
+    ]
+    name = "pk_medicos"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "codmedico" {
+      type = character varying(10)
+      null = NOT NULL
+    }
+    column "nroregistro" {
+      type = character varying(10)
+    }
+    column "tipoprof" {
+      type = character varying(100)
+    }
+    column "nomyape" {
+      type = character varying(150)
+    }
+    column "estado" {
+      type = numeric(1,0)
+    }
+  )
+}
+

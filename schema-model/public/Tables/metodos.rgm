@@ -1,0 +1,20 @@
+table "public"."metodos" {
+  primaryKey = {
+    columns = [
+      "codmetodo"
+    ]
+    name = "pk_metodos"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "codmetodo" {
+      type = character varying(10)
+      null = NOT NULL
+    }
+    column "nommetodo" {
+      type = character varying(200)
+    }
+  )
+}
+

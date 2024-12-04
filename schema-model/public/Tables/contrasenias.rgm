@@ -1,0 +1,33 @@
+table "public"."contrasenias" {
+  primaryKey = {
+    columns = [
+      "codusu"
+      "fecha"
+      "hora"
+    ]
+    name = "pk_contrasenias"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "codusu" {
+      type = character varying(20)
+      null = NOT NULL
+    }
+    column "fecha" {
+      type = date
+      null = NOT NULL
+    }
+    column "hora" {
+      type = character varying(8)
+      null = NOT NULL
+    }
+    column "claveant" {
+      type = character varying(20)
+    }
+    column "clavenueva" {
+      type = character varying(20)
+    }
+  )
+}
+

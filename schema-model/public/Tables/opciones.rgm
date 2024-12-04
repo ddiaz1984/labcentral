@@ -1,0 +1,40 @@
+table "public"."opciones" {
+  primaryKey = {
+    columns = [
+      "codopc"
+    ]
+    name = "pk_opciones"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "codopc" {
+      type = character varying(10)
+      null = NOT NULL
+    }
+    column "nomopc" {
+      type = character varying(200)
+    }
+    column "tipo" {
+      type = numeric(1,0)
+    }
+    column "ayuda" {
+      type = character varying(250)
+    }
+  )
+}
+
+trigger "public"."opciones"."audit_log_trigger" {
+  timing = BEFORE
+  events = [
+    DELETE
+    UPDATE
+    INSERT
+  ]
+  level = ROW
+  function = public.audit_trigger
+  functionArguments = [
+  ]
+  constraint = False
+}
+

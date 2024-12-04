@@ -1,0 +1,42 @@
+table "public"."matinfluenza" {
+  primaryKey = {
+    columns = [
+      "nroeval"
+      "codempresa"
+      "nrolamina"
+    ]
+    name = "pk_matinfluenza"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "nroeval" {
+      type = numeric(10,0)
+      null = NOT NULL
+    }
+    column "codempresa" {
+      type = character varying(20)
+      null = NOT NULL
+    }
+    column "nrolamina" {
+      type = character varying(100)
+      null = NOT NULL
+    }
+    column "resultado" {
+      type = character varying(100)
+    }
+    column "virus" {
+      type = character varying(100)
+    }
+    column "fechaproc" {
+      type = date
+    }
+    column "puntaje" {
+      type = numeric(10,2)
+    }
+    column "resulprevisto" {
+      type = character varying(100)
+    }
+  )
+}
+

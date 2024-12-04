@@ -1,0 +1,57 @@
+table "public"."respuestaparticipante" {
+  primaryKey = {
+    columns = [
+      "codigo"
+    ]
+    name = "pk_respuestaparticipante"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "codigo" {
+      type = integer
+      null = NOT NULL
+    }
+    column "nroeval" {
+      type = numeric(10,0)
+    }
+    column "item" {
+      type = numeric(3,0)
+    }
+    column "codusu" {
+      type = character varying(20)
+    }
+    column "respuesta" {
+      type = integer
+    }
+    column "enviado" {
+      type = character varying(2)
+      default = 'N'::character varying
+    }
+    column "fechaenviado" {
+      type = date
+    }
+    column "metodo" {
+      type = character varying(100)
+    }
+    column "reactivo" {
+      type = character varying(100)
+    }
+    column "equipo" {
+      type = character varying(100)
+    }
+    column "marca" {
+      type = character varying(100)
+    }
+    column "lote" {
+      type = character varying(100)
+    }
+    column "fechaven" {
+      type = date
+    }
+    column "obs" {
+      type = character varying(100)
+    }
+  )
+}
+

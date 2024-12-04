@@ -1,0 +1,39 @@
+table "public"."perfiles" {
+  primaryKey = {
+    columns = [
+      "codusu"
+      "codopc"
+    ]
+    name = "pk_perfiles"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "codusu" {
+      type = character varying(20)
+      null = NOT NULL
+    }
+    column "codopc" {
+      type = character varying(10)
+      null = NOT NULL
+    }
+    column "modo" {
+      type = numeric(1,0)
+    }
+  )
+}
+
+trigger "public"."perfiles"."audit_log_trigger" {
+  timing = BEFORE
+  events = [
+    DELETE
+    UPDATE
+    INSERT
+  ]
+  level = ROW
+  function = public.audit_trigger
+  functionArguments = [
+  ]
+  constraint = False
+}
+

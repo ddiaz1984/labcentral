@@ -1,0 +1,49 @@
+table "public"."evaleducacioncontinua" {
+  primaryKey = {
+    columns = [
+      "nroeval"
+      "codempresa"
+    ]
+    name = "pk_evaleducacioncontinua"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "nroeval" {
+      type = numeric(10,0)
+      null = NOT NULL
+    }
+    column "codempresa" {
+      type = character varying(20)
+      null = NOT NULL
+    }
+    column "permes" {
+      type = numeric(2,0)
+    }
+    column "peranio" {
+      type = numeric(4,0)
+    }
+    column "fecha" {
+      type = date
+    }
+    column "lote" {
+      type = character varying(20)
+    }
+    column "tiposerv" {
+      type = numeric(1,0)
+    }
+    column "codservicio" {
+      type = character varying(10)
+    }
+    column "responsable" {
+      type = character varying(150)
+    }
+    column "cargo" {
+      type = character varying(150)
+    }
+    column "puntaje" {
+      type = numeric(10,2)
+    }
+  )
+}
+

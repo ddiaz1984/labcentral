@@ -1,0 +1,38 @@
+table "public"."regiones" {
+  primaryKey = {
+    columns = [
+      "codreg"
+      "subcreg"
+    ]
+    name = "pk_regiones"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "codreg" {
+      type = character varying(2)
+      null = NOT NULL
+    }
+    column "subcreg" {
+      type = character varying(3)
+      null = NOT NULL
+    }
+    column "nomreg" {
+      type = character varying(40)
+      null = NOT NULL
+    }
+    column "dire" {
+      type = character varying(30)
+    }
+    column "dccion" {
+      type = character varying(50)
+    }
+    column "telef" {
+      type = character varying(30)
+    }
+    column "email" {
+      type = character varying(30)
+    }
+  )
+}
+

@@ -1,0 +1,164 @@
+table "public"."otreventos" {
+  primaryKey = {
+    columns = [
+      "nronotif"
+    ]
+    name = "pk_otreventos"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "nronotif" {
+      type = numeric(10,0)
+      null = NOT NULL
+    }
+    column "nordentra" {
+      type = integer
+    }
+    column "codreg" {
+      type = character varying(2)
+    }
+    column "subcreg" {
+      type = character varying(3)
+    }
+    column "coddist" {
+      type = character varying(3)
+    }
+    column "codserv" {
+      type = character varying(3)
+    }
+    column "eventrepo" {
+      type = character varying(200)
+    }
+    column "afectados" {
+      type = character varying(200)
+    }
+    column "pobbarrio" {
+      type = numeric(10,0)
+    }
+    column "tipoloc" {
+      type = numeric(1,0)
+    }
+    column "carsanitaria" {
+      type = character varying(200)
+    }
+    column "econppal" {
+      type = character varying(200)
+    }
+    column "fecocur" {
+      type = date
+    }
+    column "tipoocur" {
+      type = character varying(200)
+    }
+    column "coddptooc" {
+      type = character varying(2)
+    }
+    column "coddistoc" {
+      type = character varying(3)
+    }
+    column "nrocasos" {
+      type = numeric(10,0)
+    }
+    column "nrohosps" {
+      type = numeric(10,0)
+    }
+    column "nrodefs" {
+      type = numeric(10,0)
+    }
+    column "fecinieven" {
+      type = date
+    }
+    column "fecucaso" {
+      type = date
+    }
+    column "caredad" {
+      type = character varying(200)
+    }
+    column "carsexo" {
+      type = character varying(200)
+    }
+    column "carocup" {
+      type = character varying(200)
+    }
+    column "carviaje" {
+      type = character varying(200)
+    }
+    column "carotros" {
+      type = character varying(200)
+    }
+    column "fecsimilar" {
+      type = date
+    }
+    column "antevento" {
+      type = character varying(200)
+    }
+    column "antnafec" {
+      type = numeric(10,0)
+    }
+    column "sintomas" {
+      type = character varying(200)
+    }
+    column "carclinic" {
+      type = character varying(200)
+    }
+    column "tratamiento" {
+      type = character varying(200)
+    }
+    column "evolucion" {
+      type = character varying(200)
+    }
+    column "diagsospecha" {
+      type = character varying(200)
+    }
+    column "tipomuestra" {
+      type = character varying(200)
+    }
+    column "nromuestra" {
+      type = numeric(10,0)
+    }
+    column "labenvio" {
+      type = character varying(120)
+    }
+    column "fecenvio" {
+      type = date
+    }
+    column "fecresul" {
+      type = date
+    }
+    column "mambient" {
+      type = character varying(200)
+    }
+    column "malim" {
+      type = character varying(200)
+    }
+    column "manimal" {
+      type = character varying(200)
+    }
+    column "mreserv" {
+      type = character varying(200)
+    }
+    column "mrecol" {
+      type = character varying(200)
+    }
+    column "laboenvio" {
+      type = character varying(150)
+    }
+    column "fecresul2" {
+      type = date
+    }
+    column "resultado" {
+      type = character varying(200)
+    }
+    column "mectransmi" {
+      type = character varying(200)
+    }
+    column "accctrl" {
+      type = character varying(200)
+    }
+    column "continvest" {
+      type = character varying(200)
+    }
+  )
+}
+

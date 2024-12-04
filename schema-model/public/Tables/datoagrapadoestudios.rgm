@@ -1,0 +1,22 @@
+table "public"."datoagrapadoestudios" {
+  primaryKey = {
+    columns = [
+      "nperfil"
+      "codestudio"
+    ]
+    name = "pk_datoagrapadoestudios"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "nperfil" {
+      type = character varying(10)
+      null = NOT NULL
+    }
+    column "codestudio" {
+      type = character varying(10)
+      null = NOT NULL
+    }
+  )
+}
+

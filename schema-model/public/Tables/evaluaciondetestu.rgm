@@ -1,0 +1,25 @@
+table "public"."evaluaciondetestu" {
+  primaryKey = {
+    columns = [
+      "nroeval"
+      "codestudio"
+    ]
+    name = "pk_evaluaciondetestu"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "nroeval" {
+      type = numeric(10,0)
+      null = NOT NULL
+    }
+    column "codestudio" {
+      type = character varying(10)
+      null = NOT NULL
+    }
+    column "fecharegistro" {
+      type = date
+    }
+  )
+}
+

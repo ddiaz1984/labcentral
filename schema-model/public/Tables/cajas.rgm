@@ -1,0 +1,28 @@
+table "public"."cajas" {
+  primaryKey = {
+    columns = [
+      "codservicio"
+      "codcaja"
+    ]
+    name = "pk_cajas"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "codservicio" {
+      type = character varying(10)
+      null = NOT NULL
+    }
+    column "codcaja" {
+      type = character varying(10)
+      null = NOT NULL
+    }
+    column "nomcaja" {
+      type = character varying(100)
+    }
+    column "codusu" {
+      type = character varying(20)
+    }
+  )
+}
+

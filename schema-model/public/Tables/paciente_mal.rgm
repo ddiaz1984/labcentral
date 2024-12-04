@@ -1,0 +1,147 @@
+table "public"."paciente_mal" {
+  primaryKey = {
+    columns = [
+      "nropaciente"
+    ]
+    name = "pk_paciente_mal"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "nropaciente" {
+      type = numeric(10,0)
+      null = NOT NULL
+      default = nextval('public.seq_paciente'::regclass)
+    }
+    column "fechareg" {
+      type = date
+    }
+    column "tdocumento" {
+      type = numeric(1,0)
+    }
+    column "cedula" {
+      type = character varying(15)
+    }
+    column "pnombre" {
+      type = character varying(30)
+    }
+    column "snombre" {
+      type = character varying(30)
+    }
+    column "papellido" {
+      type = character varying(30)
+    }
+    column "sapellido" {
+      type = character varying(30)
+    }
+    column "sexo" {
+      type = numeric(1,0)
+    }
+    column "fechanac" {
+      type = date
+    }
+    column "edada" {
+      type = numeric(3,0)
+    }
+    column "edadm" {
+      type = numeric(3,0)
+    }
+    column "ecivil" {
+      type = numeric(1,0)
+    }
+    column "nacionalidad" {
+      type = character varying(100)
+    }
+    column "telefono" {
+      type = character varying(30)
+    }
+    column "email" {
+      type = character varying(50)
+    }
+    column "codexterno" {
+      type = character varying(20)
+    }
+    column "estado" {
+      type = numeric(1,0)
+    }
+    column "dccionr" {
+      type = character varying(200)
+    }
+    column "paisr" {
+      type = character varying(100)
+    }
+    column "coddptor" {
+      type = character varying(2)
+    }
+    column "coddistr" {
+      type = character varying(3)
+    }
+    column "nomyapefam" {
+      type = character varying(150)
+    }
+    column "telefonof" {
+      type = character varying(30)
+    }
+    column "celularf" {
+      type = character varying(50)
+    }
+    column "obs" {
+      type = character varying(250)
+    }
+    column "fechauact" {
+      type = date
+    }
+    column "codusup" {
+      type = character varying(20)
+    }
+    column "tb" {
+      type = numeric(1,0)
+    }
+    column "cod_dgvs" {
+      type = bigint
+    }
+    column "codetnia" {
+      type = character varying(5)
+    }
+    column "esetnia" {
+      type = numeric(1,0)
+    }
+  )
+}
+
+index "public"."i_paciente_mal" {
+  table = "public"."paciente_mal"
+  type = btree
+  columns = <
+    {
+      definition = nropaciente
+    }
+
+  >
+  isUnique = True
+}
+
+index "public"."ind_paciente_mal" {
+  table = "public"."paciente_mal"
+  type = btree
+  columns = <
+    {
+      definition = nropaciente
+    }
+
+    {
+      definition = cedula
+    }
+
+    {
+      definition = pnombre
+    }
+
+    {
+      definition = papellido
+    }
+
+  >
+  isUnique = True
+}
+

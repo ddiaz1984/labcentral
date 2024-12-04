@@ -1,0 +1,39 @@
+table "public"."notifmalaria" {
+  primaryKey = {
+    columns = [
+      "nronotif"
+      "codempresa"
+      "nrocontrol"
+    ]
+    name = "pk_notifmalaria"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "nronotif" {
+      type = numeric(10,0)
+      null = NOT NULL
+    }
+    column "codempresa" {
+      type = character varying(20)
+      null = NOT NULL
+    }
+    column "nrocontrol" {
+      type = numeric(10,0)
+      null = NOT NULL
+    }
+    column "fecha" {
+      type = date
+    }
+    column "resultado" {
+      type = character varying(100)
+    }
+    column "densidadpar" {
+      type = character varying(100)
+    }
+    column "responsable" {
+      type = character varying(150)
+    }
+  )
+}
+

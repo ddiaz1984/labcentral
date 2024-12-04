@@ -1,0 +1,184 @@
+table "public"."resultados" {
+  primaryKey = {
+    columns = [
+      "nordentra"
+      "codservicio"
+      "nroestudio"
+      "idmuestra"
+    ]
+    name = "pk_resultados"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "nordentra" {
+      type = integer
+      null = NOT NULL
+    }
+    column "codservicio" {
+      type = character varying(10)
+      null = NOT NULL
+    }
+    column "nroestudio" {
+      type = integer
+      null = NOT NULL
+    }
+    column "idmuestra" {
+      type = character varying(20)
+      null = NOT NULL
+    }
+    column "nroorden" {
+      type = numeric(10,0)
+    }
+    column "fechares" {
+      type = date
+    }
+    column "codmetodo" {
+      type = character varying(10)
+    }
+    column "codumedida" {
+      type = character varying(10)
+    }
+    column "codsector" {
+      type = character varying(10)
+    }
+    column "codestudio" {
+      type = character varying(10)
+    }
+    column "coddetermina" {
+      type = character varying(10)
+    }
+    column "resultado" {
+      type = character varying(250)
+    }
+    column "codresultado" {
+      type = character varying(10)
+    }
+    column "codequipo" {
+      type = character varying(10)
+    }
+    column "codestado" {
+      type = character varying(5)
+    }
+    column "codusu1" {
+      type = character varying(20)
+    }
+    column "fechaval" {
+      type = date
+    }
+    column "horaval" {
+      type = character varying(8)
+    }
+    column "codusu2" {
+      type = character varying(20)
+    }
+    column "fechareval" {
+      type = date
+    }
+    column "horareval" {
+      type = character varying(8)
+    }
+    column "anulado" {
+      type = numeric(1,0)
+    }
+    column "fechaanul" {
+      type = date
+    }
+    column "horaanul" {
+      type = character varying(8)
+    }
+    column "codusu3" {
+      type = character varying(20)
+    }
+    column "codusu4" {
+      type = character varying(20)
+    }
+    column "fechaent" {
+      type = date
+    }
+    column "horaentre" {
+      type = character varying(8)
+    }
+    column "obs" {
+      type = character varying(300)
+    }
+    column "vecesimp" {
+      type = numeric(3,0)
+    }
+    column "codusu5" {
+      type = character varying(20)
+    }
+    column "fechaenvio" {
+      type = date
+    }
+    column "horaenvio" {
+      type = numeric(8,0)
+    }
+    column "nro_toma" {
+      type = character varying(100)
+    }
+    column "cod_dgvs" {
+      type = bigint
+    }
+    column "envio_dgvs" {
+      type = numeric(1,0)
+    }
+    column "ffiebre" {
+      type = character varying(10)
+    }
+    column "ftoma" {
+      type = character varying(10)
+    }
+    column "orden_dgvs" {
+      type = character varying(20)
+    }
+    column "nroficha" {
+      type = integer
+    }
+    column "idlab" {
+      type = integer
+    }
+    column "id_secciones_ficha" {
+      type = integer
+    }
+    column "proceso_dgvs" {
+      type = character varying(50)
+    }
+    column "cod_dgvs2" {
+      type = integer
+    }
+    column "cod_reactivo" {
+      type = character(30)
+    }
+    column "horares" {
+      type = character(8)
+    }
+    column "hospitalizado" {
+      type = character varying(2)
+    }
+    column "fallecido" {
+      type = character varying(2)
+    }
+    column "numero_muestra" {
+      type = character varying(10)
+    }
+    column "resultado_text" {
+      type = text
+    }
+  )
+}
+
+trigger "public"."resultados"."audit_log_trigger" {
+  timing = BEFORE
+  events = [
+    DELETE
+    UPDATE
+    INSERT
+  ]
+  level = ROW
+  function = public.audit_trigger
+  functionArguments = [
+  ]
+  constraint = False
+}
+

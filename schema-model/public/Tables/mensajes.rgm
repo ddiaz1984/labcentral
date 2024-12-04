@@ -1,0 +1,55 @@
+table "public"."mensajes" {
+  primaryKey = {
+    columns = [
+      "nromsg"
+      "fecha"
+      "hora"
+      "codusu"
+      "codservicio"
+    ]
+    name = "pk_mensajes"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "nromsg" {
+      type = numeric(15,0)
+      null = NOT NULL
+    }
+    column "fecha" {
+      type = date
+      null = NOT NULL
+    }
+    column "hora" {
+      type = character varying(8)
+      null = NOT NULL
+    }
+    column "codusu" {
+      type = character varying(20)
+      null = NOT NULL
+    }
+    column "codservicio" {
+      type = character varying(10)
+      null = NOT NULL
+    }
+    column "sms" {
+      type = numeric(1,0)
+    }
+    column "email" {
+      type = numeric(1,0)
+    }
+    column "alerta" {
+      type = numeric(1,0)
+    }
+    column "estadosms" {
+      type = numeric(1,0)
+    }
+    column "estadoemail" {
+      type = numeric(1,0)
+    }
+    column "estadoalerta" {
+      type = numeric(1,0)
+    }
+  )
+}
+

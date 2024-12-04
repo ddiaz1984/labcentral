@@ -1,0 +1,275 @@
+table "public"."leishmaniosismucosa" {
+  primaryKey = {
+    columns = [
+      "nronotif"
+    ]
+    name = "pk_leishmaniosismucosa"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "nronotif" {
+      type = numeric(10,0)
+      null = NOT NULL
+    }
+    column "nordentra" {
+      type = character varying(20)
+    }
+    column "fechanotif" {
+      type = date
+    }
+    column "nomyapenot" {
+      type = character varying(150)
+    }
+    column "cargonotif" {
+      type = character varying(100)
+    }
+    column "codserv" {
+      type = character varying(3)
+    }
+    column "codreg" {
+      type = character varying(2)
+    }
+    column "coddist" {
+      type = character varying(3)
+    }
+    column "nomyape" {
+      type = character varying(150)
+    }
+    column "sexo" {
+      type = numeric(1,0)
+    }
+    column "fechanac" {
+      type = date
+    }
+    column "edad" {
+      type = numeric(3,0)
+    }
+    column "cedula" {
+      type = character varying(15)
+    }
+    column "dccion" {
+      type = character varying(200)
+    }
+    column "referencia" {
+      type = character varying(250)
+    }
+    column "coddistref" {
+      type = character varying(3)
+    }
+    column "localidad" {
+      type = character varying(100)
+    }
+    column "coddptor" {
+      type = character varying(2)
+    }
+    column "nacionalidad" {
+      type = character varying(100)
+    }
+    column "ocupacion" {
+      type = character varying(100)
+    }
+    column "esetnia" {
+      type = numeric(1,0)
+    }
+    column "codetnia" {
+      type = character varying(5)
+    }
+    column "loccontagio" {
+      type = character varying(100)
+    }
+    column "coddistcon" {
+      type = character varying(3)
+    }
+    column "coddptocon" {
+      type = character varying(2)
+    }
+    column "fechacons" {
+      type = date
+    }
+    column "peso" {
+      type = numeric(10,2)
+    }
+    column "lmtabique" {
+      type = numeric(1,0)
+    }
+    column "lmlabios" {
+      type = numeric(1,0)
+    }
+    column "lmpaladar" {
+      type = numeric(1,0)
+    }
+    column "lmfaringe" {
+      type = numeric(1,0)
+    }
+    column "lmlaringe" {
+      type = numeric(1,0)
+    }
+    column "lmmutilaci" {
+      type = numeric(1,0)
+    }
+    column "tevollesion" {
+      type = numeric(5,0)
+    }
+    column "cicatrices" {
+      type = numeric(1,0)
+    }
+    column "tlescutanea" {
+      type = numeric(5,0)
+    }
+    column "tantleishman" {
+      type = numeric(1,0)
+    }
+    column "otrcompli" {
+      type = character varying(100)
+    }
+    column "frcardiaco" {
+      type = numeric(1,0)
+    }
+    column "frhepatico" {
+      type = numeric(1,0)
+    }
+    column "frrenales" {
+      type = numeric(1,0)
+    }
+    column "frhta" {
+      type = numeric(1,0)
+    }
+    column "frotro" {
+      type = numeric(1,0)
+    }
+    column "frotroesp" {
+      type = character varying(100)
+    }
+    column "casonuevo" {
+      type = numeric(1,0)
+    }
+    column "recidiva" {
+      type = numeric(1,0)
+    }
+    column "seguntrat" {
+      type = numeric(1,0)
+    }
+    column "drog2dotrat" {
+      type = numeric(1,0)
+    }
+    column "retorno" {
+      type = numeric(1,0)
+    }
+    column "rmontenegro" {
+      type = numeric(1,0)
+    }
+    column "diamindu" {
+      type = numeric(5,0)
+    }
+    column "fecidrm" {
+      type = date
+    }
+    column "nomyapeidrm" {
+      type = character varying(150)
+    }
+    column "servidrm" {
+      type = character varying(100)
+    }
+    column "metodo" {
+      type = character varying(100)
+    }
+    column "fechares" {
+      type = date
+    }
+    column "nomyaperea" {
+      type = character varying(150)
+    }
+    column "servserolo" {
+      type = character varying(100)
+    }
+    column "otrdiag" {
+      type = character varying(100)
+    }
+    column "entregamed" {
+      type = numeric(1,0)
+    }
+    column "hospitaliza" {
+      type = numeric(1,0)
+    }
+    column "fechahosp" {
+      type = date
+    }
+    column "fechatrat" {
+      type = date
+    }
+    column "esqtrata" {
+      type = numeric(1,0)
+    }
+    column "nomyapereatra" {
+      type = character varying(150)
+    }
+    column "servrealiza" {
+      type = character varying(100)
+    }
+    column "drogautil" {
+      type = character varying(100)
+    }
+    column "dosisutil" {
+      type = character varying(100)
+    }
+    column "diastrat" {
+      type = numeric(3,0)
+    }
+    column "viaadmin" {
+      type = numeric(1,0)
+    }
+    column "efadverso" {
+      type = numeric(1,0)
+    }
+    column "interrutrat" {
+      type = numeric(1,0)
+    }
+    column "motintertrat" {
+      type = character varying(100)
+    }
+    column "terapantibio" {
+      type = numeric(1,0)
+    }
+    column "antibioutil" {
+      type = character varying(100)
+    }
+    column "otrasterap" {
+      type = character varying(100)
+    }
+    column "regulatrat" {
+      type = numeric(1,0)
+    }
+    column "clasiffinal" {
+      type = numeric(1,0)
+    }
+    column "clasfinalesp" {
+      type = character varying(100)
+    }
+    column "paiscontag2" {
+      type = character varying(100)
+    }
+    column "coddptocon2" {
+      type = character varying(2)
+    }
+    column "coddistcon2" {
+      type = character varying(3)
+    }
+    column "locpcontag2" {
+      type = character varying(100)
+    }
+    column "evolcaso" {
+      type = numeric(1,0)
+    }
+    column "fechaobi" {
+      type = date
+    }
+    column "fechacierre" {
+      type = date
+    }
+    column "obs" {
+      type = character varying(250)
+    }
+  )
+}
+

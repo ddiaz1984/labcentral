@@ -1,0 +1,97 @@
+table "public"."arqueo" {
+  primaryKey = {
+    columns = [
+      "fecha"
+      "hora"
+    ]
+    name = "pk_arqueo"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "fecha" {
+      type = date
+      null = NOT NULL
+    }
+    column "hora" {
+      type = character varying(8)
+      null = NOT NULL
+    }
+    column "codusu" {
+      type = character varying(20)
+    }
+    column "codcaja" {
+      type = character varying(10)
+    }
+    column "monto" {
+      type = numeric(10,0)
+    }
+    column "b1" {
+      type = numeric(10,0)
+    }
+    column "b5" {
+      type = numeric(10,0)
+    }
+    column "b10" {
+      type = numeric(10,0)
+    }
+    column "b50" {
+      type = numeric(10,0)
+    }
+    column "b100" {
+      type = numeric(10,0)
+    }
+    column "b500" {
+      type = numeric(10,0)
+    }
+    column "b1000" {
+      type = numeric(10,0)
+    }
+    column "b2000" {
+      type = numeric(10,0)
+    }
+    column "b5000" {
+      type = numeric(10,0)
+    }
+    column "b10000" {
+      type = numeric(10,0)
+    }
+    column "b20000" {
+      type = numeric(10,0)
+    }
+    column "b50000" {
+      type = numeric(10,0)
+    }
+    column "b100000" {
+      type = numeric(10,0)
+    }
+    column "codreg" {
+      type = character varying(2)
+    }
+    column "subcreg" {
+      type = character varying(3)
+    }
+    column "coddist" {
+      type = character varying(3)
+    }
+    column "codserv" {
+      type = character varying(3)
+    }
+    column "cheques" {
+      type = character varying(100)
+    }
+    column "totcheques" {
+      type = numeric(10,0)
+    }
+    column "obs" {
+      type = character varying(250)
+    }
+    column "codservicio" {
+      type = character varying(10)
+    }
+    column "idapertura" {
+      type = integer
+    }
+  )
+}
+

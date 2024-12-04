@@ -1,0 +1,50 @@
+table "public"."distritos" {
+  primaryKey = {
+    columns = [
+      "coddpto"
+      "coddist"
+    ]
+    name = "pk_distritos"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "coddpto" {
+      type = character varying(2)
+      null = NOT NULL
+    }
+    column "coddist" {
+      type = character varying(3)
+      null = NOT NULL
+    }
+    column "nomdist" {
+      type = character varying(50)
+      null = NOT NULL
+    }
+    column "codreg" {
+      type = character varying(2)
+      null = NOT NULL
+    }
+    column "subcreg" {
+      type = character varying(3)
+      null = NOT NULL
+    }
+  )
+}
+
+index "public"."idistritos" {
+  table = "public"."distritos"
+  type = btree
+  columns = <
+    {
+      definition = coddpto
+    }
+
+    {
+      definition = coddist
+    }
+
+  >
+  isUnique = False
+}
+

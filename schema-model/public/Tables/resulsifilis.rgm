@@ -1,0 +1,53 @@
+table "public"."resulsifilis" {
+  primaryKey = {
+    columns = [
+      "nroeval"
+      "codempresa"
+      "reactivo"
+      "nrotubo"
+    ]
+    name = "pk_resulsifilis"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "nroeval" {
+      type = numeric(10,0)
+      null = NOT NULL
+    }
+    column "codempresa" {
+      type = character varying(20)
+      null = NOT NULL
+    }
+    column "reactivo" {
+      type = character varying(50)
+      null = NOT NULL
+    }
+    column "nrotubo" {
+      type = numeric(1,0)
+      null = NOT NULL
+    }
+    column "esreactivo" {
+      type = character varying(50)
+    }
+    column "noesreactivo" {
+      type = character varying(20)
+    }
+    column "dilucion" {
+      type = character varying(100)
+    }
+    column "esreactivor" {
+      type = character varying(50)
+    }
+    column "noesreactivor" {
+      type = character varying(20)
+    }
+    column "dilucionr" {
+      type = character varying(100)
+    }
+    column "puntaje" {
+      type = numeric(10,2)
+    }
+  )
+}
+

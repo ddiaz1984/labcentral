@@ -1,0 +1,45 @@
+function "public"."update_resultados_from_ingenius()" {
+  text = """
+
+declare
+    idEstudio VARCHAR(10);
+    idDetermina VARCHAR(10);
+    idOrden INTEGER;
+    idNroMuestra iNTEGER;
+    lResultado VARCHAR(100);
+BEGIN
+    -- Extracting the value from universal_test_id
+    SELECT coddetermina, codestudio
+      INTO idDetermina, idEstudio
+      FROM determinaciones_equipos
+     WHERE coddetermina_equipo LIKE '%' || SUBSTRING(NEW.universal_test_id FROM 4 FOR POSITION('^' IN SUBSTRING(NEW.universal_test_id FROM 4)) - 1) || '%';
+
+    -- Extracting data from nro_orden
+    idNroMuestra := CAST ( SUBSTRING(NEW.nro_orden FROM 4) as integer);
+     
+     SELECT nordentra
+       INTO idOrden
+       FROM estrealizar
+      WHERE nromuestra = idNroMuestra;
+     
+    
+    --idOrden := CAST ( SUBSTRING(NEW.nro_orden FROM 4) as integer);
+    lResultado := new.component2;
+   
+    -- Updating the resultados table
+    UPDATE resultados
+       SET resultado = lResultado
+     WHERE coddetermina = idDetermina
+       AND codestudio = idEstudio
+       AND nordentra = idOrden;
+
+    RETURN NEW;
+END;
+"""
+  returnType = trigger
+  arguments = [
+  ]
+  language = plpgsql
+  owner = postgres
+}
+

@@ -1,0 +1,323 @@
+table "public"."meningitis" {
+  primaryKey = {
+    columns = [
+      "nronotif"
+    ]
+    name = "pk_meningitis"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "nronotif" {
+      type = numeric(10,0)
+      null = NOT NULL
+    }
+    column "nordentra" {
+      type = character varying(20)
+    }
+    column "nomyapenot" {
+      type = character varying(150)
+    }
+    column "codreg" {
+      type = character varying(2)
+    }
+    column "subcreg" {
+      type = character varying(3)
+    }
+    column "coddist" {
+      type = character varying(3)
+    }
+    column "codserv" {
+      type = character varying(3)
+    }
+    column "fechahosp" {
+      type = date
+    }
+    column "fechacap" {
+      type = date
+    }
+    column "nomyape" {
+      type = character varying(150)
+    }
+    column "cedula" {
+      type = character varying(15)
+    }
+    column "nrohclinica" {
+      type = character varying(20)
+    }
+    column "fechanac" {
+      type = date
+    }
+    column "edad" {
+      type = numeric(3,0)
+    }
+    column "sexo" {
+      type = numeric(1,0)
+    }
+    column "coddptor" {
+      type = character varying(2)
+    }
+    column "coddistr" {
+      type = character varying(3)
+    }
+    column "barrio" {
+      type = character varying(100)
+    }
+    column "dccion" {
+      type = character varying(200)
+    }
+    column "nommadre" {
+      type = character varying(150)
+    }
+    column "celularmad" {
+      type = character varying(30)
+    }
+    column "centroeduca" {
+      type = character varying(150)
+    }
+    column "vaccarnet" {
+      type = numeric(1,0)
+    }
+    column "vacantihib" {
+      type = numeric(1,0)
+    }
+    column "vdoshibpenta" {
+      type = character varying(30)
+    }
+    column "fecvacpenta" {
+      type = date
+    }
+    column "tvachibpenta" {
+      type = character varying(100)
+    }
+    column "vacantineumo" {
+      type = numeric(1,0)
+    }
+    column "vacaneudos" {
+      type = character varying(30)
+    }
+    column "fecvacantineu" {
+      type = date
+    }
+    column "vactiponeu" {
+      type = character varying(100)
+    }
+    column "vacantimenin" {
+      type = numeric(1,0)
+    }
+    column "vacmendos" {
+      type = character varying(30)
+    }
+    column "fecvacantimen" {
+      type = date
+    }
+    column "vactipomen" {
+      type = character varying(100)
+    }
+    column "fecinisint" {
+      type = date
+    }
+    column "diagingre" {
+      type = character varying(200)
+    }
+    column "enfercronica" {
+      type = numeric(1,0)
+    }
+    column "enfcronica" {
+      type = character varying(200)
+    }
+    column "antibiotusem" {
+      type = numeric(1,0)
+    }
+    column "antibusem" {
+      type = character varying(200)
+    }
+    column "casosimilar" {
+      type = numeric(1,0)
+    }
+    column "nombnexo" {
+      type = character varying(200)
+    }
+    column "tomahemo" {
+      type = numeric(1,0)
+    }
+    column "fecmuestrah" {
+      type = date
+    }
+    column "tomalcr" {
+      type = numeric(1,0)
+    }
+    column "fecmtralcr" {
+      type = date
+    }
+    column "gramhemo" {
+      type = character varying(200)
+    }
+    column "gramlcr" {
+      type = character varying(200)
+    }
+    column "latex" {
+      type = character varying(200)
+    }
+    column "citolcr" {
+      type = character varying(200)
+    }
+    column "leuco" {
+      type = character varying(200)
+    }
+    column "pmn" {
+      type = character varying(200)
+    }
+    column "mn" {
+      type = character varying(200)
+    }
+    column "glucosa" {
+      type = character varying(200)
+    }
+    column "proteinas" {
+      type = character varying(200)
+    }
+    column "hemo" {
+      type = numeric(1,0)
+    }
+    column "hemohi" {
+      type = numeric(1,0)
+    }
+    column "hemospn" {
+      type = numeric(1,0)
+    }
+    column "hemohm" {
+      type = numeric(1,0)
+    }
+    column "hemoning" {
+      type = numeric(1,0)
+    }
+    column "hemootr" {
+      type = numeric(1,0)
+    }
+    column "hemootresp" {
+      type = character varying(200)
+    }
+    column "fecresulh" {
+      type = date
+    }
+    column "lcr" {
+      type = numeric(1,0)
+    }
+    column "lcrhi" {
+      type = numeric(1,0)
+    }
+    column "lcrspn" {
+      type = numeric(1,0)
+    }
+    column "lcrnm" {
+      type = numeric(1,0)
+    }
+    column "lcrning" {
+      type = numeric(1,0)
+    }
+    column "lcrotr" {
+      type = numeric(1,0)
+    }
+    column "lcrotresp" {
+      type = character varying(200)
+    }
+    column "fecresulcr" {
+      type = date
+    }
+    column "pcrhemosan" {
+      type = numeric(1,0)
+    }
+    column "pcrhemohi" {
+      type = numeric(1,0)
+    }
+    column "pcrhemospn" {
+      type = numeric(1,0)
+    }
+    column "pcrhemonm" {
+      type = numeric(1,0)
+    }
+    column "pcrhemoning" {
+      type = numeric(1,0)
+    }
+    column "pcrhemootr" {
+      type = numeric(1,0)
+    }
+    column "pcrhemootre" {
+      type = character varying(200)
+    }
+    column "fecresulpcr" {
+      type = date
+    }
+    column "pcrhemsero" {
+      type = character varying(200)
+    }
+    column "pcrbac" {
+      type = numeric(1,0)
+    }
+    column "pacbachi" {
+      type = numeric(1,0)
+    }
+    column "pcrbacspn" {
+      type = numeric(1,0)
+    }
+    column "pcrbacnm" {
+      type = numeric(1,0)
+    }
+    column "pcrbacning" {
+      type = numeric(1,0)
+    }
+    column "pcrbacotr" {
+      type = numeric(1,0)
+    }
+    column "pcrbacotre" {
+      type = character varying(200)
+    }
+    column "fecresbac" {
+      type = date
+    }
+    column "pcrbacsero" {
+      type = character varying(200)
+    }
+    column "pcrdelcr" {
+      type = numeric(1,0)
+    }
+    column "pcrdelcrtip" {
+      type = numeric(1,0)
+    }
+    column "pcrdelcrtipe" {
+      type = character varying(200)
+    }
+    column "tintachina" {
+      type = character varying(200)
+    }
+    column "ingresouci" {
+      type = numeric(1,0)
+    }
+    column "fecinguci" {
+      type = date
+    }
+    column "fecegruci" {
+      type = date
+    }
+    column "tipoegreso" {
+      type = numeric(1,0)
+    }
+    column "fecegreso" {
+      type = date
+    }
+    column "referido" {
+      type = numeric(1,0)
+    }
+    column "establecual" {
+      type = character varying(150)
+    }
+    column "diagegre" {
+      type = character varying(200)
+    }
+    column "clasfinal" {
+      type = numeric(1,0)
+    }
+  )
+}
+

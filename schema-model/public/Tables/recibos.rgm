@@ -1,0 +1,43 @@
+table "public"."recibos" {
+  primaryKey = {
+    columns = [
+      "nroingreso"
+      "norden"
+    ]
+    name = "pk_recibos"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "nroingreso" {
+      type = numeric(10,0)
+      null = NOT NULL
+    }
+    column "nrorecibo" {
+      type = numeric(10,0)
+    }
+    column "nroreciboser" {
+      type = character varying(20)
+    }
+    column "norden" {
+      type = numeric(2,0)
+      null = NOT NULL
+    }
+    column "codarancel" {
+      type = character varying(10)
+    }
+    column "monto" {
+      type = numeric(10,0)
+    }
+    column "fecha" {
+      type = date
+    }
+    column "exonerado" {
+      type = numeric(1,0)
+    }
+    column "cantidad" {
+      type = numeric(5,0)
+    }
+  )
+}
+

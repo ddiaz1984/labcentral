@@ -1,0 +1,40 @@
+table "public"."procesos" {
+  primaryKey = {
+    columns = [
+      "codproceso"
+    ]
+    name = "pk_procesos"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "codproceso" {
+      type = character varying(10)
+      null = NOT NULL
+    }
+    column "nomproceso" {
+      type = character varying(100)
+    }
+    column "codopc" {
+      type = character varying(10)
+    }
+    column "textobase" {
+      type = character varying(250)
+    }
+  )
+}
+
+trigger "public"."procesos"."audit_log_trigger" {
+  timing = BEFORE
+  events = [
+    DELETE
+    UPDATE
+    INSERT
+  ]
+  level = ROW
+  function = public.audit_trigger
+  functionArguments = [
+  ]
+  constraint = False
+}
+

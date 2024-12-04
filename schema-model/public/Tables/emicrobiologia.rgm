@@ -1,0 +1,43 @@
+table "public"."emicrobiologia" {
+  primaryKey = {
+    columns = [
+      "codestudiobio"
+    ]
+    name = "pk_emicrobiologia"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "codestudiobio" {
+      type = character varying(10)
+      null = NOT NULL
+    }
+    column "nomestudiobio" {
+      type = character varying(150)
+    }
+    column "obsestudio" {
+      type = character varying(250)
+    }
+    column "obsrecep" {
+      type = character varying(250)
+    }
+    column "obsmedico" {
+      type = character varying(250)
+    }
+  )
+}
+
+trigger "public"."emicrobiologia"."audit_log_trigger" {
+  timing = BEFORE
+  events = [
+    DELETE
+    UPDATE
+    INSERT
+  ]
+  level = ROW
+  function = public.audit_trigger
+  functionArguments = [
+  ]
+  constraint = False
+}
+

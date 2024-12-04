@@ -1,0 +1,43 @@
+table "public"."establecimientos" {
+  owner = postgres
+  columns = (
+    column "codservicio" {
+      type = character varying(10)
+      null = NOT NULL
+    }
+    column "nomservicio" {
+      type = character varying(150)
+    }
+    column "tiposerv" {
+      type = character varying(5)
+    }
+    column "nomserv" {
+      type = character varying(150)
+    }
+    column "director" {
+      type = character varying(150)
+    }
+    column "dccion" {
+      type = character varying(200)
+    }
+    column "telefono" {
+      type = character varying(30)
+    }
+    column "email" {
+      type = character varying(50)
+    }
+    column "codreg" {
+      type = character varying(2)
+    }
+    column "subcreg" {
+      type = character varying(3)
+    }
+    column "coddist" {
+      type = character varying(3)
+    }
+    column "codserv" {
+      type = character varying(3)
+    }
+  )
+}
+

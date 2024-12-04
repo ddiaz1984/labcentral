@@ -1,0 +1,38 @@
+table "public"."semana_epidemiologica" {
+  primaryKey = {
+    columns = [
+      "codsemana"
+    ]
+    name = "semana_epidemiologica_pk"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "codsemana" {
+      type = integer
+      null = NOT NULL
+      default = nextval('public.semana_epidemiologica_codsemana_seq'::regclass)
+    }
+    column "numero_semana" {
+      type = integer
+      null = NOT NULL
+    }
+    column "mes" {
+      type = character varying
+      null = NOT NULL
+    }
+    column "desde" {
+      type = date
+      null = NOT NULL
+    }
+    column "hasta" {
+      type = date
+      null = NOT NULL
+    }
+    column "anhio" {
+      type = character varying
+      null = NOT NULL
+    }
+  )
+}
+

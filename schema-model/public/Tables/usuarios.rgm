@@ -1,0 +1,88 @@
+table "public"."usuarios" {
+  primaryKey = {
+    columns = [
+      "codusu"
+    ]
+    name = "pk_usuarios"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "codusu" {
+      type = character varying(20)
+      null = NOT NULL
+    }
+    column "nomyape" {
+      type = character varying(150)
+    }
+    column "cedula" {
+      type = character varying(15)
+    }
+    column "email" {
+      type = character varying(50)
+    }
+    column "telefono" {
+      type = character varying(30)
+    }
+    column "celular" {
+      type = character varying(30)
+    }
+    column "dccion" {
+      type = character varying(200)
+    }
+    column "fechareg" {
+      type = date
+    }
+    column "estado" {
+      type = numeric(1,0)
+    }
+    column "clave" {
+      type = character varying(80)
+    }
+    column "fechauact" {
+      type = date
+    }
+    column "codservicio" {
+      type = character varying(10)
+    }
+    column "codarea" {
+      type = character varying(10)
+    }
+    column "recsms" {
+      type = numeric(1,0)
+    }
+    column "recemail" {
+      type = numeric(1,0)
+    }
+    column "recalerta" {
+      type = numeric(1,0)
+    }
+    column "nroregprof" {
+      type = character varying(30)
+    }
+    column "codempresa" {
+      type = character varying(10)
+    }
+    column "laboratorio" {
+      type = bigint
+    }
+    column "codrol" {
+      type = character varying(10)
+    }
+  )
+}
+
+trigger "public"."usuarios"."audit_log_trigger" {
+  timing = BEFORE
+  events = [
+    DELETE
+    UPDATE
+    INSERT
+  ]
+  level = ROW
+  function = public.audit_trigger
+  functionArguments = [
+  ]
+  constraint = False
+}
+

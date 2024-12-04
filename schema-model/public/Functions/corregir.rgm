@@ -1,0 +1,33 @@
+function "public"."corregir()" {
+  text = """
+
+DECLARE
+    reg          RECORD;
+    cur_estudios CURSOR FOR 
+	select t.nordentra, r.nroestudio
+	from ordtrabajo t, estrealizar r, resultados re
+	where t.nordentra   = r.nordentra
+	and   (select count(*) from resultados where nordentra = t.nordentra) = 1
+	and   (re.nroestudio != r.nroestudio
+			and  re.nordentra  = r.nordentra
+		  );
+BEGIN
+   FOR reg IN cur_estudios LOOP
+    
+	update resultados
+	set nroestudio = reg.nroestudio
+	where nordentra  =  reg.nordentra;
+ 
+	
+    RAISE NOTICE ' PROCESANDO  %', reg.nordentra;
+   END LOOP;
+   RETURN;
+END
+"""
+  returnType = void
+  arguments = [
+  ]
+  language = plpgsql
+  owner = postgres
+}
+

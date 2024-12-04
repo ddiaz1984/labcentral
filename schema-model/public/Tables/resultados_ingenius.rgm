@@ -1,0 +1,72 @@
+table "public"."resultados_ingenius" {
+  primaryKey = {
+    columns = [
+      "id"
+    ]
+    name = "resultados_ingenius_pk"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "id" {
+      type = integer
+      null = NOT NULL
+      default = nextval('public.resultados_ingenius_id_seq'::regclass)
+    }
+    column "sender_name" {
+      type = character varying(100)
+    }
+    column "transmission_date" {
+      type = character varying(100)
+    }
+    column "sequence_id" {
+      type = character varying(100)
+    }
+    column "universal_test_id" {
+      type = character varying(100)
+    }
+    column "nro_orden" {
+      type = character varying(100)
+    }
+    column "nombre_paciente" {
+      type = character varying(100)
+    }
+    column "universal_test_id2" {
+      type = character varying(100)
+    }
+    column "data_easured" {
+      type = character varying(100)
+    }
+    column "component1" {
+      type = character varying(100)
+    }
+    column "component2" {
+      type = character varying(100)
+    }
+    column "units" {
+      type = character varying(100)
+    }
+    column "result_flag" {
+      type = character varying(100)
+    }
+    column "operator_name" {
+      type = character varying(100)
+    }
+    column "completed_date_time" {
+      type = character varying(100)
+    }
+  )
+}
+
+trigger "public"."resultados_ingenius"."trg_rein_ai" {
+  timing = AFTER
+  events = [
+    INSERT
+  ]
+  level = ROW
+  function = public.update_resultados_from_ingenius
+  functionArguments = [
+  ]
+  constraint = False
+}
+

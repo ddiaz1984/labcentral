@@ -1,0 +1,26 @@
+table "public"."semanas_anuales" {
+  owner = postgres
+  columns = (
+    column "semana" {
+      type = integer
+      default = 0
+    }
+    column "fechadesde" {
+      type = character varying(10)
+      default = NULL::character varying
+    }
+    column "fechahasta" {
+      type = character varying(10)
+      default = NULL::character varying
+    }
+    column "año" {
+      type = character varying(4)
+      default = NULL::character varying
+    }
+    column "aanio" {
+      type = character varying(4)
+      default = NULL::character varying
+    }
+  )
+}
+

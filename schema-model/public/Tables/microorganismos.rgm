@@ -1,0 +1,37 @@
+table "public"."microorganismos" {
+  primaryKey = {
+    columns = [
+      "codmicroorg"
+    ]
+    name = "pk_microorganismos"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "codmicroorg" {
+      type = character varying(10)
+      null = NOT NULL
+    }
+    column "nommicroorg" {
+      type = character varying(100)
+    }
+    column "codexterno" {
+      type = character varying(50)
+    }
+  )
+}
+
+trigger "public"."microorganismos"."audit_log_trigger" {
+  timing = BEFORE
+  events = [
+    DELETE
+    UPDATE
+    INSERT
+  ]
+  level = ROW
+  function = public.audit_trigger
+  functionArguments = [
+  ]
+  constraint = False
+}
+

@@ -1,0 +1,23 @@
+table "public"."sectores" {
+  primaryKey = {
+    columns = [
+      "codsector"
+    ]
+    name = "pk_sectores"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "codsector" {
+      type = character varying(10)
+      null = NOT NULL
+    }
+    column "nomsector" {
+      type = character varying(200)
+    }
+    column "posicion" {
+      type = numeric(5,0)
+    }
+  )
+}
+

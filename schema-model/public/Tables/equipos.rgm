@@ -1,0 +1,91 @@
+table "public"."equipos" {
+  primaryKey = {
+    columns = [
+      "codequipo"
+    ]
+    name = "pk_equipos"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "codequipo" {
+      type = character varying(10)
+      null = NOT NULL
+    }
+    column "tipo" {
+      type = character varying(100)
+    }
+    column "descripcion" {
+      type = character varying(200)
+    }
+    column "tipodato" {
+      type = character varying(15)
+    }
+    column "programa" {
+      type = character varying(200)
+    }
+    column "crc" {
+      type = numeric(1,0)
+    }
+    column "confirmares" {
+      type = numeric(1,0)
+    }
+    column "comport" {
+      type = numeric(1,0)
+    }
+    column "hasdshking" {
+      type = numeric(1,0)
+    }
+    column "baudrate" {
+      type = numeric(2,0)
+    }
+    column "stopbit" {
+      type = numeric(1,0)
+    }
+    column "parity" {
+      type = numeric(1,0)
+    }
+    column "bits" {
+      type = numeric(1,0)
+    }
+    column "confres" {
+      type = numeric(1,0)
+    }
+    column "recsenial" {
+      type = numeric(1,0)
+    }
+    column "visualres" {
+      type = numeric(1,0)
+    }
+    column "envioautom" {
+      type = numeric(1,0)
+    }
+    column "posidcol" {
+      type = numeric(2,0)
+    }
+    column "separadec" {
+      type = numeric(1,0)
+    }
+    column "escrres" {
+      type = numeric(1,0)
+    }
+    column "rutalog" {
+      type = character varying(200)
+    }
+  )
+}
+
+trigger "public"."equipos"."audit_log_trigger" {
+  timing = BEFORE
+  events = [
+    DELETE
+    UPDATE
+    INSERT
+  ]
+  level = ROW
+  function = public.audit_trigger
+  functionArguments = [
+  ]
+  constraint = False
+}
+

@@ -1,0 +1,284 @@
+table "public"."hepatitisbcd" {
+  primaryKey = {
+    columns = [
+      "nronotif"
+    ]
+    name = "pk_hepatitisbcd"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "nronotif" {
+      type = numeric(10,0)
+      null = NOT NULL
+    }
+    column "nordentra" {
+      type = character varying(20)
+    }
+    column "nomyape" {
+      type = character varying(150)
+    }
+    column "edada" {
+      type = numeric(3,0)
+    }
+    column "edadm" {
+      type = numeric(3,0)
+    }
+    column "edadd" {
+      type = numeric(3,0)
+    }
+    column "sexo" {
+      type = numeric(1,0)
+    }
+    column "cedula" {
+      type = character varying(15)
+    }
+    column "dccion" {
+      type = character varying(200)
+    }
+    column "coddptor" {
+      type = character varying(2)
+    }
+    column "coddistr" {
+      type = character varying(3)
+    }
+    column "barrio" {
+      type = character varying(100)
+    }
+    column "tipoloc" {
+      type = numeric(1,0)
+    }
+    column "pais" {
+      type = character varying(100)
+    }
+    column "telefonor" {
+      type = character varying(30)
+    }
+    column "ocupacion" {
+      type = character varying(150)
+    }
+    column "dcciontraesc" {
+      type = character varying(200)
+    }
+    column "vacantihepa" {
+      type = numeric(1,0)
+    }
+    column "fecultdosis" {
+      type = date
+    }
+    column "dcompleta" {
+      type = numeric(1,0)
+    }
+    column "vaccarnet" {
+      type = numeric(1,0)
+    }
+    column "dondecaso" {
+      type = numeric(1,0)
+    }
+    column "medinyecta" {
+      type = numeric(1,0)
+    }
+    column "drogasinye" {
+      type = numeric(1,0)
+    }
+    column "tatuajes" {
+      type = numeric(1,0)
+    }
+    column "acupuntura" {
+      type = numeric(1,0)
+    }
+    column "tratquirurgi" {
+      type = numeric(1,0)
+    }
+    column "tratdentario" {
+      type = numeric(1,0)
+    }
+    column "transfsangre" {
+      type = numeric(1,0)
+    }
+    column "hemodialisis" {
+      type = numeric(1,0)
+    }
+    column "sexovm" {
+      type = numeric(1,0)
+    }
+    column "sexovv" {
+      type = numeric(1,0)
+    }
+    column "multipareja" {
+      type = numeric(1,0)
+    }
+    column "sexosinprot" {
+      type = numeric(1,0)
+    }
+    column "sexoanal" {
+      type = numeric(1,0)
+    }
+    column "realotr" {
+      type = character varying(200)
+    }
+    column "trabsalud" {
+      type = numeric(1,0)
+    }
+    column "codreg" {
+      type = character varying(2)
+    }
+    column "subcreg" {
+      type = character varying(3)
+    }
+    column "coddist" {
+      type = character varying(3)
+    }
+    column "codserv" {
+      type = character varying(3)
+    }
+    column "madreposit" {
+      type = numeric(1,0)
+    }
+    column "inmunotrat" {
+      type = numeric(1,0)
+    }
+    column "vih" {
+      type = numeric(1,0)
+    }
+    column "tbc" {
+      type = numeric(1,0)
+    }
+    column "desnutrido" {
+      type = numeric(1,0)
+    }
+    column "alcohol" {
+      type = numeric(1,0)
+    }
+    column "fecinisint" {
+      type = date
+    }
+    column "fec1racons" {
+      type = date
+    }
+    column "estableccons" {
+      type = character varying(150)
+    }
+    column "hospitaliza" {
+      type = numeric(1,0)
+    }
+    column "fechosp" {
+      type = date
+    }
+    column "diagingre" {
+      type = character varying(200)
+    }
+    column "fecegreso" {
+      type = date
+    }
+    column "tipoegreso" {
+      type = numeric(1,0)
+    }
+    column "establecim" {
+      type = character varying(150)
+    }
+    column "tabotgo" {
+      type = numeric(1,0)
+    }
+    column "labtgovn" {
+      type = character varying(200)
+    }
+    column "labotgp" {
+      type = numeric(1,0)
+    }
+    column "labtgpvn" {
+      type = character varying(200)
+    }
+    column "labbvt" {
+      type = character varying(200)
+    }
+    column "labbvd" {
+      type = character varying(200)
+    }
+    column "labbvi" {
+      type = character varying(200)
+    }
+    column "labofa" {
+      type = numeric(1,0)
+    }
+    column "labfavn" {
+      type = character varying(200)
+    }
+    column "labogammagt" {
+      type = numeric(1,0)
+    }
+    column "labgamagtvn" {
+      type = character varying(200)
+    }
+    column "laboldh" {
+      type = numeric(1,0)
+    }
+    column "labldhvn" {
+      type = character varying(200)
+    }
+    column "rantivhaigm" {
+      type = numeric(1,0)
+    }
+    column "rantihbcigm" {
+      type = numeric(1,0)
+    }
+    column "rantihbctot" {
+      type = numeric(1,0)
+    }
+    column "rantihbs" {
+      type = numeric(1,0)
+    }
+    column "rhbsag" {
+      type = numeric(1,0)
+    }
+    column "rantivhdtot" {
+      type = numeric(1,0)
+    }
+    column "rantivhdigm" {
+      type = numeric(1,0)
+    }
+    column "rantivheigm" {
+      type = numeric(1,0)
+    }
+    column "rhbeag" {
+      type = numeric(1,0)
+    }
+    column "rvhcadn" {
+      type = numeric(1,0)
+    }
+    column "rvhcrna" {
+      type = numeric(1,0)
+    }
+    column "rantihbe" {
+      type = numeric(1,0)
+    }
+    column "rantihbc" {
+      type = numeric(1,0)
+    }
+    column "clasifcaso" {
+      type = numeric(1,0)
+    }
+    column "periodo" {
+      type = numeric(1,0)
+    }
+    column "fechanotif" {
+      type = date
+    }
+    column "nomyapenot" {
+      type = character varying(150)
+    }
+    column "codregn" {
+      type = character varying(2)
+    }
+    column "subcregn" {
+      type = character varying(3)
+    }
+    column "coddistn" {
+      type = character varying(3)
+    }
+    column "codservn" {
+      type = character varying(3)
+    }
+  )
+}
+

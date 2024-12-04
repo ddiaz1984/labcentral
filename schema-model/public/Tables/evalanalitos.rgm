@@ -1,0 +1,54 @@
+table "public"."evalanalitos" {
+  primaryKey = {
+    columns = [
+      "nroeval"
+      "codempresa"
+      "analito"
+    ]
+    name = "pk_evalanalitos"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "nroeval" {
+      type = numeric(10,0)
+      null = NOT NULL
+    }
+    column "codempresa" {
+      type = character varying(20)
+      null = NOT NULL
+    }
+    column "marcaeq" {
+      type = character varying(100)
+    }
+    column "recativo" {
+      type = character varying(100)
+    }
+    column "metodo" {
+      type = character varying(100)
+    }
+    column "resulpatolog" {
+      type = character varying(100)
+    }
+    column "resulcnorm" {
+      type = character varying(100)
+    }
+    column "resullote" {
+      type = character varying(100)
+    }
+    column "umedida" {
+      type = character varying(30)
+    }
+    column "puntaje" {
+      type = numeric(10,2)
+    }
+    column "resulprevisto" {
+      type = character varying(100)
+    }
+    column "analito" {
+      type = numeric(2,0)
+      null = NOT NULL
+    }
+  )
+}
+

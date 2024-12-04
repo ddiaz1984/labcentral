@@ -1,0 +1,23 @@
+table "public"."textos" {
+  primaryKey = {
+    columns = [
+      "codtexto"
+    ]
+    name = "pk_textos"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "codtexto" {
+      type = numeric(10,0)
+      null = NOT NULL
+    }
+    column "nomtexto" {
+      type = character varying(100)
+    }
+    column "texto" {
+      type = character varying(250)
+    }
+  )
+}
+

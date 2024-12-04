@@ -1,0 +1,63 @@
+table "public"."respuestafinal" {
+  primaryKey = {
+    columns = [
+      "codigo"
+    ]
+    name = "pk_respuestafinal"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "codigo" {
+      type = integer
+      null = NOT NULL
+    }
+    column "nroeval" {
+      type = numeric(10,0)
+    }
+    column "idpregunta" {
+      type = numeric(10,0)
+    }
+    column "codusu" {
+      type = character varying(20)
+    }
+    column "respuesta" {
+      type = character varying(1)
+    }
+    column "respuestar" {
+      type = character varying(200)
+    }
+    column "enviado" {
+      type = character varying(2)
+      default = 'N'::character varying
+    }
+    column "fechaenviado" {
+      type = date
+    }
+    column "metodo" {
+      type = character varying(100)
+    }
+    column "reactivo" {
+      type = character varying(100)
+    }
+    column "equipo" {
+      type = character varying(100)
+    }
+    column "marca" {
+      type = character varying(100)
+    }
+    column "lote" {
+      type = character varying(100)
+    }
+    column "fechaven" {
+      type = date
+    }
+    column "obs" {
+      type = character varying(100)
+    }
+    column "puntaje" {
+      type = numeric(10,2)
+    }
+  )
+}
+

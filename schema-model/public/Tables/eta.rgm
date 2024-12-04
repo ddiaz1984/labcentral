@@ -1,0 +1,155 @@
+table "public"."eta" {
+  primaryKey = {
+    columns = [
+      "nronotif"
+    ]
+    name = "pk_eta"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "nronotif" {
+      type = numeric(10,0)
+      null = NOT NULL
+    }
+    column "nordentra" {
+      type = character varying(20)
+    }
+    column "nomyape" {
+      type = character varying(150)
+    }
+    column "edada" {
+      type = numeric(3,0)
+    }
+    column "edadm" {
+      type = numeric(3,0)
+    }
+    column "edadd" {
+      type = numeric(3,0)
+    }
+    column "sexo" {
+      type = numeric(1,0)
+    }
+    column "cedula" {
+      type = character varying(15)
+    }
+    column "dccion" {
+      type = character varying(200)
+    }
+    column "coddptor" {
+      type = character varying(2)
+    }
+    column "coddistr" {
+      type = character varying(3)
+    }
+    column "barrio" {
+      type = character varying(100)
+    }
+    column "tipoloc" {
+      type = numeric(1,0)
+    }
+    column "pais" {
+      type = character varying(100)
+    }
+    column "celularr" {
+      type = character varying(30)
+    }
+    column "ocupacion" {
+      type = character varying(150)
+    }
+    column "dcciontraesc" {
+      type = character varying(200)
+    }
+    column "relamanipula" {
+      type = numeric(1,0)
+    }
+    column "relacomensal" {
+      type = numeric(1,0)
+    }
+    column "relaotro" {
+      type = numeric(1,0)
+    }
+    column "relaotroesp" {
+      type = character varying(150)
+    }
+    column "fecinisint" {
+      type = date
+    }
+    column "horaini" {
+      type = character varying(8)
+    }
+    column "hospitaliza" {
+      type = numeric(1,0)
+    }
+    column "medicado" {
+      type = numeric(1,0)
+    }
+    column "medicual" {
+      type = character varying(200)
+    }
+    column "fecinitoma" {
+      type = date
+    }
+    column "tipomtheces" {
+      type = numeric(1,0)
+    }
+    column "tmhageti" {
+      type = character varying(200)
+    }
+    column "tmhgb" {
+      type = character varying(200)
+    }
+    column "tmhinter" {
+      type = character varying(200)
+    }
+    column "tipomtvomito" {
+      type = numeric(1,0)
+    }
+    column "tmvageti" {
+      type = character varying(200)
+    }
+    column "tmvinter" {
+      type = character varying(200)
+    }
+    column "tipomtsangre" {
+      type = numeric(1,0)
+    }
+    column "tmsageti" {
+      type = character varying(200)
+    }
+    column "tmsinter" {
+      type = character varying(200)
+    }
+    column "tipomtresto" {
+      type = numeric(1,0)
+    }
+    column "tmrageti" {
+      type = character varying(200)
+    }
+    column "tmrinter" {
+      type = character varying(200)
+    }
+    column "alimplicado" {
+      type = character varying(200)
+    }
+    column "fechanotif" {
+      type = date
+    }
+    column "nomyapenot" {
+      type = character varying(150)
+    }
+    column "codreg" {
+      type = character varying(2)
+    }
+    column "subcreg" {
+      type = character varying(3)
+    }
+    column "coddist" {
+      type = character varying(3)
+    }
+    column "codserv" {
+      type = character varying(3)
+    }
+  )
+}
+

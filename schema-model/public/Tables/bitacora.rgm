@@ -1,0 +1,28 @@
+table "public"."bitacora" {
+  owner = postgres
+  columns = (
+    column "codusu" {
+      type = character varying(20)
+      null = NOT NULL
+    }
+    column "codopc" {
+      type = character varying(10)
+      null = NOT NULL
+    }
+    column "fecha" {
+      type = date
+      null = NOT NULL
+    }
+    column "hora" {
+      type = character varying(8)
+      null = NOT NULL
+    }
+    column "accion" {
+      type = character varying(250)
+    }
+    column "nroip" {
+      type = character varying(30)
+    }
+  )
+}
+

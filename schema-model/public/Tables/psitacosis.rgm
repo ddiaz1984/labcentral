@@ -1,0 +1,182 @@
+table "public"."psitacosis" {
+  primaryKey = {
+    columns = [
+      "nronotif"
+    ]
+    name = "pk_psitacosis"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "nronotif" {
+      type = numeric(10,0)
+      null = NOT NULL
+    }
+    column "nordentra" {
+      type = character varying(20)
+    }
+    column "nomyape" {
+      type = character varying(150)
+    }
+    column "edada" {
+      type = numeric(3,0)
+    }
+    column "edadm" {
+      type = numeric(3,0)
+    }
+    column "edadd" {
+      type = numeric(3,0)
+    }
+    column "sexo" {
+      type = numeric(1,0)
+    }
+    column "cedula" {
+      type = character varying(15)
+    }
+    column "coddptor" {
+      type = character varying(2)
+    }
+    column "coddistr" {
+      type = character varying(3)
+    }
+    column "barrio" {
+      type = character varying(100)
+    }
+    column "tipoloc" {
+      type = numeric(1,0)
+    }
+    column "pais" {
+      type = character varying(100)
+    }
+    column "telefonor" {
+      type = character varying(30)
+    }
+    column "celularr" {
+      type = character varying(30)
+    }
+    column "ocupacion" {
+      type = character varying(150)
+    }
+    column "dccionte" {
+      type = character varying(200)
+    }
+    column "contaves" {
+      type = numeric(1,0)
+    }
+    column "contcasa" {
+      type = numeric(1,0)
+    }
+    column "conttrabajo" {
+      type = numeric(1,0)
+    }
+    column "contotr" {
+      type = numeric(1,0)
+    }
+    column "tipoave" {
+      type = character varying(200)
+    }
+    column "avesenfer" {
+      type = numeric(1,0)
+    }
+    column "avescompr" {
+      type = numeric(1,0)
+    }
+    column "compvet" {
+      type = numeric(1,0)
+    }
+    column "compferia" {
+      type = numeric(1,0)
+    }
+    column "compotr" {
+      type = numeric(1,0)
+    }
+    column "dcompra" {
+      type = character varying(200)
+    }
+    column "contpers" {
+      type = numeric(1,0)
+    }
+    column "lcontacto" {
+      type = character varying(200)
+    }
+    column "fecinisint" {
+      type = date
+    }
+    column "fec1racons" {
+      type = date
+    }
+    column "establecaten" {
+      type = character varying(150)
+    }
+    column "fechosp" {
+      type = date
+    }
+    column "radiologia" {
+      type = character varying(200)
+    }
+    column "tratamiento" {
+      type = numeric(1,0)
+    }
+    column "drogas" {
+      type = character varying(200)
+    }
+    column "laboratorio" {
+      type = character varying(150)
+    }
+    column "fec1ramuest" {
+      type = date
+    }
+    column "mat1ramtra" {
+      type = character varying(200)
+    }
+    column "met1ramtra" {
+      type = character varying(200)
+    }
+    column "res1ramtra" {
+      type = character varying(200)
+    }
+    column "fec2damuest" {
+      type = date
+    }
+    column "mat2damtra" {
+      type = character varying(200)
+    }
+    column "met2damtra" {
+      type = character varying(200)
+    }
+    column "res2damtra" {
+      type = character varying(200)
+    }
+    column "fecegreso" {
+      type = date
+    }
+    column "tipoegreso" {
+      type = numeric(1,0)
+    }
+    column "codregtran" {
+      type = character varying(2)
+    }
+    column "coddisttran" {
+      type = character varying(3)
+    }
+    column "codservtran" {
+      type = character varying(3)
+    }
+    column "fechanotif" {
+      type = date
+    }
+    column "nomyapenot" {
+      type = character varying(150)
+    }
+    column "codreg" {
+      type = character varying(2)
+    }
+    column "coddist" {
+      type = character varying(3)
+    }
+    column "codserv" {
+      type = character varying(3)
+    }
+  )
+}
+

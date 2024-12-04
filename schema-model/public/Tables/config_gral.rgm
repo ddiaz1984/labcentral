@@ -1,0 +1,59 @@
+table "public"."config_gral" {
+  primaryKey = {
+    columns = [
+      "codservicio"
+    ]
+    name = "pk_config_gral"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "codservicio" {
+      type = character varying(10)
+      null = NOT NULL
+    }
+    column "director" {
+      type = character varying(150)
+    }
+    column "cargodir" {
+      type = character varying(100)
+    }
+    column "nomyapefir" {
+      type = character varying(150)
+    }
+    column "cuentagral" {
+      type = character varying(100)
+    }
+    column "nomctagral" {
+      type = character varying(200)
+    }
+    column "nomyapedep" {
+      type = character varying(150)
+    }
+    column "concepto" {
+      type = character varying(200)
+    }
+    column "n_recibo_ini" {
+      type = numeric(10,0)
+    }
+    column "n_recibo" {
+      type = numeric(10,0)
+    }
+    column "n_recibo_fin" {
+      type = numeric(10,0)
+    }
+    column "serie" {
+      type = character varying(10)
+    }
+    column "np_mensaje" {
+      type = numeric(10,0)
+    }
+    column "decreto" {
+      type = character varying(100)
+    }
+    column "ruc" {
+      type = character varying(50)
+    }
+  )
+}
+

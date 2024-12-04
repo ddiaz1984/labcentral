@@ -1,0 +1,194 @@
+table "public"."fichas_dgvs" {
+  owner = postgres
+  columns = (
+    column "nordentra" {
+      type = character varying(30)
+      null = NOT NULL
+    }
+    column "nroficha" {
+      type = character varying(30)
+      null = NOT NULL
+    }
+    column "hospitalizado" {
+      type = character varying(30)
+      null = NOT NULL
+    }
+    column "fallecido" {
+      type = character varying(30)
+      null = NOT NULL
+    }
+    column "card_cron" {
+      type = character varying(30)
+      null = NOT NULL
+    }
+    column "diabetes" {
+      type = character varying(30)
+      null = NOT NULL
+    }
+    column "puerpera" {
+      type = character varying(30)
+      null = NOT NULL
+    }
+    column "enbarazada" {
+      type = character varying(30)
+      null = NOT NULL
+    }
+    column "trim_emba" {
+      type = character varying(30)
+      null = NOT NULL
+    }
+    column "sem_gest" {
+      type = character varying(30)
+      null = NOT NULL
+    }
+    column "otros" {
+      type = character varying(30)
+      null = NOT NULL
+    }
+    column "enf_pul_cro" {
+      type = character varying(30)
+      null = NOT NULL
+    }
+    column "enf_neu_cro" {
+      type = character varying(30)
+      null = NOT NULL
+    }
+    column "enf_ren_cro" {
+      type = character varying(30)
+      null = NOT NULL
+    }
+    column "obesidad" {
+      type = character varying(30)
+      null = NOT NULL
+    }
+    column "enf_hepa_cro" {
+      type = character varying(30)
+      null = NOT NULL
+    }
+    column "desnutricion" {
+      type = character varying(30)
+      null = NOT NULL
+    }
+    column "nauseas" {
+      type = character varying(30)
+      null = NOT NULL
+    }
+    column "dolor_ret_orbital" {
+      type = character varying(30)
+      null = NOT NULL
+    }
+    column "artralgia" {
+      type = character varying(30)
+      null = NOT NULL
+    }
+    column "tipo_artr" {
+      type = character varying(30)
+      null = NOT NULL
+    }
+    column "petequias" {
+      type = character varying(30)
+      null = NOT NULL
+    }
+    column "vomi_persis" {
+      type = character varying(30)
+      null = NOT NULL
+    }
+    column "hepatomegalia" {
+      type = character varying(30)
+      null = NOT NULL
+    }
+    column "sang_grave" {
+      type = character varying(30)
+      null = NOT NULL
+    }
+    column "lactante" {
+      type = character varying(30)
+      null = NOT NULL
+    }
+    column "erup_rash_cut" {
+      type = character varying(30)
+      null = NOT NULL
+    }
+    column "prurito" {
+      type = character varying(30)
+      null = NOT NULL
+    }
+    column "vomitos" {
+      type = character varying(30)
+      null = NOT NULL
+    }
+    column "mialgia" {
+      type = character varying(30)
+      null = NOT NULL
+    }
+    column "leucopenia" {
+      type = character varying(30)
+      null = NOT NULL
+    }
+    column "acum_liquid" {
+      type = character varying(30)
+      null = NOT NULL
+    }
+    column "aumen_prog_hematocrito" {
+      type = character varying(30)
+      null = NOT NULL
+    }
+    column "dan_grav_org" {
+      type = character varying(30)
+      null = NOT NULL
+    }
+    column "erup_cutanea" {
+      type = character varying(30)
+      null = NOT NULL
+    }
+    column "fecha" {
+      type = character varying(30)
+      null = NOT NULL
+    }
+    column "hip_conjuntival" {
+      type = character varying(30)
+      null = NOT NULL
+    }
+    column "exantema" {
+      type = character varying(30)
+      null = NOT NULL
+    }
+    column "dol_abdo_int_con" {
+      type = character varying(30)
+      null = NOT NULL
+    }
+    column "sang_act_mucosa" {
+      type = character varying(30)
+      null = NOT NULL
+    }
+    column "hipotension" {
+      type = character varying(30)
+      null = NOT NULL
+    }
+    column "artritis" {
+      type = character varying(30)
+      null = NOT NULL
+    }
+    column "edema_periart" {
+      type = character varying(30)
+      null = NOT NULL
+    }
+    column "cefalea" {
+      type = character varying(30)
+      null = NOT NULL
+    }
+    column "dolor_palpa_adbomen" {
+      type = character varying(30)
+      null = NOT NULL
+    }
+    column "irrita_somnolencia" {
+      type = character varying(30)
+      null = NOT NULL
+    }
+    column "dific_resp_extravasacion" {
+      type = character varying(30)
+      null = NOT NULL
+    }
+  )
+}
+

@@ -1,0 +1,31 @@
+table "public"."rangoedad" {
+  primaryKey = {
+    columns = [
+      "cgrupoedad"
+      "posicion"
+    ]
+    name = "pk_rangoedad"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "cgrupoedad" {
+      type = character varying(10)
+      null = NOT NULL
+    }
+    column "posicion" {
+      type = numeric(2,0)
+      null = NOT NULL
+    }
+    column "desdeedad" {
+      type = numeric(3,0)
+    }
+    column "hastaedad" {
+      type = numeric(3,0)
+    }
+    column "tipo" {
+      type = numeric(1,0)
+    }
+  )
+}
+

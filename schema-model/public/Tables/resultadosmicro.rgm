@@ -1,0 +1,113 @@
+table "public"."resultadosmicro" {
+  primaryKey = {
+    columns = [
+      "nordentra"
+      "codservicio"
+      "nroestudio"
+      "idmuestra"
+    ]
+    name = "pk_resultadosmicro"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "nordentra" {
+      type = integer
+      null = NOT NULL
+    }
+    column "codservicio" {
+      type = character varying(10)
+      null = NOT NULL
+    }
+    column "nroestudio" {
+      type = integer
+      null = NOT NULL
+    }
+    column "idmuestra" {
+      type = character varying(20)
+      null = NOT NULL
+    }
+    column "norden" {
+      type = numeric(5,0)
+    }
+    column "fechares" {
+      type = date
+    }
+    column "codmetodo" {
+      type = character varying(10)
+    }
+    column "codumedida" {
+      type = character varying(10)
+    }
+    column "codsector" {
+      type = character varying(10)
+    }
+    column "codestudio" {
+      type = character varying(10)
+    }
+    column "coddetermina" {
+      type = character varying(10)
+    }
+    column "resultado" {
+      type = character varying(100)
+    }
+    column "codresultado" {
+      type = character varying(10)
+    }
+    column "codequipo" {
+      type = character varying(10)
+    }
+    column "codestado" {
+      type = character varying(5)
+    }
+    column "codusu1" {
+      type = character varying(20)
+    }
+    column "fechaval" {
+      type = date
+    }
+    column "horaval" {
+      type = character varying(8)
+    }
+    column "codusu2" {
+      type = character varying(20)
+    }
+    column "fechareval" {
+      type = date
+    }
+    column "horareval" {
+      type = character varying(8)
+    }
+    column "anulado" {
+      type = numeric(1,0)
+    }
+    column "fechaanul" {
+      type = date
+    }
+    column "horaanul" {
+      type = character varying(8)
+    }
+    column "codusu3" {
+      type = character varying(20)
+    }
+    column "codusu4" {
+      type = character varying(20)
+    }
+    column "fechaent" {
+      type = date
+    }
+    column "horaentre" {
+      type = numeric(8,0)
+    }
+    column "obs" {
+      type = character varying(250)
+    }
+    column "vecesimp" {
+      type = numeric(3,0)
+    }
+    column "envio_dgvs" {
+      type = numeric(1,0)
+    }
+  )
+}
+

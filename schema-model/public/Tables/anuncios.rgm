@@ -1,0 +1,34 @@
+table "public"."anuncios" {
+  primaryKey = {
+    columns = [
+      "norden"
+    ]
+    name = "pk_anuncios"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "norden" {
+      type = numeric(10,0)
+      null = NOT NULL
+    }
+    column "texto" {
+      type = character varying(250)
+      null = NOT NULL
+    }
+    column "vecliente" {
+      type = numeric(1,0)
+    }
+    column "veempresa" {
+      type = numeric(1,0)
+    }
+    column "fecha" {
+      type = date
+    }
+    column "archivo" {
+      type = character varying(100)
+      null = NOT NULL
+    }
+  )
+}
+

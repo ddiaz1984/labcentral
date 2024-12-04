@@ -1,0 +1,48 @@
+table "public"."respuestaparti" {
+  owner = postgres
+  columns = (
+    column "nroeval" {
+      type = numeric(10,0)
+    }
+    column "codestudio" {
+      type = character varying(10)
+    }
+    column "coddetermina" {
+      type = character varying(10)
+    }
+    column "codusu" {
+      type = character varying(20)
+    }
+    column "respuesta" {
+      type = character varying(100)
+    }
+    column "metodo" {
+      type = character varying(100)
+    }
+    column "reactivo" {
+      type = character varying(100)
+    }
+    column "equipo" {
+      type = character varying(100)
+    }
+    column "marcaeq" {
+      type = character varying(100)
+    }
+    column "lote" {
+      type = character varying(100)
+    }
+    column "marcalo" {
+      type = character varying(100)
+    }
+    column "fechaven" {
+      type = date
+    }
+    column "fechaenviado" {
+      type = date
+    }
+    column "puntaje" {
+      type = numeric(10,1)
+    }
+  )
+}
+

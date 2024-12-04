@@ -1,0 +1,88 @@
+table "public"."evaluacion" {
+  primaryKey = {
+    columns = [
+      "nroeval"
+    ]
+    name = "pk_evalucion"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "nroeval" {
+      type = numeric(10,0)
+      null = NOT NULL
+      default = nextval('public.seq_evaluacion'::regclass)
+    }
+    column "permes" {
+      type = numeric(2,0)
+    }
+    column "peranio" {
+      type = numeric(4,0)
+    }
+    column "fecharegistro" {
+      type = date
+    }
+    column "lote" {
+      type = character varying(20)
+    }
+    column "codservicio" {
+      type = character varying(10)
+    }
+    column "puntaje" {
+      type = numeric(5,2)
+    }
+    column "escala" {
+      type = numeric(3,0)
+    }
+    column "fecharcierre" {
+      type = date
+    }
+    column "codsector" {
+      type = character varying(10)
+    }
+    column "fechainicio" {
+      type = date
+    }
+    column "tipo" {
+      type = character varying(1)
+    }
+    column "obs" {
+      type = character varying(200)
+    }
+    column "subprograma" {
+      type = character varying(50)
+    }
+    column "metodo" {
+      type = character varying(100)
+    }
+    column "reactivo" {
+      type = character varying(100)
+    }
+    column "marca" {
+      type = character varying(100)
+    }
+    column "loteev" {
+      type = character varying(100)
+    }
+    column "fechaven" {
+      type = date
+    }
+    column "equipo" {
+      type = character varying(100)
+    }
+    column "obsev" {
+      type = character varying(200)
+    }
+    column "rmuestra" {
+      type = numeric(1,0)
+      default = 1
+    }
+    column "cantfila" {
+      type = character varying(2)
+    }
+    column "enunciado" {
+      type = character varying(500)
+    }
+  )
+}
+

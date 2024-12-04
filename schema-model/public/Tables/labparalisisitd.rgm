@@ -1,0 +1,43 @@
+table "public"."labparalisisitd" {
+  primaryKey = {
+    columns = [
+      "nronotif"
+      "nromuestra"
+    ]
+    name = "pk_labparalisisitd"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "nronotif" {
+      type = numeric(10,0)
+      null = NOT NULL
+    }
+    column "nromuestra" {
+      type = numeric(2,0)
+      null = NOT NULL
+    }
+    column "fecenvio" {
+      type = date
+    }
+    column "laboratorio" {
+      type = character varying(150)
+    }
+    column "fecrecep" {
+      type = date
+    }
+    column "difitraatipr" {
+      type = numeric(1,0)
+    }
+    column "fecitd" {
+      type = date
+    }
+    column "difitraatipd" {
+      type = numeric(1,0)
+    }
+    column "resdefinit" {
+      type = character varying(200)
+    }
+  )
+}
+

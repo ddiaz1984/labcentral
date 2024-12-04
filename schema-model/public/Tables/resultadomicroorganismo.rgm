@@ -1,0 +1,65 @@
+table "public"."resultadomicroorganismo" {
+  primaryKey = {
+    columns = [
+      "nordentra"
+      "codservicio"
+      "nroestudio"
+      "idmuestra"
+    ]
+    name = "pk_resultadomicroorganismo"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "nordentra" {
+      type = integer
+      null = NOT NULL
+    }
+    column "codservicio" {
+      type = character varying(10)
+      null = NOT NULL
+    }
+    column "nroestudio" {
+      type = character varying(20)
+      null = NOT NULL
+    }
+    column "idmuestra" {
+      type = character varying(20)
+      null = NOT NULL
+    }
+    column "nroresul" {
+      type = numeric(10,0)
+    }
+    column "fechares" {
+      type = date
+    }
+    column "codmetodo" {
+      type = character varying(10)
+    }
+    column "codumedida" {
+      type = character varying(10)
+    }
+    column "codsector" {
+      type = character varying(10)
+    }
+    column "codestudio" {
+      type = character varying(10)
+    }
+    column "codmicroorg" {
+      type = character varying(10)
+    }
+    column "resultado" {
+      type = character varying(100)
+    }
+    column "codantibiogr" {
+      type = character varying(10)
+    }
+    column "obs" {
+      type = character varying(250)
+    }
+    column "codestudiobio" {
+      type = character varying(10)
+    }
+  )
+}
+

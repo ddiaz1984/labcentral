@@ -1,0 +1,59 @@
+table "public"."evaluaciondet" {
+  primaryKey = {
+    columns = [
+      "nroeval"
+      "item"
+    ]
+    name = "pk_evaluciondet"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "nroeval" {
+      type = numeric(10,0)
+      null = NOT NULL
+    }
+    column "item" {
+      type = numeric(3,0)
+      null = NOT NULL
+    }
+    column "fecharegistro" {
+      type = date
+    }
+    column "pregunta" {
+      type = character varying(500)
+    }
+    column "opc1" {
+      type = character varying(350)
+    }
+    column "opc2" {
+      type = character varying(350)
+    }
+    column "opc3" {
+      type = character varying(350)
+    }
+    column "opc4" {
+      type = character varying(350)
+    }
+    column "opc5" {
+      type = character varying(350)
+    }
+    column "respuesta" {
+      type = character varying(1)
+    }
+    column "puntaje" {
+      type = numeric(5,2)
+    }
+    column "terminado" {
+      type = numeric(1,0)
+      default = 1
+    }
+    column "opc6" {
+      type = character varying(200)
+    }
+    column "opc7" {
+      type = character varying(200)
+    }
+  )
+}
+

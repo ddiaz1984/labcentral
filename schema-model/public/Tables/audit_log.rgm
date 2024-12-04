@@ -1,0 +1,46 @@
+table "public"."audit_log" {
+  primaryKey = {
+    columns = [
+      "id"
+    ]
+    name = "audit_log_pkey"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "id" {
+      type = integer
+      null = NOT NULL
+      default = nextval('public.audit_log_id_seq'::regclass)
+    }
+    column "table_name" {
+      type = text
+    }
+    column "operation_type" {
+      type = text
+    }
+    column "changed_at" {
+      type = timestamp without time zone
+      default = now()
+    }
+    column "changed_by" {
+      type = text
+    }
+    column "original_values" {
+      type = jsonb
+    }
+    column "new_values" {
+      type = jsonb
+    }
+    column "query" {
+      type = text
+    }
+    column "nordentra" {
+      type = integer
+    }
+    column "codservicio" {
+      type = character varying(20)
+    }
+  )
+}
+

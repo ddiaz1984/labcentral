@@ -1,0 +1,20 @@
+table "public"."origenpaciente" {
+  primaryKey = {
+    columns = [
+      "codorigen"
+    ]
+    name = "pk_origenpaciente"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "codorigen" {
+      type = character varying(10)
+      null = NOT NULL
+    }
+    column "nomorigen" {
+      type = character varying(100)
+    }
+  )
+}
+

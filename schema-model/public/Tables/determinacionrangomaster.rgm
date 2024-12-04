@@ -1,0 +1,49 @@
+table "public"."determinacionrangomaster" {
+  primaryKey = {
+    columns = [
+      "coddetermina"
+      "tipo"
+    ]
+    name = "pk_determinacionrangomaster"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "coddetermina" {
+      type = character varying(10)
+      null = NOT NULL
+    }
+    column "tipo" {
+      type = numeric(1,0)
+      null = NOT NULL
+    }
+    column "sexo" {
+      type = numeric(1,0)
+    }
+    column "edadmin" {
+      type = numeric(3,0)
+    }
+    column "edadmax" {
+      type = numeric(3,0)
+    }
+    column "inirango" {
+      type = numeric(10,0)
+    }
+    column "finrango" {
+      type = numeric(10,0)
+    }
+    column "codresultado1" {
+      type = character varying(10)
+    }
+    column "codresultado2" {
+      type = character varying(10)
+    }
+    column "codresultado3" {
+      type = character varying(10)
+    }
+    column "tipoedad" {
+      type = numeric(1,0)
+    }
+  )
+}
+

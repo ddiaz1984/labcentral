@@ -1,0 +1,49 @@
+table "public"."courier" {
+  primaryKey = {
+    columns = [
+      "codcourier"
+    ]
+    name = "pk_courier"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "codcourier" {
+      type = character varying(10)
+      null = NOT NULL
+    }
+    column "nomcourier" {
+      type = character varying(200)
+    }
+    column "director" {
+      type = character varying(200)
+    }
+    column "dccion" {
+      type = character varying(250)
+    }
+    column "telefono" {
+      type = character varying(100)
+    }
+    column "email" {
+      type = character varying(200)
+    }
+    column "estado" {
+      type = numeric(1,0)
+    }
+  )
+}
+
+trigger "public"."courier"."audit_log_trigger" {
+  timing = BEFORE
+  events = [
+    DELETE
+    UPDATE
+    INSERT
+  ]
+  level = ROW
+  function = public.audit_trigger
+  functionArguments = [
+  ]
+  constraint = False
+}
+

@@ -1,0 +1,68 @@
+function "public"."audit_trigger()" {
+  text = """
+
+DECLARE
+    new_data jsonb;
+    old_data jsonb;
+    key text;
+    new_values jsonb;
+    old_values jsonb;
+    user_id text;
+BEGIN
+
+    user_id := current_setting('audit.user_id', true);
+
+    IF user_id IS NULL THEN
+        user_id := current_user;
+    END IF;
+
+    new_values := '{}';
+    old_values := '{}';
+
+    IF TG_OP = 'INSERT' THEN
+        new_data := to_jsonb(NEW);
+        new_values := new_data;
+
+    ELSIF TG_OP = 'UPDATE' THEN
+        new_data := to_jsonb(NEW);
+        old_data := to_jsonb(OLD);
+
+        FOR key IN SELECT jsonb_object_keys(new_data) INTERSECT SELECT jsonb_object_keys(old_data)
+        LOOP
+            IF new_data ->> key != old_data ->> key THEN
+                new_values := new_values || jsonb_build_object(key, new_data ->> key);
+                old_values := old_values || jsonb_build_object(key, old_data ->> key);
+            END IF;
+        END LOOP;
+
+    ELSIF TG_OP = 'DELETE' THEN
+        old_data := to_jsonb(OLD);
+        old_values := old_data;
+
+        FOR key IN SELECT jsonb_object_keys(old_data)
+        LOOP
+            old_values := old_values || jsonb_build_object(key, old_data ->> key);
+        END LOOP;
+
+    END IF;
+
+    IF TG_OP = 'INSERT' OR TG_OP = 'UPDATE' THEN
+        INSERT INTO audit_log (table_name, operation_type, changed_by, original_values, new_values, query)
+        VALUES (TG_TABLE_NAME, TG_OP, user_id, old_values, new_values, current_query());
+
+        RETURN NEW;
+    ELSE
+        INSERT INTO audit_log (table_name, operation_type, changed_by, original_values, new_values, query)
+        VALUES (TG_TABLE_NAME, TG_OP, user_id, old_values, new_values, current_query());
+
+        RETURN OLD;
+    END IF;
+END;
+"""
+  returnType = trigger
+  arguments = [
+  ]
+  language = plpgsql
+  owner = postgres
+}
+

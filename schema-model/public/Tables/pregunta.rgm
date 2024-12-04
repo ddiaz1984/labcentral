@@ -1,0 +1,44 @@
+table "public"."pregunta" {
+  primaryKey = {
+    columns = [
+      "nroeval"
+      "idpregunta"
+    ]
+    name = "pk_pregunta"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "nroeval" {
+      type = numeric(10,0)
+      null = NOT NULL
+    }
+    column "idpregunta" {
+      type = numeric(10,0)
+      null = NOT NULL
+    }
+    column "fecharegistro" {
+      type = date
+    }
+    column "descripcio" {
+      type = character varying(200)
+    }
+    column "puntaje" {
+      type = numeric(5,2)
+    }
+    column "terminado" {
+      type = numeric(1,0)
+      default = 1
+    }
+    column "tipo" {
+      type = character varying(2)
+    }
+    column "reporte" {
+      type = character varying(200)
+    }
+    column "referencia" {
+      type = character(200)
+    }
+  )
+}
+

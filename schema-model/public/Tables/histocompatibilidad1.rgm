@@ -1,0 +1,44 @@
+table "public"."histocompatibilidad1" {
+  primaryKey = {
+    columns = [
+      "nronotif"
+    ]
+    name = "pk_histocompatibilida1"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "nronotif" {
+      type = numeric(10,0)
+      null = NOT NULL
+    }
+    column "nordentra" {
+      type = character varying(20)
+    }
+    column "fechanotif" {
+      type = date
+    }
+    column "nomyape" {
+      type = character varying(150)
+    }
+    column "fechanac" {
+      type = date
+    }
+    column "cedula" {
+      type = character varying(15)
+    }
+    column "lugarnac" {
+      type = character varying(150)
+    }
+    column "gruposang" {
+      type = character varying(1)
+    }
+    column "parentesco" {
+      type = character varying(100)
+    }
+    column "obs" {
+      type = character varying(250)
+    }
+  )
+}
+

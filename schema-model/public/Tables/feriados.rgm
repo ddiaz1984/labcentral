@@ -1,0 +1,32 @@
+table "public"."feriados" {
+  primaryKey = {
+    columns = [
+      "nroorden"
+    ]
+    name = "pk_feriados"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "nroorden" {
+      type = numeric(10,0)
+      null = NOT NULL
+    }
+    column "dia" {
+      type = numeric(2,0)
+    }
+    column "mes" {
+      type = numeric(2,0)
+    }
+    column "anio" {
+      type = numeric(4,0)
+    }
+    column "motivo" {
+      type = character varying(200)
+    }
+    column "esanual" {
+      type = numeric(1,0)
+    }
+  )
+}
+

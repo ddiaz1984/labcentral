@@ -1,0 +1,36 @@
+table "public"."procesoresultado" {
+  primaryKey = {
+    columns = [
+      "nordentra"
+      "nroestudio"
+      "idmuestra"
+    ]
+    name = "pk_procesoresultado"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "nordentra" {
+      type = integer
+      null = NOT NULL
+    }
+    column "nroestudio" {
+      type = character varying(20)
+      null = NOT NULL
+    }
+    column "idmuestra" {
+      type = character varying(20)
+      null = NOT NULL
+    }
+    column "codproceso" {
+      type = character varying(10)
+    }
+    column "fecha" {
+      type = date
+    }
+    column "hora" {
+      type = character varying(8)
+    }
+  )
+}
+

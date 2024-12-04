@@ -1,0 +1,72 @@
+table "public"."tiposturnos" {
+  primaryKey = {
+    columns = [
+      "codservicio"
+      "codarea"
+      "codturno"
+    ]
+    name = "pk_tiposturnos"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "codservicio" {
+      type = character varying(10)
+      null = NOT NULL
+    }
+    column "codarea" {
+      type = character varying(10)
+      null = NOT NULL
+    }
+    column "codturno" {
+      type = numeric(10,0)
+      null = NOT NULL
+    }
+    column "cantlun" {
+      type = numeric(2,0)
+    }
+    column "cantmar" {
+      type = numeric(2,0)
+    }
+    column "cantmie" {
+      type = numeric(2,0)
+    }
+    column "cantjue" {
+      type = numeric(2,0)
+    }
+    column "cantvie" {
+      type = numeric(2,0)
+    }
+    column "cantsab" {
+      type = numeric(2,0)
+    }
+    column "cantdom" {
+      type = numeric(2,0)
+    }
+    column "horarlun" {
+      type = character varying(50)
+    }
+    column "horarmar" {
+      type = character varying(50)
+    }
+    column "horarmie" {
+      type = character varying(50)
+    }
+    column "horarjue" {
+      type = character varying(50)
+    }
+    column "horarvie" {
+      type = character varying(50)
+    }
+    column "horarsab" {
+      type = character varying(50)
+    }
+    column "horardom" {
+      type = character varying(50)
+    }
+    column "nomturno" {
+      type = character varying(100)
+    }
+  )
+}
+

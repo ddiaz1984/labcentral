@@ -1,0 +1,39 @@
+table "public"."antibioticoantibiograma" {
+  primaryKey = {
+    columns = [
+      "codantibiogr"
+      "codantibiot"
+    ]
+    name = "pk_antibioticoantibiograma"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "codantibiogr" {
+      type = character varying(10)
+      null = NOT NULL
+    }
+    column "codantibiot" {
+      type = character varying(10)
+      null = NOT NULL
+    }
+    column "posicion" {
+      type = numeric(2,0)
+    }
+  )
+}
+
+trigger "public"."antibioticoantibiograma"."audit_log_trigger" {
+  timing = BEFORE
+  events = [
+    DELETE
+    UPDATE
+    INSERT
+  ]
+  level = ROW
+  function = public.audit_trigger
+  functionArguments = [
+  ]
+  constraint = False
+}
+

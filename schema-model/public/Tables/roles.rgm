@@ -1,0 +1,37 @@
+table "public"."roles" {
+  primaryKey = {
+    columns = [
+      "codrol"
+    ]
+    name = "pk_roles"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "codrol" {
+      type = character varying(10)
+      null = NOT NULL
+    }
+    column "nomrol" {
+      type = character varying(100)
+    }
+    column "estado" {
+      type = numeric(1,0)
+    }
+  )
+}
+
+trigger "public"."roles"."audit_log_trigger" {
+  timing = BEFORE
+  events = [
+    DELETE
+    UPDATE
+    INSERT
+  ]
+  level = ROW
+  function = public.audit_trigger
+  functionArguments = [
+  ]
+  constraint = False
+}
+

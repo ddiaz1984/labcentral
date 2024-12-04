@@ -1,0 +1,53 @@
+table "public"."homebanking" {
+  primaryKey = {
+    columns = [
+      "nroingreso"
+    ]
+    name = "pk_homebanking"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "nroingreso" {
+      type = numeric(10,0)
+      null = NOT NULL
+    }
+    column "nrotransac" {
+      type = character varying(30)
+    }
+    column "banco" {
+      type = character varying(100)
+    }
+    column "fecha" {
+      type = date
+    }
+    column "hora" {
+      type = character varying(8)
+    }
+    column "codempresa" {
+      type = integer
+    }
+    column "monto" {
+      type = numeric(10,0)
+    }
+    column "estadu" {
+      type = numeric(1,0)
+    }
+    column "tipo" {
+      type = numeric(1,0)
+    }
+    column "nroexpediente" {
+      type = numeric(10,0)
+    }
+    column "codbco" {
+      type = character varying(10)
+    }
+    column "fechapago" {
+      type = date
+    }
+    column "id" {
+      type = character varying(50)
+    }
+  )
+}
+

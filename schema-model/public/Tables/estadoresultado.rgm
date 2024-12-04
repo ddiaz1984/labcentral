@@ -1,0 +1,34 @@
+table "public"."estadoresultado" {
+  primaryKey = {
+    columns = [
+      "codestado"
+    ]
+    name = "pk_estadoresultado"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "codestado" {
+      type = character varying(5)
+      null = NOT NULL
+    }
+    column "nomestado" {
+      type = character varying(100)
+    }
+  )
+}
+
+trigger "public"."estadoresultado"."audit_log_trigger" {
+  timing = BEFORE
+  events = [
+    DELETE
+    UPDATE
+    INSERT
+  ]
+  level = ROW
+  function = public.audit_trigger
+  functionArguments = [
+  ]
+  constraint = False
+}
+

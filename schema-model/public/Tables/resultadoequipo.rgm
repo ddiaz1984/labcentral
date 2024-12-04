@@ -1,0 +1,47 @@
+table "public"."resultadoequipo" {
+  primaryKey = {
+    columns = [
+      "idmuestra"
+    ]
+    name = "pk_resultadoequipo"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "idmuestra" {
+      type = character varying(20)
+      null = NOT NULL
+    }
+    column "codequipo" {
+      type = character varying(10)
+    }
+    column "nomyape" {
+      type = character varying(150)
+    }
+    column "fecha" {
+      type = date
+    }
+    column "hora" {
+      type = character varying(8)
+    }
+    column "codestudio" {
+      type = character varying(10)
+    }
+    column "coddetermina" {
+      type = character varying(10)
+    }
+    column "idasig1" {
+      type = character varying(20)
+    }
+    column "idasig2" {
+      type = character varying(20)
+    }
+    column "resultado" {
+      type = character varying(100)
+    }
+    column "nroanalisis" {
+      type = character varying(20)
+    }
+  )
+}
+

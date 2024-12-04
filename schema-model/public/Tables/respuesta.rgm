@@ -1,0 +1,31 @@
+table "public"."respuesta" {
+  primaryKey = {
+    columns = [
+      "idpregunta"
+      "item"
+    ]
+    name = "pk_respuesta"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "idpregunta" {
+      type = numeric(10,0)
+      null = NOT NULL
+    }
+    column "item" {
+      type = numeric(3,0)
+      null = NOT NULL
+    }
+    column "descripcio" {
+      type = character varying(200)
+    }
+    column "correcta" {
+      type = character varying(1)
+    }
+    column "correctar" {
+      type = character varying(100)
+    }
+  )
+}
+

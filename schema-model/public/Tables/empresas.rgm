@@ -1,0 +1,62 @@
+table "public"."empresas" {
+  primaryKey = {
+    columns = [
+      "codempresa"
+    ]
+    name = "pk_empresas"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "codempresa" {
+      type = integer
+      null = NOT NULL
+    }
+    column "laboratorio" {
+      type = numeric(1,0)
+    }
+    column "razonsocial" {
+      type = character varying(200)
+    }
+    column "ruc" {
+      type = character varying(50)
+    }
+    column "responsable" {
+      type = character varying(150)
+    }
+    column "cargoresp" {
+      type = character varying(100)
+    }
+    column "dccion" {
+      type = character varying(200)
+    }
+    column "coddpto" {
+      type = character varying(2)
+    }
+    column "coddist" {
+      type = character varying(3)
+    }
+    column "barrio" {
+      type = character varying(150)
+    }
+    column "zona" {
+      type = numeric(1,0)
+    }
+    column "telefono" {
+      type = character varying(30)
+    }
+    column "celular" {
+      type = character varying(30)
+    }
+    column "email" {
+      type = character varying(100)
+    }
+    column "obs" {
+      type = character varying(250)
+    }
+    column "estado" {
+      type = numeric(1,0)
+    }
+  )
+}
+

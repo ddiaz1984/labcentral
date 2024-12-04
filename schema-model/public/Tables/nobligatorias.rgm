@@ -1,0 +1,32 @@
+table "public"."nobligatorias" {
+  primaryKey = {
+    columns = [
+      "nronotif"
+    ]
+    name = "pk_nobligatorias"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "nronotif" {
+      type = numeric(10,0)
+      null = NOT NULL
+    }
+    column "nordentra" {
+      type = integer
+    }
+    column "nropaciente" {
+      type = numeric(10,0)
+    }
+    column "codenferm" {
+      type = character varying(50)
+    }
+    column "codservicio" {
+      type = character varying(10)
+    }
+    column "codusu" {
+      type = character varying(20)
+    }
+  )
+}
+

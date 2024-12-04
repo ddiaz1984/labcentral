@@ -1,0 +1,33 @@
+table "public"."respeducacioncontinua" {
+  primaryKey = {
+    columns = [
+      "nroeval"
+      "codempresa"
+      "nropregunta"
+    ]
+    name = "pk_respeducacioncontinua"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "nroeval" {
+      type = numeric(10,0)
+      null = NOT NULL
+    }
+    column "codempresa" {
+      type = character varying(20)
+      null = NOT NULL
+    }
+    column "nropregunta" {
+      type = numeric(2,0)
+      null = NOT NULL
+    }
+    column "respuesta" {
+      type = character varying(30)
+    }
+    column "puntaje" {
+      type = numeric(10,2)
+    }
+  )
+}
+

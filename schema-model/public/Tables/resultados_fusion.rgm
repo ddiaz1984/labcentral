@@ -1,0 +1,212 @@
+table "public"."resultados_fusion" {
+  primaryKey = {
+    columns = [
+      "id"
+    ]
+    name = "pk_result_fusion_id"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "id" {
+      type = integer
+      null = NOT NULL
+      default = nextval('public.resultados_fusion_id_seq'::regclass)
+    }
+    column "idmaquina" {
+      type = character varying(100)
+      null = NOT NULL
+    }
+    column "fch" {
+      type = date
+    }
+    column "hora" {
+      type = character varying(10)
+    }
+    column "nroorden" {
+      type = integer
+    }
+    column "usuario" {
+      type = character varying(100)
+    }
+    column "machinename" {
+      type = character varying(100)
+    }
+    column "sampleid" {
+      type = character varying(100)
+    }
+    column "sampleidname" {
+      type = character varying(100)
+    }
+    column "catalogid" {
+      type = character varying(75)
+    }
+    column "catalogtype" {
+      type = character varying(2)
+    }
+    column "locustype" {
+      type = character varying(50)
+    }
+    column "trayid" {
+      type = character varying(100)
+    }
+    column "trayidname" {
+      type = character varying(100)
+    }
+    column "patientid" {
+      type = character varying(50)
+    }
+    column "wellid" {
+      type = character varying(100)
+    }
+    column "expr1" {
+      type = character varying(100)
+    }
+    column "wellposition" {
+      type = character varying(50)
+    }
+    column "expr2" {
+      type = character varying(100)
+    }
+    column "wellremarks" {
+      type = character varying(10485760)
+    }
+    column "rxn" {
+      type = character varying(2000)
+    }
+    column "beadcnt" {
+      type = integer
+    }
+    column "nc1" {
+      type = real
+    }
+    column "nc1beadid" {
+      type = character varying(4)
+    }
+    column "nc2" {
+      type = real
+    }
+    column "nc2beadid" {
+      type = character varying(4)
+    }
+    column "pc1" {
+      type = real
+    }
+    column "pc1beadid" {
+      type = character varying(4)
+    }
+    column "pc2" {
+      type = real
+    }
+    column "pc2beadid" {
+      type = character varying(4)
+    }
+    column "moretest" {
+      type = character varying(10)
+    }
+    column "falserxn" {
+      type = character varying(10)
+    }
+    column "morehiresolution" {
+      type = character varying(10)
+    }
+    column "nmdpreportcreated" {
+      type = character varying(10)
+    }
+    column "nsflg" {
+      type = character varying(10)
+    }
+    column "cwincluded" {
+      type = character varying(10)
+    }
+    column "cl1formulaid" {
+      type = character varying(10)
+    }
+    column "cl2formulaid" {
+      type = character varying(10)
+    }
+    column "parentwellid" {
+      type = character varying(100)
+    }
+    column "wellstatus" {
+      type = character(2)
+    }
+    column "analysisuserid" {
+      type = character varying(100)
+    }
+    column "analysisdt" {
+      type = timestamp without time zone
+    }
+    column "confirmuserid" {
+      type = character varying(100)
+    }
+    column "confirmdt" {
+      type = timestamp without time zone
+    }
+    column "isactive" {
+      type = character varying(10)
+    }
+    column "deluserid" {
+      type = character varying(100)
+    }
+    column "deldt" {
+      type = timestamp without time zone
+    }
+    column "mesfwellid" {
+      type = character varying(50)
+    }
+    column "configureid" {
+      type = integer
+    }
+    column "imagefile" {
+      type = character varying(256)
+    }
+    column "excluded" {
+      type = character varying(10)
+    }
+    column "asigned_allele_code" {
+      type = character varying(100)
+    }
+    column "locus_1" {
+      type = character varying(100)
+    }
+    column "nmdp_1" {
+      type = character varying(100)
+    }
+    column "nmdp_id_1" {
+      type = character varying(100)
+    }
+    column "nmdpdef_1" {
+      type = text
+    }
+    column "locus_2" {
+      type = character varying(100)
+    }
+    column "nmdp_2" {
+      type = character varying(100)
+    }
+    column "nmdp_id_2" {
+      type = character varying(100)
+    }
+    column "nmdpdef_2" {
+      type = text
+    }
+    column "resultid" {
+      type = character varying(100)
+    }
+  )
+}
+
+index "public"."idx_result_fusion_resu_id" {
+  table = "public"."resultados_fusion"
+  type = btree
+  columns = <
+    {
+      definition = resultid
+    }
+
+  >
+  isUnique = True
+  isConstraint = true
+}
+

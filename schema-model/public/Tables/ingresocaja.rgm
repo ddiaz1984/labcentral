@@ -1,0 +1,86 @@
+table "public"."ingresocaja" {
+  primaryKey = {
+    columns = [
+      "nroingreso"
+    ]
+    name = "pk_ingresocaja"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "nroingreso" {
+      type = numeric(10,0)
+      null = NOT NULL
+    }
+    column "nrorecibo" {
+      type = numeric(10,0)
+    }
+    column "nroreciboser" {
+      type = character varying(20)
+    }
+    column "reciboide" {
+      type = character varying(150)
+    }
+    column "dccion" {
+      type = character varying(200)
+    }
+    column "fecha" {
+      type = date
+    }
+    column "hora" {
+      type = character varying(8)
+    }
+    column "formapago" {
+      type = numeric(1,0)
+    }
+    column "otrafp" {
+      type = character varying(50)
+    }
+    column "estado" {
+      type = numeric(1,0)
+    }
+    column "nrorecibo1" {
+      type = numeric(10,0)
+    }
+    column "nroserie1" {
+      type = character varying(20)
+    }
+    column "nrorecibo2" {
+      type = numeric(10,0)
+    }
+    column "nroserie2" {
+      type = character varying(20)
+    }
+    column "cedula" {
+      type = character varying(15)
+    }
+    column "nomyape" {
+      type = character varying(150)
+    }
+    column "nropaciente" {
+      type = integer
+    }
+    column "codcaja" {
+      type = character varying(10)
+    }
+    column "codusu" {
+      type = character varying(20)
+    }
+    column "arqueado" {
+      type = numeric(1,0)
+    }
+    column "codservicio" {
+      type = character varying(10)
+    }
+    column "codanula" {
+      type = character varying(10)
+    }
+    column "observacion" {
+      type = character varying(100)
+    }
+    column "idapertura" {
+      type = integer
+    }
+  )
+}
+

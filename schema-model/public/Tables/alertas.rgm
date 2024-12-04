@@ -1,0 +1,29 @@
+table "public"."alertas" {
+  primaryKey = {
+    columns = [
+      "nromsg"
+    ]
+    name = "pk_alertas"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "nromsg" {
+      type = numeric(15,0)
+      null = NOT NULL
+    }
+    column "codproceso" {
+      type = character varying(10)
+    }
+    column "texto" {
+      type = character varying(250)
+    }
+    column "fechaproc" {
+      type = date
+    }
+    column "estado" {
+      type = numeric(1,0)
+    }
+  )
+}
+

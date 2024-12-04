@@ -1,0 +1,22 @@
+table "public"."resultadoposiblemaster" {
+  primaryKey = {
+    columns = [
+      "coddetermina"
+      "codresultado"
+    ]
+    name = "pk_resultadoposiblemaster"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "coddetermina" {
+      type = character varying(10)
+      null = NOT NULL
+    }
+    column "codresultado" {
+      type = character varying(10)
+      null = NOT NULL
+    }
+  )
+}
+

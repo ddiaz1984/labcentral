@@ -1,0 +1,33 @@
+table "public"."ordenagrupado" {
+  primaryKey = {
+    columns = [
+      "grupo"
+      "nordentra"
+      "codestudio"
+    ]
+    name = "pk_ordenagrupado"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "grupo" {
+      type = character varying(10)
+      null = NOT NULL
+    }
+    column "fecha" {
+      type = date
+    }
+    column "nordentra" {
+      type = integer
+      null = NOT NULL
+    }
+    column "codusu" {
+      type = character varying(20)
+    }
+    column "codestudio" {
+      type = character varying(10)
+      null = NOT NULL
+    }
+  )
+}
+

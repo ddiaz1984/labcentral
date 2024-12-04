@@ -1,21 +1,22 @@
-table "public"."ordtrabajo" {
+table "public"."estrealizar" {
   primaryKey = {
     columns = [
-      "nordentra"
+      "nroestudio"
     ]
-    name = "pk_nordentra"
+    name = "pk_estrealizar"
     objectType = primaryKey
   }
   owner = postgres
   columns = (
-    column "nordentra" {
+    column "nroestudio" {
       type = integer
       null = NOT NULL
-      default = nextval('public.seq_ordtrabajo'::regclass)
     }
     column "codservicio" {
       type = character varying(10)
-      null = NOT NULL
+    }
+    column "codarea" {
+      type = character varying(10)
     }
     column "codusu" {
       type = character varying(20)
@@ -23,65 +24,65 @@ table "public"."ordtrabajo" {
     column "nropaciente" {
       type = numeric(10,0)
     }
-    column "fecharec" {
+    column "fecha" {
       type = date
     }
-    column "horarec" {
+    column "hora" {
       type = character varying(8)
     }
-    column "fechasal" {
-      type = date
+    column "codestudio" {
+      type = character varying(10)
     }
-    column "horasal" {
-      type = character varying(8)
+    column "codservicior" {
+      type = character varying(10)
     }
-    column "urgente" {
+    column "codserviciod" {
+      type = character varying(10)
+    }
+    column "coddiagnostico" {
+      type = character varying(10)
+    }
+    column "estadoestu" {
       type = numeric(1,0)
+    }
+    column "fechatmues" {
+      type = date
+    }
+    column "horatmues" {
+      type = character varying(8)
+    }
+    column "codtmuestra" {
+      type = character varying(10)
+    }
+    column "nromuestra" {
+      type = character varying(10)
     }
     column "nroturno" {
       type = character varying(10)
     }
+    column "nordentra" {
+      type = integer
+    }
+    column "codservact" {
+      type = character varying(10)
+    }
+    column "validar" {
+      type = numeric(1,0)
+    }
     column "codorigen" {
-      type = character varying(10)
-    }
-    column "codservrem" {
-      type = character varying(10)
-    }
-    column "codservder" {
       type = character varying(10)
     }
     column "codmedico" {
       type = character varying(10)
     }
-    column "recitacion" {
-      type = numeric(1,0)
-    }
-    column "retira" {
-      type = numeric(1,0)
-    }
-    column "obs" {
-      type = character varying(250)
-    }
-    column "atendido" {
-      type = numeric(1,0)
-    }
     column "cod_dgvs" {
       type = bigint
     }
     column "nro_toma" {
-      type = character varying
-    }
-    column "nom_servicio" {
-      type = character varying(500)
-    }
-    column "laboratorio" {
-      type = bigint
+      type = character varying(50)
     }
     column "orden_dgvs" {
       type = character varying(20)
-    }
-    column "nom_proceso" {
-      type = character(300)
     }
     column "nroficha" {
       type = integer
@@ -95,17 +96,20 @@ table "public"."ordtrabajo" {
     column "cod_dgvs2" {
       type = integer
     }
-    column "estado" {
-      type = numeric(1,0)
+    column "hospitalizado" {
+      type = character varying(2)
     }
-    column "nro_orden" {
-      type = character varying(100)
+    column "fallecido" {
+      type = character varying(2)
+    }
+    column "traspasarhl" {
+      type = boolean
     }
   )
 }
 
-index "public"."ind_ordtrabajo" {
-  table = "public"."ordtrabajo"
+index "public"."i_estrealizar" {
+  table = "public"."estrealizar"
   type = btree
   columns = <
     {
@@ -113,26 +117,18 @@ index "public"."ind_ordtrabajo" {
     }
 
     {
-      definition = codservicio
-    }
-
-    {
       definition = nropaciente
     }
 
     {
-      definition = fecharec
-    }
-
-    {
-      definition = codusu
+      definition = nroestudio
     }
 
   >
-  isUnique = False
+  isUnique = True
 }
 
-trigger "public"."ordtrabajo"."audit_log_trigger" {
+trigger "public"."estrealizar"."audit_log_trigger" {
   timing = BEFORE
   events = [
     DELETE

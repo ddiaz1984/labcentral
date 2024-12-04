@@ -1,0 +1,111 @@
+table "public"."establecimientos1" {
+  primaryKey = {
+    columns = [
+      "codreg"
+      "subcreg"
+      "coddist"
+      "codserv"
+    ]
+    name = "pk_establecimientos"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "codreg" {
+      type = character varying(2)
+      null = NOT NULL
+    }
+    column "subcreg" {
+      type = character varying(3)
+      null = NOT NULL
+    }
+    column "coddist" {
+      type = character varying(3)
+      null = NOT NULL
+    }
+    column "codserv" {
+      type = character varying(3)
+      null = NOT NULL
+    }
+    column "tiposerv" {
+      type = character varying(4)
+    }
+    column "nomserv" {
+      type = character varying(60)
+    }
+    column "dire" {
+      type = character varying(80)
+    }
+    column "dccion" {
+      type = character varying(50)
+    }
+    column "telef" {
+      type = character varying(30)
+    }
+    column "email" {
+      type = character varying(50)
+    }
+    column "area" {
+      type = numeric(1,0)
+    }
+    column "unrocons" {
+      type = numeric(10,0)
+    }
+    column "unroficha" {
+      type = numeric(10,0)
+    }
+    column "activo" {
+      type = numeric(1,0)
+    }
+    column "unrolabo" {
+      type = numeric(10,0)
+    }
+    column "codigoesta" {
+      type = character varying(12)
+    }
+    column "observ" {
+      type = character varying(250)
+    }
+    column "desdemes" {
+      type = numeric(2,0)
+    }
+    column "desdeano" {
+      type = numeric(4,0)
+    }
+    column "latitud" {
+      type = numeric(11,7)
+    }
+    column "longitud" {
+      type = numeric(11,7)
+    }
+    column "receta" {
+      type = numeric(1,0)
+      default = 2
+    }
+  )
+}
+
+index "public"."iestablecimientos" {
+  table = "public"."establecimientos1"
+  type = btree
+  columns = <
+    {
+      definition = codreg
+    }
+
+    {
+      definition = subcreg
+    }
+
+    {
+      definition = coddist
+    }
+
+    {
+      definition = codserv
+    }
+
+  >
+  isUnique = False
+}
+

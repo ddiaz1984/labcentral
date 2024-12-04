@@ -1,0 +1,29 @@
+table "public"."evalucionparticipante" {
+  primaryKey = {
+    columns = [
+      "nroeval"
+      "item"
+    ]
+    name = "pk_evalucionparticipante"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "nroeval" {
+      type = numeric(10,0)
+      null = NOT NULL
+    }
+    column "item" {
+      type = numeric(3,0)
+      null = NOT NULL
+    }
+    column "codusu" {
+      type = character varying(20)
+    }
+    column "estado" {
+      type = character varying(1)
+      default = 1
+    }
+  )
+}
+

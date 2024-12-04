@@ -1,0 +1,23 @@
+table "public"."preguntaedcontinua" {
+  primaryKey = {
+    columns = [
+      "nropregunta"
+    ]
+    name = "pk_preguntaedcontinua"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "nropregunta" {
+      type = numeric(2,0)
+      null = NOT NULL
+    }
+    column "respuesta" {
+      type = character varying(30)
+    }
+    column "textopregunta" {
+      type = character varying(300)
+    }
+  )
+}
+

@@ -1,0 +1,12 @@
+sequence "public"."semana_epidemiologica_codsemana_seq" {
+  type = bigint
+  increment = 1
+  minValue = 1
+  maxValue = 9223372036854775807
+  start = 1
+  cache = 1
+  cycle = NO CYCLE
+  owner = postgres
+  ownedBy = "public"."semana_epidemiologica"."codsemana"
+}
+

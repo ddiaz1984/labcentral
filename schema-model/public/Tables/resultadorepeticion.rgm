@@ -1,0 +1,74 @@
+table "public"."resultadorepeticion" {
+  primaryKey = {
+    columns = [
+      "nordentra"
+      "nroestudio"
+      "idmuestra"
+      "nroresul"
+    ]
+    name = "pk_resultadorepeticion"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "nordentra" {
+      type = integer
+      null = NOT NULL
+    }
+    column "nroestudio" {
+      type = character varying(20)
+      null = NOT NULL
+    }
+    column "idmuestra" {
+      type = character varying(20)
+      null = NOT NULL
+    }
+    column "nroresul" {
+      type = numeric(10,0)
+      null = NOT NULL
+    }
+    column "fechares" {
+      type = date
+    }
+    column "codmetodo" {
+      type = character varying(10)
+    }
+    column "codumedida" {
+      type = character varying(10)
+    }
+    column "codsector" {
+      type = character varying(10)
+    }
+    column "codestudio" {
+      type = character varying(10)
+    }
+    column "coddetermina" {
+      type = character varying(10)
+    }
+    column "resultado" {
+      type = character varying(100)
+    }
+    column "codresultado" {
+      type = character varying(10)
+    }
+    column "codequipo" {
+      type = character varying(10)
+    }
+    column "anulado" {
+      type = numeric(1,0)
+    }
+    column "fechaanul" {
+      type = date
+    }
+    column "horaanul" {
+      type = character varying(8)
+    }
+    column "codusu" {
+      type = character varying(20)
+    }
+    column "obs" {
+      type = character varying(250)
+    }
+  )
+}
+

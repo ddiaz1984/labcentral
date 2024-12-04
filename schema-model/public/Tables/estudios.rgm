@@ -1,0 +1,83 @@
+table "public"."estudios" {
+  primaryKey = {
+    columns = [
+      "codestudio"
+    ]
+    name = "pk_estudios"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "codestudio" {
+      type = character varying(10)
+      null = NOT NULL
+    }
+    column "codexterno" {
+      type = character varying(10)
+    }
+    column "nomestudio" {
+      type = character varying(100)
+    }
+    column "abreviatura" {
+      type = character varying(20)
+    }
+    column "dias" {
+      type = numeric(2,0)
+    }
+    column "codsector" {
+      type = character varying(10)
+    }
+    column "codtmuestra" {
+      type = character varying(10)
+    }
+    column "cantetiq" {
+      type = numeric(2,0)
+    }
+    column "factor" {
+      type = numeric(10,3)
+    }
+    column "microbiologia" {
+      type = numeric(1,0)
+    }
+    column "codestudiobio" {
+      type = character varying(10)
+    }
+    column "estado" {
+      type = numeric(1,0)
+    }
+    column "enviarec" {
+      type = numeric(1,0)
+    }
+    column "obs" {
+      type = character varying(250)
+    }
+    column "codmetodo" {
+      type = character varying(10)
+    }
+    column "posicion" {
+      type = numeric(5,0)
+    }
+    column "index" {
+      type = boolean
+    }
+    column "perfil" {
+      type = numeric(1,0)
+      default = 2
+    }
+  )
+}
+
+trigger "public"."estudios"."audit_log_trigger" {
+  timing = BEFORE
+  events = [
+    DELETE
+    UPDATE
+    INSERT
+  ]
+  level = ROW
+  function = public.audit_trigger
+  functionArguments = [
+  ]
+  constraint = False
+}
+

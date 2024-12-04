@@ -1,0 +1,37 @@
+table "public"."rechazados" {
+  primaryKey = {
+    columns = [
+      "grupo"
+      "nromuestra"
+    ]
+    name = "pk_rechazados"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "grupo" {
+      type = character varying(10)
+      null = NOT NULL
+    }
+    column "nromuestra" {
+      type = character varying(20)
+      null = NOT NULL
+    }
+    column "fecharechazo" {
+      type = date
+    }
+    column "codrechazo" {
+      type = character varying(10)
+    }
+    column "codusu" {
+      type = character varying(20)
+    }
+    column "nropaciente" {
+      type = numeric(10,0)
+    }
+    column "obs" {
+      type = character varying(250)
+    }
+  )
+}
+

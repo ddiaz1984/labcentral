@@ -1,0 +1,39 @@
+table "public"."plantillaplandet" {
+  primaryKey = {
+    columns = [
+      "codplatilla"
+      "posicion"
+    ]
+    name = "pk_plantillaplandet"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "codplatilla" {
+      type = character varying(10)
+      null = NOT NULL
+    }
+    column "posicion" {
+      type = numeric(2,0)
+      null = NOT NULL
+    }
+    column "columna" {
+      type = character varying(20)
+    }
+  )
+}
+
+trigger "public"."plantillaplandet"."audit_log_trigger" {
+  timing = BEFORE
+  events = [
+    DELETE
+    UPDATE
+    INSERT
+  ]
+  level = ROW
+  function = public.audit_trigger
+  functionArguments = [
+  ]
+  constraint = False
+}
+

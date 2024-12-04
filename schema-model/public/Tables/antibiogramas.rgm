@@ -1,0 +1,37 @@
+table "public"."antibiogramas" {
+  primaryKey = {
+    columns = [
+      "codantibiogr"
+    ]
+    name = "pk_antibiogramas"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "codantibiogr" {
+      type = character varying(10)
+      null = NOT NULL
+    }
+    column "nomantibiogr" {
+      type = character varying(100)
+    }
+    column "codestudiobio" {
+      type = character varying(10)
+    }
+  )
+}
+
+trigger "public"."antibiogramas"."audit_log_trigger" {
+  timing = BEFORE
+  events = [
+    DELETE
+    UPDATE
+    INSERT
+  ]
+  level = ROW
+  function = public.audit_trigger
+  functionArguments = [
+  ]
+  constraint = False
+}
+

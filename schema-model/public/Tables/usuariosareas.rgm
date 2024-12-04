@@ -1,0 +1,47 @@
+table "public"."usuariosareas" {
+  primaryKey = {
+    columns = [
+      "codusu"
+      "codservicio"
+      "codarea"
+      "codrol"
+    ]
+    name = "pk_usuariosareas"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "codusu" {
+      type = character varying(20)
+      null = NOT NULL
+    }
+    column "codservicio" {
+      type = character varying(10)
+      null = NOT NULL
+    }
+    column "codarea" {
+      type = character varying(10)
+      null = NOT NULL
+    }
+    column "codrol" {
+      type = character varying(10)
+      null = NOT NULL
+    }
+    column "estado" {
+      type = numeric(1,0)
+    }
+    column "sms" {
+      type = numeric(1,0)
+    }
+    column "email" {
+      type = numeric(1,0)
+    }
+    column "alerta" {
+      type = numeric(1,0)
+    }
+    column "fechauact" {
+      type = date
+    }
+  )
+}
+

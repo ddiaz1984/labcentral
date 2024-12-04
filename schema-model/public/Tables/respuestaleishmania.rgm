@@ -1,0 +1,33 @@
+table "public"."respuestaleishmania" {
+  owner = postgres
+  columns = (
+    column "nroeval" {
+      type = numeric(10,0)
+    }
+    column "codusu" {
+      type = character varying(20)
+    }
+    column "codnumero" {
+      type = character varying(2)
+    }
+    column "codletra" {
+      type = character varying(2)
+    }
+    column "valor" {
+      type = character varying(100)
+    }
+    column "fechaenviado" {
+      type = date
+    }
+    column "item" {
+      type = numeric(5,0)
+    }
+    column "puntaje" {
+      type = numeric(10,2)
+    }
+    column "obs" {
+      type = character varying(200)
+    }
+  )
+}
+

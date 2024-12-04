@@ -1,0 +1,28 @@
+table "public"."areasest" {
+  primaryKey = {
+    columns = [
+      "codservicio"
+      "codarea"
+    ]
+    name = "pk_areasest"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "codservicio" {
+      type = character varying(10)
+      null = NOT NULL
+    }
+    column "codarea" {
+      type = character varying(10)
+      null = NOT NULL
+    }
+    column "nomarea" {
+      type = character varying(150)
+    }
+    column "codsector" {
+      type = character varying(10)
+    }
+  )
+}
+

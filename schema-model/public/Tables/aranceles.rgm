@@ -1,0 +1,26 @@
+table "public"."aranceles" {
+  primaryKey = {
+    columns = [
+      "codarancel"
+    ]
+    name = "pk_aranceles"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "codarancel" {
+      type = character varying(10)
+      null = NOT NULL
+    }
+    column "monto" {
+      type = numeric(10,0)
+    }
+    column "tipo" {
+      type = numeric(1,0)
+    }
+    column "nomarancel" {
+      type = character varying(250)
+    }
+  )
+}
+

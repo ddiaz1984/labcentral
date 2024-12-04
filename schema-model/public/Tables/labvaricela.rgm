@@ -1,0 +1,55 @@
+table "public"."labvaricela" {
+  primaryKey = {
+    columns = [
+      "nronotif"
+      "nromuestra"
+    ]
+    name = "pk_labvaricela"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "nronotif" {
+      type = numeric(10,0)
+      null = NOT NULL
+    }
+    column "nromuestra" {
+      type = numeric(2,0)
+      null = NOT NULL
+    }
+    column "nordentra" {
+      type = character varying(20)
+    }
+    column "tipomuestra" {
+      type = numeric(1,0)
+    }
+    column "fecmuestra" {
+      type = date
+    }
+    column "laboratorio" {
+      type = character varying(150)
+    }
+    column "fecenvio" {
+      type = date
+    }
+    column "fecrecep" {
+      type = date
+    }
+    column "idlabo" {
+      type = character varying(20)
+    }
+    column "tipoprueba" {
+      type = numeric(1,0)
+    }
+    column "antigeno" {
+      type = numeric(1,0)
+    }
+    column "resultado" {
+      type = numeric(1,0)
+    }
+    column "fecresult" {
+      type = date
+    }
+  )
+}
+

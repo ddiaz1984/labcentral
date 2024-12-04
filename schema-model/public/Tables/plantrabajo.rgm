@@ -1,0 +1,52 @@
+table "public"."plantrabajo" {
+  primaryKey = {
+    columns = [
+      "nroplan"
+      "codservicio"
+      "codarea"
+      "codsector"
+      "fecha"
+    ]
+    name = "pk_plantrabajo"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "nroplan" {
+      type = numeric(10,0)
+      null = NOT NULL
+    }
+    column "codservicio" {
+      type = character varying(10)
+      null = NOT NULL
+    }
+    column "codarea" {
+      type = character varying(10)
+      null = NOT NULL
+    }
+    column "codsector" {
+      type = character varying(10)
+      null = NOT NULL
+    }
+    column "fecha" {
+      type = date
+      null = NOT NULL
+    }
+    column "nordentra" {
+      type = integer
+    }
+    column "nroestudio" {
+      type = character varying(20)
+    }
+    column "nropaciente" {
+      type = numeric(10,0)
+    }
+    column "codusu" {
+      type = character varying(20)
+    }
+    column "codplantilla" {
+      type = character varying(10)
+    }
+  )
+}
+

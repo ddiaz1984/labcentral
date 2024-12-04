@@ -1,0 +1,52 @@
+table "public"."antibioticos" {
+  primaryKey = {
+    columns = [
+      "codantibiot"
+    ]
+    name = "pk_antibioticos"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "codantibiot" {
+      type = character varying(10)
+      null = NOT NULL
+    }
+    column "nomantibiot" {
+      type = character varying(100)
+    }
+    column "abreviatura" {
+      type = character varying(50)
+    }
+    column "diamresmen" {
+      type = character varying(20)
+    }
+    column "diammedmin" {
+      type = character varying(20)
+    }
+    column "diammedmax" {
+      type = character varying(20)
+    }
+    column "diamsensmen" {
+      type = character varying(20)
+    }
+    column "codexterno" {
+      type = character varying(50)
+    }
+  )
+}
+
+trigger "public"."antibioticos"."audit_log_trigger" {
+  timing = BEFORE
+  events = [
+    DELETE
+    UPDATE
+    INSERT
+  ]
+  level = ROW
+  function = public.audit_trigger
+  functionArguments = [
+  ]
+  constraint = False
+}
+

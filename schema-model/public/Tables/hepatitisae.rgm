@@ -1,0 +1,218 @@
+table "public"."hepatitisae" {
+  primaryKey = {
+    columns = [
+      "nronotif"
+    ]
+    name = "pk_hepatitisae"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "nronotif" {
+      type = numeric(10,0)
+      null = NOT NULL
+    }
+    column "nordentra" {
+      type = character varying(20)
+    }
+    column "nomyape" {
+      type = character varying(150)
+    }
+    column "edada" {
+      type = numeric(3,0)
+    }
+    column "edadm" {
+      type = numeric(3,0)
+    }
+    column "edadd" {
+      type = numeric(3,0)
+    }
+    column "sexo" {
+      type = numeric(1,0)
+    }
+    column "cedula" {
+      type = character varying(15)
+    }
+    column "dccion" {
+      type = character varying(200)
+    }
+    column "coddptor" {
+      type = character varying(2)
+    }
+    column "coddistr" {
+      type = character varying(3)
+    }
+    column "barrio" {
+      type = character varying(100)
+    }
+    column "tipoloc" {
+      type = numeric(1,0)
+    }
+    column "pais" {
+      type = character varying(100)
+    }
+    column "celularr" {
+      type = character varying(30)
+    }
+    column "ocupacion" {
+      type = character varying(150)
+    }
+    column "dcciontraesc" {
+      type = character varying(200)
+    }
+    column "vacantihep" {
+      type = numeric(1,0)
+    }
+    column "fec1radosis" {
+      type = date
+    }
+    column "fec2dadosis" {
+      type = date
+    }
+    column "vaccarnet" {
+      type = numeric(1,0)
+    }
+    column "contpers" {
+      type = numeric(1,0)
+    }
+    column "trabajo" {
+      type = numeric(1,0)
+    }
+    column "fectrabajo" {
+      type = date
+    }
+    column "familia" {
+      type = numeric(1,0)
+    }
+    column "fecfamilia" {
+      type = date
+    }
+    column "jardin" {
+      type = numeric(1,0)
+    }
+    column "fecescuela" {
+      type = date
+    }
+    column "salagrado" {
+      type = character varying(200)
+    }
+    column "comedor" {
+      type = numeric(1,0)
+    }
+    column "feccomedor" {
+      type = date
+    }
+    column "club" {
+      type = numeric(1,0)
+    }
+    column "fecclub" {
+      type = date
+    }
+    column "clubpiscina" {
+      type = numeric(1,0)
+    }
+    column "chabviv" {
+      type = numeric(2,0)
+    }
+    column "ccuartos" {
+      type = numeric(2,0)
+    }
+    column "cperscuarto" {
+      type = numeric(2,0)
+    }
+    column "agua" {
+      type = numeric(1,0)
+    }
+    column "excretas" {
+      type = numeric(1,0)
+    }
+    column "tipobanio" {
+      type = numeric(1,0)
+    }
+    column "tipobanioesp" {
+      type = character varying(200)
+    }
+    column "comparteviv" {
+      type = numeric(1,0)
+    }
+    column "fecinisint" {
+      type = date
+    }
+    column "fec1racons" {
+      type = date
+    }
+    column "establecons" {
+      type = character varying(150)
+    }
+    column "hospitalizado" {
+      type = numeric(1,0)
+    }
+    column "fechosp" {
+      type = date
+    }
+    column "diagingre" {
+      type = character varying(200)
+    }
+    column "labotgo" {
+      type = numeric(1,0)
+    }
+    column "labtgovn" {
+      type = character varying(200)
+    }
+    column "labotgp" {
+      type = numeric(1,0)
+    }
+    column "labtgpvn" {
+      type = character varying(200)
+    }
+    column "labbvt" {
+      type = character varying(200)
+    }
+    column "labbvd" {
+      type = character varying(200)
+    }
+    column "labbvi" {
+      type = character varying(200)
+    }
+    column "rantihavigm" {
+      type = numeric(1,0)
+    }
+    column "reshavigm" {
+      type = character varying(200)
+    }
+    column "rantihavigg" {
+      type = numeric(1,0)
+    }
+    column "reshavigg" {
+      type = character varying(200)
+    }
+    column "fecegreso" {
+      type = date
+    }
+    column "tipoegreso" {
+      type = numeric(1,0)
+    }
+    column "establecim" {
+      type = character varying(150)
+    }
+    column "fechanotif" {
+      type = date
+    }
+    column "nomyapenot" {
+      type = character varying(150)
+    }
+    column "codreg" {
+      type = character varying(2)
+    }
+    column "subcreg" {
+      type = character varying(3)
+    }
+    column "coddist" {
+      type = character varying(3)
+    }
+    column "codserv" {
+      type = character varying(3)
+    }
+  )
+}
+

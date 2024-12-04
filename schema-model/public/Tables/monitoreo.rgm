@@ -1,0 +1,162 @@
+table "public"."monitoreo" {
+  primaryKey = {
+    columns = [
+      "codmonitoreo"
+    ]
+    name = "monitoreo_pk"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "codmonitoreo" {
+      type = integer
+      null = NOT NULL
+      default = nextval('public.monitoreo_codmonitoreo_seq'::regclass)
+    }
+    column "codreg" {
+      type = character varying
+      null = NOT NULL
+    }
+    column "subreg" {
+      type = character varying
+      null = NOT NULL
+    }
+    column "laboratorio" {
+      type = character varying(150)
+      null = NOT NULL
+    }
+    column "codsemana" {
+      type = integer
+      null = NOT NULL
+    }
+    column "horario" {
+      type = character varying(200)
+      null = NOT NULL
+    }
+    column "cantidad_pacientes" {
+      type = numeric
+      null = NOT NULL
+    }
+    column "cantidad_paciente_bio" {
+      type = numeric
+      null = NOT NULL
+    }
+    column "pruebas_total" {
+      type = numeric
+      null = NOT NULL
+    }
+    column "numero_muestras_bio" {
+      type = numeric
+      null = NOT NULL
+    }
+    column "pcr" {
+      type = numeric
+      null = NOT NULL
+    }
+    column "elisa_igc" {
+      type = numeric
+      null = NOT NULL
+    }
+    column "elisa_igm" {
+      type = numeric
+      null = NOT NULL
+    }
+    column "elisa_ns1" {
+      type = numeric
+      null = NOT NULL
+    }
+    column "muestras_lcsp_enviadas" {
+      type = numeric
+      null = NOT NULL
+    }
+    column "paciente_hospitalizado" {
+      type = numeric
+      null = NOT NULL
+    }
+    column "paciente_obito" {
+      type = numeric
+      null = NOT NULL
+    }
+    column "paciente_ambulatoria" {
+      type = numeric
+      null = NOT NULL
+    }
+    column "personal_activo" {
+      type = numeric
+      null = NOT NULL
+    }
+    column "bioquimico" {
+      type = numeric
+      null = NOT NULL
+    }
+    column "tecnico" {
+      type = numeric
+      null = NOT NULL
+    }
+    column "apoyo_administrativo" {
+      type = numeric
+      null = NOT NULL
+    }
+    column "bioquimico_activo" {
+      type = numeric
+      null = NOT NULL
+    }
+    column "stock_epidemiologico" {
+      type = numeric
+      null = NOT NULL
+    }
+    column "rcpcr_epi" {
+      type = numeric
+      null = NOT NULL
+    }
+    column "elisa_ns1_epi" {
+      type = numeric
+      null = NOT NULL
+    }
+    column "elisa_igc_epi" {
+      type = numeric
+      null = NOT NULL
+    }
+    column "elisa_igm_epi" {
+      type = numeric
+      null = NOT NULL
+    }
+    column "hemograma" {
+      type = numeric
+    }
+    column "hepatograma" {
+      type = numeric
+    }
+    column "observacion" {
+      type = character varying
+      null = NOT NULL
+    }
+    column "responsable_nombre" {
+      type = character varying
+      null = NOT NULL
+    }
+    column "responsable_contacto" {
+      type = character varying
+      null = NOT NULL
+    }
+    column "responsable_email" {
+      type = character varying
+      null = NOT NULL
+    }
+    column "codusuario" {
+      type = character varying
+      null = NOT NULL
+    }
+    column "fecha" {
+      type = timestamp without time zone
+      null = NOT NULL
+    }
+    column "inmuno" {
+      type = numeric
+    }
+    column "inmuno_epi" {
+      type = numeric
+    }
+  )
+}
+

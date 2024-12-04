@@ -1,0 +1,253 @@
+table "public"."evalhematologia" {
+  primaryKey = {
+    columns = [
+      "nroeval"
+      "codempresa"
+    ]
+    name = "pk_evalhematologia"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "nroeval" {
+      type = numeric(10,0)
+      null = NOT NULL
+    }
+    column "codempresa" {
+      type = character varying(20)
+      null = NOT NULL
+    }
+    column "permes" {
+      type = numeric(2,0)
+    }
+    column "peranio" {
+      type = numeric(4,0)
+    }
+    column "fecha" {
+      type = date
+    }
+    column "lote" {
+      type = character varying(20)
+    }
+    column "tiposerv" {
+      type = numeric(1,0)
+    }
+    column "codservicio" {
+      type = character varying(10)
+    }
+    column "responsable" {
+      type = character varying(150)
+    }
+    column "cargo" {
+      type = character varying(150)
+    }
+    column "flneutroband" {
+      type = character varying(100)
+    }
+    column "flneutrosegm" {
+      type = character varying(100)
+    }
+    column "fllinfo" {
+      type = character varying(100)
+    }
+    column "fllinforeact" {
+      type = character varying(100)
+    }
+    column "flmonocito" {
+      type = character varying(100)
+    }
+    column "fleosinofilo" {
+      type = character varying(100)
+    }
+    column "flbasofilo" {
+      type = character varying(100)
+    }
+    column "flblastos" {
+      type = character varying(100)
+    }
+    column "flmielocitos" {
+      type = character varying(100)
+    }
+    column "flmetamielo" {
+      type = character varying(100)
+    }
+    column "sbsinalt" {
+      type = numeric(1,0)
+      default = 2
+    }
+    column "sbgranu" {
+      type = numeric(1,0)
+      default = 2
+    }
+    column "sbnucleo" {
+      type = numeric(1,0)
+      default = 2
+    }
+    column "sbvacuola" {
+      type = numeric(1,0)
+      default = 2
+    }
+    column "srsinalt" {
+      type = numeric(1,0)
+      default = 2
+    }
+    column "sranisocit" {
+      type = numeric(1,0)
+      default = 2
+    }
+    column "srmicrocito" {
+      type = numeric(1,0)
+      default = 2
+    }
+    column "srmacrocito" {
+      type = numeric(1,0)
+      default = 2
+    }
+    column "srnormocit" {
+      type = numeric(1,0)
+      default = 2
+    }
+    column "srpoiquilocit" {
+      type = numeric(1,0)
+      default = 2
+    }
+    column "srnormocrom" {
+      type = numeric(1,0)
+      default = 2
+    }
+    column "srhipocromia" {
+      type = numeric(1,0)
+      default = 2
+    }
+    column "srpolicroma" {
+      type = numeric(1,0)
+      default = 2
+    }
+    column "srnormobla" {
+      type = numeric(1,0)
+      default = 2
+    }
+    column "spmacroplaqsa" {
+      type = numeric(1,0)
+      default = 2
+    }
+    column "spmacropaq" {
+      type = numeric(1,0)
+      default = 2
+    }
+    column "parleishmania" {
+      type = numeric(1,0)
+      default = 2
+    }
+    column "parplasmod" {
+      type = numeric(1,0)
+      default = 2
+    }
+    column "flneutrobandr" {
+      type = character varying(100)
+    }
+    column "flneutrosegmr" {
+      type = character varying(100)
+    }
+    column "fllinfor" {
+      type = character varying(100)
+    }
+    column "fllinforeactr" {
+      type = character varying(100)
+    }
+    column "flmonocitor" {
+      type = character varying(100)
+    }
+    column "fleosinofilor" {
+      type = character varying(100)
+    }
+    column "flbasofilor" {
+      type = character varying(100)
+    }
+    column "flblastosr" {
+      type = character varying(100)
+    }
+    column "flmielocitosr" {
+      type = character varying(100)
+    }
+    column "flmetamielor" {
+      type = character varying(100)
+    }
+    column "sbsinaltr" {
+      type = numeric(1,0)
+      default = 2
+    }
+    column "sbgranur" {
+      type = numeric(1,0)
+      default = 2
+    }
+    column "sbnucleor" {
+      type = numeric(1,0)
+      default = 2
+    }
+    column "sbvacuolar" {
+      type = numeric(1,0)
+      default = 2
+    }
+    column "srsinaltr" {
+      type = numeric(1,0)
+      default = 2
+    }
+    column "sranisocitr" {
+      type = numeric(1,0)
+      default = 2
+    }
+    column "srmicrocitor" {
+      type = numeric(1,0)
+      default = 2
+    }
+    column "srmacrocitor" {
+      type = numeric(1,0)
+      default = 2
+    }
+    column "srnormocitr" {
+      type = numeric(1,0)
+      default = 2
+    }
+    column "srpoiquilocitr" {
+      type = numeric(1,0)
+      default = 2
+    }
+    column "srnormocromr" {
+      type = numeric(1,0)
+      default = 2
+    }
+    column "srhipocromiar" {
+      type = numeric(1,0)
+      default = 2
+    }
+    column "srpolicromar" {
+      type = numeric(1,0)
+      default = 2
+    }
+    column "srnormoblar" {
+      type = numeric(1,0)
+      default = 2
+    }
+    column "spmacroplaqsar" {
+      type = numeric(1,0)
+      default = 2
+    }
+    column "spmacropaqr" {
+      type = numeric(1,0)
+      default = 2
+    }
+    column "parleishmaniar" {
+      type = numeric(1,0)
+      default = 2
+    }
+    column "parplasmodr" {
+      type = numeric(1,0)
+      default = 2
+    }
+    column "puntaje" {
+      type = numeric(10,2)
+    }
+  )
+}
+

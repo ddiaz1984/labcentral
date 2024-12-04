@@ -1,0 +1,43 @@
+table "public"."evaluaciondeterminacion" {
+  primaryKey = {
+    columns = [
+      "nroeval"
+      "codestudio"
+      "coddetermina"
+    ]
+    name = "pk_evaluaciondeterminacion"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "nroeval" {
+      type = numeric(10,0)
+      null = NOT NULL
+    }
+    column "codestudio" {
+      type = character varying(10)
+      null = NOT NULL
+    }
+    column "coddetermina" {
+      type = character varying(10)
+      null = NOT NULL
+    }
+    column "respuesta" {
+      type = character varying(100)
+    }
+    column "puntaje" {
+      type = numeric(10,0)
+    }
+    column "terminado" {
+      type = numeric(1,0)
+      default = 1
+    }
+    column "correcta" {
+      type = character varying(100)
+    }
+    column "drp" {
+      type = numeric(10,0)
+    }
+  )
+}
+

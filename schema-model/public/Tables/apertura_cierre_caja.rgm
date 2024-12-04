@@ -1,0 +1,44 @@
+table "public"."apertura_cierre_caja" {
+  primaryKey = {
+    columns = [
+      "id"
+    ]
+    name = "pk_apertura_cierre_caja"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "id" {
+      type = integer
+      null = NOT NULL
+    }
+    column "fechaapertura" {
+      type = date
+    }
+    column "horaapertura" {
+      type = character varying(8)
+    }
+    column "codusu" {
+      type = character varying(20)
+    }
+    column "codservicio" {
+      type = character varying(10)
+    }
+    column "codcaja" {
+      type = character varying(10)
+    }
+    column "horacierre" {
+      type = character varying(8)
+    }
+    column "tipo" {
+      type = numeric(1,0)
+    }
+    column "codusuc" {
+      type = character varying(20)
+    }
+    column "monto" {
+      type = numeric(20,2)
+    }
+  )
+}
+
