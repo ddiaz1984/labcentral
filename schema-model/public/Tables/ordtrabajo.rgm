@@ -97,6 +97,7 @@ table "public"."ordtrabajo" {
     }
     column "estado" {
       type = numeric(1,0)
+      default = 1
     }
     column "nro_orden" {
       type = character varying(100)
