@@ -1,0 +1,55 @@
+function "public"."get_secuencia(character varying, character varying)" {
+  text = """
+
+declare
+   secuencia integer;
+begin
+   select COALESCE (max(numero), 0)
+   into secuencia
+   from generasecuencia
+   where tabla = v_tabla 
+   and   ultimo  = v_ultimo;
+
+   if secuencia = 0 then
+
+   		secuencia := 1;
+
+		 INSERT INTO public.generasecuencia(
+			tabla, ultimo, numero)
+			VALUES (v_tabla, v_ultimo, secuencia);
+
+	else
+
+		secuencia := secuencia + 1;
+
+		update generasecuencia
+		set numero = secuencia
+		where tabla = v_tabla 
+        and   ultimo  = v_ultimo;		
+
+	end if;
+
+		 
+
+   return secuencia;
+end;
+"""
+  returnType = integer
+  arguments = <
+    {
+      name = v_tabla
+      type = character varying
+      mode = IN
+    }
+
+    {
+      name = v_ultimo
+      type = character varying
+      mode = IN
+    }
+
+  >
+  language = plpgsql
+  owner = postgres
+}
+

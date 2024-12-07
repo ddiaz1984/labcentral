@@ -1,0 +1,15 @@
+table "public"."generasecuencia" {
+  owner = postgres
+  columns = (
+    column "tabla" {
+      type = character varying(10)
+    }
+    column "ultimo" {
+      type = character varying(10)
+    }
+    column "numero" {
+      type = integer
+    }
+  )
+}
+

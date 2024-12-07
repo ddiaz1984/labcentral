@@ -100,7 +100,7 @@ table "public"."ordtrabajo" {
       default = 1
     }
     column "nro_orden" {
-      type = character varying(100)
+      type = character varying(15)
     }
   )
 }

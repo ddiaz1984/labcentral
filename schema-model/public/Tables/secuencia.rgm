@@ -1,0 +1,9 @@
+table "public"."secuencia" {
+  owner = postgres
+  columns = (
+    column "max" {
+      type = integer
+    }
+  )
+}
+
