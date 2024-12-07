@@ -105,6 +105,9 @@ table "public"."estrealizar" {
     column "traspasarhl" {
       type = boolean
     }
+    column "nro_orden" {
+      type = character varying(15)
+    }
   )
 }
 

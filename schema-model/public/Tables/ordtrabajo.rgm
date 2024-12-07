@@ -1,7 +1,7 @@
 table "public"."ordtrabajo" {
   primaryKey = {
     columns = [
-      "nordentra"
+      "nro_orden"
     ]
     name = "pk_nordentra"
     objectType = primaryKey
@@ -101,8 +101,19 @@ table "public"."ordtrabajo" {
     }
     column "nro_orden" {
       type = character varying(15)
+      null = NOT NULL
     }
   )
+}
+
+foreignKey "public"."ordtrabajo"."fk_paciente_nropaciente" {
+  columns = [
+    "nropaciente"
+  ]
+  referencedTable = "public"."paciente"
+  referencedColumns = [
+    "nropaciente"
+  ]
 }
 
 index "public"."ind_ordtrabajo" {
@@ -110,11 +121,7 @@ index "public"."ind_ordtrabajo" {
   type = btree
   columns = <
     {
-      definition = nordentra
-    }
-
-    {
-      definition = codservicio
+      definition = nro_orden
     }
 
     {
