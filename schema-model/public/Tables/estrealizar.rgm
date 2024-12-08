@@ -111,12 +111,22 @@ table "public"."estrealizar" {
   )
 }
 
-index "public"."i_estrealizar" {
+foreignKey "public"."estrealizar"."fk_estrealizar_nroorden" {
+  columns = [
+    "nro_orden"
+  ]
+  referencedTable = "public"."ordtrabajo"
+  referencedColumns = [
+    "nro_orden"
+  ]
+}
+
+index "public"."ind_estrealizar" {
   table = "public"."estrealizar"
   type = btree
   columns = <
     {
-      definition = nordentra
+      definition = nro_orden
     }
 
     {

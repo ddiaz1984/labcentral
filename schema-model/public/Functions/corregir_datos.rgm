@@ -1,0 +1,28 @@
+function "public"."corregir_datos()" {
+  text = """
+
+DECLARE
+    reg          RECORD;
+    cur_ordenes CURSOR FOR 
+	select distinct nordentra, nro_orden
+	from ordtrabajo;
+BEGIN
+   FOR reg IN cur_ordenes LOOP
+    
+	update estrealizar
+	set nro_orden = reg.nro_orden
+	where nordentra  =  reg.nordentra;
+ 
+	
+    RAISE NOTICE ' PROCESANDO  %', reg.nro_orden;
+   END LOOP;
+   RETURN;
+END
+"""
+  returnType = void
+  arguments = [
+  ]
+  language = plpgsql
+  owner = postgres
+}
+
