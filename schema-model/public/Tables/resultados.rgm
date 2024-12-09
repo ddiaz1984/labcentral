@@ -165,6 +165,9 @@ table "public"."resultados" {
     column "resultado_text" {
       type = text
     }
+    column "nro_orden" {
+      type = character varying(15)
+    }
   )
 }
 

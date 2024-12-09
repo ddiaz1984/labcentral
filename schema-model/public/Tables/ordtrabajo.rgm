@@ -106,6 +106,16 @@ table "public"."ordtrabajo" {
   )
 }
 
+foreignKey "public"."ordtrabajo"."fk_ordtrabajo_codusu" {
+  columns = [
+    "codusu"
+  ]
+  referencedTable = "public"."usuarios"
+  referencedColumns = [
+    "codusu"
+  ]
+}
+
 foreignKey "public"."ordtrabajo"."fk_paciente_nropaciente" {
   columns = [
     "nropaciente"
