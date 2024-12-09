@@ -27,3 +27,13 @@ table "public"."evalucionparticipante" {
   )
 }
 
+foreignKey "public"."evalucionparticipante"."fk_evalucionparticipante_codusu" {
+  columns = [
+    "codusu"
+  ]
+  referencedTable = "public"."usuarios"
+  referencedColumns = [
+    "codusu"
+  ]
+}
+

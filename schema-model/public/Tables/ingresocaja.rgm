@@ -84,3 +84,23 @@ table "public"."ingresocaja" {
   )
 }
 
+foreignKey "public"."ingresocaja"."fk_ingresocaja_codusu" {
+  columns = [
+    "codusu"
+  ]
+  referencedTable = "public"."usuarios"
+  referencedColumns = [
+    "codusu"
+  ]
+}
+
+foreignKey "public"."ingresocaja"."fk_ingresocaja_nropaciente" {
+  columns = [
+    "nropaciente"
+  ]
+  referencedTable = "public"."paciente"
+  referencedColumns = [
+    "nropaciente"
+  ]
+}
+

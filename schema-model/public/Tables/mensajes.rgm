@@ -53,3 +53,13 @@ table "public"."mensajes" {
   )
 }
 
+foreignKey "public"."mensajes"."fk_mensajes_codusu" {
+  columns = [
+    "codusu"
+  ]
+  referencedTable = "public"."usuarios"
+  referencedColumns = [
+    "codusu"
+  ]
+}
+

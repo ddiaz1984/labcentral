@@ -46,3 +46,33 @@ table "public"."datoagrupado" {
   )
 }
 
+foreignKey "public"."datoagrupado"."fk_datoagrupado_codusu" {
+  columns = [
+    "codusu"
+  ]
+  referencedTable = "public"."usuarios"
+  referencedColumns = [
+    "codusu"
+  ]
+}
+
+foreignKey "public"."datoagrupado"."fk_datoagrupado_nropaciente" {
+  columns = [
+    "nropaciente"
+  ]
+  referencedTable = "public"."paciente"
+  referencedColumns = [
+    "nropaciente"
+  ]
+}
+
+foreignKey "public"."datoagrupado"."fk_estrealizar_nroorden" {
+  columns = [
+    "nro_orden"
+  ]
+  referencedTable = "public"."ordtrabajo"
+  referencedColumns = [
+    "nro_orden"
+  ]
+}
+

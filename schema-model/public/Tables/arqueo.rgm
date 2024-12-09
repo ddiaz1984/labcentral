@@ -95,3 +95,13 @@ table "public"."arqueo" {
   )
 }
 
+foreignKey "public"."arqueo"."fk_arqueo_codusu" {
+  columns = [
+    "codusu"
+  ]
+  referencedTable = "public"."usuarios"
+  referencedColumns = [
+    "codusu"
+  ]
+}
+

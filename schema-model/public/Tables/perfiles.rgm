@@ -23,6 +23,16 @@ table "public"."perfiles" {
   )
 }
 
+foreignKey "public"."perfiles"."fk_perfiles_codusu" {
+  columns = [
+    "codusu"
+  ]
+  referencedTable = "public"."usuarios"
+  referencedColumns = [
+    "codusu"
+  ]
+}
+
 trigger "public"."perfiles"."audit_log_trigger" {
   timing = BEFORE
   events = [

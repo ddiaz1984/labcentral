@@ -71,3 +71,13 @@ table "public"."resultadorepeticion" {
   )
 }
 
+foreignKey "public"."resultadorepeticion"."fk_resultadorepeticion_codusu" {
+  columns = [
+    "codusu"
+  ]
+  referencedTable = "public"."usuarios"
+  referencedColumns = [
+    "codusu"
+  ]
+}
+

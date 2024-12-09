@@ -35,3 +35,23 @@ table "public"."rechazados" {
   )
 }
 
+foreignKey "public"."rechazados"."fk_rechazados_codusu" {
+  columns = [
+    "codusu"
+  ]
+  referencedTable = "public"."usuarios"
+  referencedColumns = [
+    "codusu"
+  ]
+}
+
+foreignKey "public"."rechazados"."fk_rechazados_nropaciente" {
+  columns = [
+    "nropaciente"
+  ]
+  referencedTable = "public"."paciente"
+  referencedColumns = [
+    "nropaciente"
+  ]
+}
+

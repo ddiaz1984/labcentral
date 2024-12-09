@@ -21,3 +21,23 @@ table "public"."ordenagrupado" {
   )
 }
 
+foreignKey "public"."ordenagrupado"."fk_estrealizar_nroorden" {
+  columns = [
+    "nro_orden"
+  ]
+  referencedTable = "public"."ordtrabajo"
+  referencedColumns = [
+    "nro_orden"
+  ]
+}
+
+foreignKey "public"."ordenagrupado"."fk_ordenagrupado_codusu" {
+  columns = [
+    "codusu"
+  ]
+  referencedTable = "public"."usuarios"
+  referencedColumns = [
+    "codusu"
+  ]
+}
+

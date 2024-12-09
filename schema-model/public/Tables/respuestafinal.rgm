@@ -61,3 +61,13 @@ table "public"."respuestafinal" {
   )
 }
 
+foreignKey "public"."respuestafinal"."fk_respuestafinal_codusu" {
+  columns = [
+    "codusu"
+  ]
+  referencedTable = "public"."usuarios"
+  referencedColumns = [
+    "codusu"
+  ]
+}
+

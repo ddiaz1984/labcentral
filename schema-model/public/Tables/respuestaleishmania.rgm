@@ -31,3 +31,13 @@ table "public"."respuestaleishmania" {
   )
 }
 
+foreignKey "public"."respuestaleishmania"."fk_respuestaleishmania_codusu" {
+  columns = [
+    "codusu"
+  ]
+  referencedTable = "public"."usuarios"
+  referencedColumns = [
+    "codusu"
+  ]
+}
+

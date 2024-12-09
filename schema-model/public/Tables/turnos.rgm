@@ -53,6 +53,16 @@ table "public"."turnos" {
   )
 }
 
+foreignKey "public"."turnos"."fk_turnos_nropaciente" {
+  columns = [
+    "nropaciente"
+  ]
+  referencedTable = "public"."paciente"
+  referencedColumns = [
+    "nropaciente"
+  ]
+}
+
 trigger "public"."turnos"."audit_log_trigger" {
   timing = BEFORE
   events = [

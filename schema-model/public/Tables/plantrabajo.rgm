@@ -20,9 +20,6 @@ table "public"."plantrabajo" {
     column "nroestudio" {
       type = character varying(20)
     }
-    column "nropaciente" {
-      type = numeric(10,0)
-    }
     column "codusu" {
       type = character varying(20)
     }
@@ -33,5 +30,25 @@ table "public"."plantrabajo" {
       type = character varying(15)
     }
   )
+}
+
+foreignKey "public"."plantrabajo"."fk_estrealizar_nroorden" {
+  columns = [
+    "nro_orden"
+  ]
+  referencedTable = "public"."ordtrabajo"
+  referencedColumns = [
+    "nro_orden"
+  ]
+}
+
+foreignKey "public"."plantrabajo"."fk_plantrabajo_codusu" {
+  columns = [
+    "codusu"
+  ]
+  referencedTable = "public"."usuarios"
+  referencedColumns = [
+    "codusu"
+  ]
 }
 

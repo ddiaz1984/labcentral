@@ -105,6 +105,16 @@ table "public"."estrealizar" {
   )
 }
 
+foreignKey "public"."estrealizar"."fk_estrealizar_codusu" {
+  columns = [
+    "codusu"
+  ]
+  referencedTable = "public"."usuarios"
+  referencedColumns = [
+    "codusu"
+  ]
+}
+
 foreignKey "public"."estrealizar"."fk_estrealizar_nroorden" {
   columns = [
     "nro_orden"
@@ -112,6 +122,16 @@ foreignKey "public"."estrealizar"."fk_estrealizar_nroorden" {
   referencedTable = "public"."ordtrabajo"
   referencedColumns = [
     "nro_orden"
+  ]
+}
+
+foreignKey "public"."estrealizar"."fk_estrealizar_nropaciente" {
+  columns = [
+    "nropaciente"
+  ]
+  referencedTable = "public"."paciente"
+  referencedColumns = [
+    "nropaciente"
   ]
 }
 

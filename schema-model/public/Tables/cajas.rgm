@@ -26,3 +26,13 @@ table "public"."cajas" {
   )
 }
 
+foreignKey "public"."cajas"."fk_cajas_codusu" {
+  columns = [
+    "codusu"
+  ]
+  referencedTable = "public"."usuarios"
+  referencedColumns = [
+    "codusu"
+  ]
+}
+

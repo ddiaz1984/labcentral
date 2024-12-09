@@ -55,3 +55,13 @@ table "public"."respuestaparticipante" {
   )
 }
 
+foreignKey "public"."respuestaparticipante"."fk_respuestaparticipante_codusu" {
+  columns = [
+    "codusu"
+  ]
+  referencedTable = "public"."usuarios"
+  referencedColumns = [
+    "codusu"
+  ]
+}
+
