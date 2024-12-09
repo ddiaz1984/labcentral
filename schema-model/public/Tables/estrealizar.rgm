@@ -12,9 +12,6 @@ table "public"."estrealizar" {
       type = integer
       null = NOT NULL
     }
-    column "codservicio" {
-      type = character varying(10)
-    }
     column "codarea" {
       type = character varying(10)
     }
@@ -59,9 +56,6 @@ table "public"."estrealizar" {
     }
     column "nroturno" {
       type = character varying(10)
-    }
-    column "nordentra" {
-      type = integer
     }
     column "codservact" {
       type = character varying(10)

@@ -1,24 +1,15 @@
 table "public"."resultadosmicro" {
   primaryKey = {
     columns = [
-      "nordentra"
-      "codservicio"
       "nroestudio"
       "idmuestra"
+      "item"
     ]
     name = "pk_resultadosmicro"
     objectType = primaryKey
   }
   owner = postgres
   columns = (
-    column "nordentra" {
-      type = integer
-      null = NOT NULL
-    }
-    column "codservicio" {
-      type = character varying(10)
-      null = NOT NULL
-    }
     column "nroestudio" {
       type = integer
       null = NOT NULL
@@ -107,6 +98,10 @@ table "public"."resultadosmicro" {
     }
     column "envio_dgvs" {
       type = numeric(1,0)
+    }
+    column "item" {
+      type = integer
+      null = NOT NULL
     }
   )
 }

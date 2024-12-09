@@ -1,23 +1,8 @@
 table "public"."plantrabajo" {
-  primaryKey = {
-    columns = [
-      "nroplan"
-      "codservicio"
-      "codarea"
-      "codsector"
-      "fecha"
-    ]
-    name = "pk_plantrabajo"
-    objectType = primaryKey
-  }
   owner = postgres
   columns = (
     column "nroplan" {
       type = numeric(10,0)
-      null = NOT NULL
-    }
-    column "codservicio" {
-      type = character varying(10)
       null = NOT NULL
     }
     column "codarea" {
@@ -32,9 +17,6 @@ table "public"."plantrabajo" {
       type = date
       null = NOT NULL
     }
-    column "nordentra" {
-      type = integer
-    }
     column "nroestudio" {
       type = character varying(20)
     }
@@ -46,6 +28,9 @@ table "public"."plantrabajo" {
     }
     column "codplantilla" {
       type = character varying(10)
+    }
+    column "nro_orden" {
+      type = character varying(15)
     }
   )
 }

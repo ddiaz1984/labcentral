@@ -1,24 +1,15 @@
 table "public"."resultadomicroorganismo" {
   primaryKey = {
     columns = [
-      "nordentra"
-      "codservicio"
       "nroestudio"
       "idmuestra"
+      "item"
     ]
     name = "pk_resultadomicroorganismo"
     objectType = primaryKey
   }
   owner = postgres
   columns = (
-    column "nordentra" {
-      type = integer
-      null = NOT NULL
-    }
-    column "codservicio" {
-      type = character varying(10)
-      null = NOT NULL
-    }
     column "nroestudio" {
       type = character varying(20)
       null = NOT NULL
@@ -59,6 +50,10 @@ table "public"."resultadomicroorganismo" {
     }
     column "codestudiobio" {
       type = character varying(10)
+    }
+    column "item" {
+      type = integer
+      null = NOT NULL
     }
   )
 }

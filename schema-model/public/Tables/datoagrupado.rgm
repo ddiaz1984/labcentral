@@ -1,14 +1,4 @@
 table "public"."datoagrupado" {
-  primaryKey = {
-    columns = [
-      "grupo"
-      "nordentra"
-      "codservicio"
-      "nromuestra"
-    ]
-    name = "pk_datoagrupado"
-    objectType = primaryKey
-  }
   owner = postgres
   columns = (
     column "grupo" {
@@ -32,10 +22,6 @@ table "public"."datoagrupado" {
     column "fecha" {
       type = date
     }
-    column "nordentra" {
-      type = integer
-      null = NOT NULL
-    }
     column "codusu" {
       type = character varying(20)
     }
@@ -54,9 +40,8 @@ table "public"."datoagrupado" {
     column "obs" {
       type = character varying(250)
     }
-    column "codservicio" {
-      type = character varying(10)
-      null = NOT NULL
+    column "nro_orden" {
+      type = character varying(15)
     }
   )
 }

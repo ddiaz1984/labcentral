@@ -35,12 +35,6 @@ table "public"."audit_log" {
     column "query" {
       type = text
     }
-    column "nordentra" {
-      type = integer
-    }
-    column "codservicio" {
-      type = character varying(20)
-    }
   )
 }
 

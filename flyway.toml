@@ -28,6 +28,6 @@ url = "jdbc:postgresql://localhost:5432/labcentral"
 schemas = [ "public" ]
 
 [environments.development]
-url = "jdbc:postgresql://localhost:5432/labcentral"
+url = "jdbc:postgresql://localhost:5432/silcsp"
 schemas = [ "public" ]
 displayName = "Development database"

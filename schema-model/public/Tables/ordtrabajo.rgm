@@ -11,7 +11,6 @@ table "public"."ordtrabajo" {
     column "nordentra" {
       type = integer
       null = NOT NULL
-      default = nextval('public.seq_ordtrabajo'::regclass)
     }
     column "codservicio" {
       type = character varying(10)
