@@ -102,7 +102,52 @@ table "public"."estrealizar" {
     column "nro_orden" {
       type = character varying(15)
     }
+    column "codservicio" {
+      type = character varying(10)
+    }
   )
+}
+
+foreignKey "public"."estrealizar"."fk_estrealizar_codestudio" {
+  columns = [
+    "codestudio"
+  ]
+  referencedTable = "public"."estudios"
+  referencedColumns = [
+    "codestudio"
+  ]
+}
+
+foreignKey "public"."estrealizar"."fk_estrealizar_codmedico" {
+  columns = [
+    "codmedico"
+  ]
+  referencedTable = "public"."medicos"
+  referencedColumns = [
+    "codmedico"
+  ]
+}
+
+foreignKey "public"."estrealizar"."fk_estrealizar_codorigen" {
+  columns = [
+    "codorigen"
+  ]
+  referencedTable = "public"."origenpaciente"
+  referencedColumns = [
+    "codorigen"
+  ]
+}
+
+foreignKey "public"."estrealizar"."fk_estrealizar_codtmuestra" {
+  columns = [
+    "codtmuestra"
+    "codestudio"
+  ]
+  referencedTable = "public"."tmuestraestudio"
+  referencedColumns = [
+    "codtmuestra"
+    "codestudio"
+  ]
 }
 
 foreignKey "public"."estrealizar"."fk_estrealizar_codusu" {
@@ -132,6 +177,18 @@ foreignKey "public"."estrealizar"."fk_estrealizar_nropaciente" {
   referencedTable = "public"."paciente"
   referencedColumns = [
     "nropaciente"
+  ]
+}
+
+foreignKey "public"."estrealizar"."fk_estrealizar_nroturno" {
+  columns = [
+    "nroturno"
+    "codservicio"
+  ]
+  referencedTable = "public"."turnos"
+  referencedColumns = [
+    "nroturno"
+    "codservicio"
   ]
 }
 

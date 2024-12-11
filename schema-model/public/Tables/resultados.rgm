@@ -1,9 +1,9 @@
 table "public"."resultados" {
   primaryKey = {
     columns = [
+      "nro_orden"
       "nroestudio"
       "idmuestra"
-      "item"
     ]
     name = "pk_resultados"
     objectType = primaryKey
@@ -156,11 +156,101 @@ table "public"."resultados" {
     column "resultado_text" {
       type = text
     }
-    column "item" {
-      type = integer
+    column "nro_orden" {
+      type = character varying(15)
       null = NOT NULL
     }
   )
+}
+
+foreignKey "public"."resultados"."fk_resultados_coddetermina" {
+  columns = [
+    "coddetermina"
+  ]
+  referencedTable = "public"."determinaciones"
+  referencedColumns = [
+    "coddetermina"
+  ]
+}
+
+foreignKey "public"."resultados"."fk_resultados_codequipo" {
+  columns = [
+    "codequipo"
+  ]
+  referencedTable = "public"."equipos"
+  referencedColumns = [
+    "codequipo"
+  ]
+}
+
+foreignKey "public"."resultados"."fk_resultados_codestado" {
+  columns = [
+    "codestado"
+  ]
+  referencedTable = "public"."estadoresultado"
+  referencedColumns = [
+    "codestado"
+  ]
+}
+
+foreignKey "public"."resultados"."fk_resultados_codestudio" {
+  columns = [
+    "codestudio"
+  ]
+  referencedTable = "public"."estudios"
+  referencedColumns = [
+    "codestudio"
+  ]
+}
+
+foreignKey "public"."resultados"."fk_resultados_codmetodo" {
+  columns = [
+    "codmetodo"
+  ]
+  referencedTable = "public"."metodos"
+  referencedColumns = [
+    "codmetodo"
+  ]
+}
+
+foreignKey "public"."resultados"."fk_resultados_codresultado" {
+  columns = [
+    "codresultado"
+  ]
+  referencedTable = "public"."resultadocodificado"
+  referencedColumns = [
+    "codresultado"
+  ]
+}
+
+foreignKey "public"."resultados"."fk_resultados_codsector" {
+  columns = [
+    "codsector"
+  ]
+  referencedTable = "public"."sectores"
+  referencedColumns = [
+    "codsector"
+  ]
+}
+
+foreignKey "public"."resultados"."fk_resultados_codumedida" {
+  columns = [
+    "codumedida"
+  ]
+  referencedTable = "public"."unidadmedida"
+  referencedColumns = [
+    "codumedida"
+  ]
+}
+
+foreignKey "public"."resultados"."fk_resultados_nroestudio" {
+  columns = [
+    "nroestudio"
+  ]
+  referencedTable = "public"."estrealizar"
+  referencedColumns = [
+    "nroestudio"
+  ]
 }
 
 trigger "public"."resultados"."audit_log_trigger" {

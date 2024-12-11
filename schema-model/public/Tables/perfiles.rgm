@@ -23,6 +23,16 @@ table "public"."perfiles" {
   )
 }
 
+foreignKey "public"."perfiles"."fk_perfiles_codopc" {
+  columns = [
+    "codopc"
+  ]
+  referencedTable = "public"."opciones"
+  referencedColumns = [
+    "codopc"
+  ]
+}
+
 foreignKey "public"."perfiles"."fk_perfiles_codusu" {
   columns = [
     "codusu"

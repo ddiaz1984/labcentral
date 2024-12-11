@@ -24,3 +24,13 @@ table "public"."procesos" {
   )
 }
 
+foreignKey "public"."procesos"."fk_procesos_codopc" {
+  columns = [
+    "codopc"
+  ]
+  referencedTable = "public"."opciones"
+  referencedColumns = [
+    "codopc"
+  ]
+}
+

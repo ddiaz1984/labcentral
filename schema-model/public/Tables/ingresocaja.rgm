@@ -84,6 +84,28 @@ table "public"."ingresocaja" {
   )
 }
 
+foreignKey "public"."ingresocaja"."fk_ingresocaja_codanula" {
+  columns = [
+    "codanula"
+  ]
+  referencedTable = "public"."motivoanulacion"
+  referencedColumns = [
+    "codanula"
+  ]
+}
+
+foreignKey "public"."ingresocaja"."fk_ingresocaja_codcaja" {
+  columns = [
+    "codcaja"
+    "codservicio"
+  ]
+  referencedTable = "public"."cajas"
+  referencedColumns = [
+    "codcaja"
+    "codservicio"
+  ]
+}
+
 foreignKey "public"."ingresocaja"."fk_ingresocaja_codusu" {
   columns = [
     "codusu"

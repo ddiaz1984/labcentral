@@ -35,6 +35,16 @@ table "public"."rechazados" {
   )
 }
 
+foreignKey "public"."rechazados"."fk_rechazados_codrechazo" {
+  columns = [
+    "codrechazo"
+  ]
+  referencedTable = "public"."motivorechazo"
+  referencedColumns = [
+    "codrechazo"
+  ]
+}
+
 foreignKey "public"."rechazados"."fk_rechazados_codusu" {
   columns = [
     "codusu"

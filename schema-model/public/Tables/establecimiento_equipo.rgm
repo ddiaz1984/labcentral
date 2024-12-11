@@ -1,0 +1,32 @@
+table "public"."establecimiento_equipo" {
+  primaryKey = {
+    columns = [
+      "codequipo"
+      "codservicio"
+    ]
+    name = "pk_establecimiento_equipo"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "codequipo" {
+      type = character varying(10)
+      null = NOT NULL
+    }
+    column "codservicio" {
+      type = character varying(10)
+      null = NOT NULL
+    }
+  )
+}
+
+foreignKey "public"."establecimiento_equipo"."fk_establecimiento_equipo_codequipo" {
+  columns = [
+    "codequipo"
+  ]
+  referencedTable = "public"."equipos"
+  referencedColumns = [
+    "codequipo"
+  ]
+}
+

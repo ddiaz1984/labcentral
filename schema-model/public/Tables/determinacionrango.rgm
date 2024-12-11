@@ -45,6 +45,26 @@ table "public"."determinacionrango" {
   )
 }
 
+foreignKey "public"."determinacionrango"."fk_determinacionrango_coddetermina" {
+  columns = [
+    "coddetermina"
+  ]
+  referencedTable = "public"."determinaciones"
+  referencedColumns = [
+    "coddetermina"
+  ]
+}
+
+foreignKey "public"."determinacionrango"."fk_determinacionrango_codestudio" {
+  columns = [
+    "codestudio"
+  ]
+  referencedTable = "public"."estudios"
+  referencedColumns = [
+    "codestudio"
+  ]
+}
+
 trigger "public"."determinacionrango"."audit_log_trigger" {
   timing = BEFORE
   events = [

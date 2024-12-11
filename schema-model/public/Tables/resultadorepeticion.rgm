@@ -71,6 +71,76 @@ table "public"."resultadorepeticion" {
   )
 }
 
+foreignKey "public"."resultadorepeticion"."fk_resultadorepeticion_coddetermina" {
+  columns = [
+    "coddetermina"
+  ]
+  referencedTable = "public"."determinaciones"
+  referencedColumns = [
+    "coddetermina"
+  ]
+}
+
+foreignKey "public"."resultadorepeticion"."fk_resultadorepeticion_codequipo" {
+  columns = [
+    "codequipo"
+  ]
+  referencedTable = "public"."equipos"
+  referencedColumns = [
+    "codequipo"
+  ]
+}
+
+foreignKey "public"."resultadorepeticion"."fk_resultadorepeticion_codestudio" {
+  columns = [
+    "codestudio"
+  ]
+  referencedTable = "public"."estudios"
+  referencedColumns = [
+    "codestudio"
+  ]
+}
+
+foreignKey "public"."resultadorepeticion"."fk_resultadorepeticion_codmetodo" {
+  columns = [
+    "codmetodo"
+  ]
+  referencedTable = "public"."metodos"
+  referencedColumns = [
+    "codmetodo"
+  ]
+}
+
+foreignKey "public"."resultadorepeticion"."fk_resultadorepeticion_codresultado" {
+  columns = [
+    "codresultado"
+  ]
+  referencedTable = "public"."resultadocodificado"
+  referencedColumns = [
+    "codresultado"
+  ]
+}
+
+foreignKey "public"."resultadorepeticion"."fk_resultadorepeticion_codsector" {
+  columns = [
+    "codsector"
+  ]
+  referencedTable = "public"."sectores"
+  referencedColumns = [
+    "codsector"
+  ]
+}
+
+foreignKey "public"."resultadorepeticion"."fk_resultadorepeticion_codumedida" {
+  columns = [
+    "codumedida"
+  ]
+  referencedTable = "public"."unidadmedida"
+  referencedColumns = [
+    "codumedida"
+  ]
+}
+
 foreignKey "public"."resultadorepeticion"."fk_resultadorepeticion_codusu" {
   columns = [
     "codusu"

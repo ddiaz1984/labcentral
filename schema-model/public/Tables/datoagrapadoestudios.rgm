@@ -20,3 +20,13 @@ table "public"."datoagrapadoestudios" {
   )
 }
 
+foreignKey "public"."datoagrapadoestudios"."fk_datoagrapadoestudios_codestudio" {
+  columns = [
+    "codestudio"
+  ]
+  referencedTable = "public"."estudios"
+  referencedColumns = [
+    "codestudio"
+  ]
+}
+

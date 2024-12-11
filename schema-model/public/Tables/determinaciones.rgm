@@ -1,9 +1,13 @@
 table "public"."determinaciones" {
+  primaryKey = {
+    columns = [
+      "coddetermina"
+    ]
+    name = "pk_determinaciones"
+    objectType = primaryKey
+  }
   owner = postgres
   columns = (
-    column "codestudio" {
-      type = character varying(10)
-    }
     column "coddetermina" {
       type = character varying(10)
       null = NOT NULL
@@ -11,26 +15,11 @@ table "public"."determinaciones" {
     column "nomdetermina" {
       type = character varying(100)
     }
-    column "codumedida" {
-      type = character varying(10)
-    }
-    column "codresultado" {
-      type = character varying(10)
-    }
-    column "posicion" {
-      type = numeric(5,0)
-    }
     column "tipo" {
       type = character varying(1)
     }
     column "abreviatura" {
       type = character varying(20)
-    }
-    column "tiempohab" {
-      type = numeric(3,0)
-    }
-    column "tiempourg" {
-      type = numeric(3,0)
     }
     column "aliasdetermina" {
       type = character varying(100)
@@ -39,19 +28,5 @@ table "public"."determinaciones" {
       type = character varying
     }
   )
-}
-
-trigger "public"."determinaciones"."audit_log_trigger" {
-  timing = BEFORE
-  events = [
-    DELETE
-    UPDATE
-    INSERT
-  ]
-  level = ROW
-  function = public.audit_trigger
-  functionArguments = [
-  ]
-  constraint = False
 }
 

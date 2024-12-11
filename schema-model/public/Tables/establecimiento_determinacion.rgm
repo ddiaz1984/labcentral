@@ -1,0 +1,70 @@
+table "public"."establecimiento_determinacion" {
+  primaryKey = {
+    columns = [
+      "coddetermina"
+      "codservicio"
+    ]
+    name = "pk_establecimiento_determinacion"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "coddetermina" {
+      type = character varying(10)
+      null = NOT NULL
+    }
+    column "codservicio" {
+      type = character varying(10)
+      null = NOT NULL
+    }
+    column "codumedida" {
+      type = character varying(10)
+    }
+    column "codresultado" {
+      type = character varying(10)
+    }
+    column "posicion" {
+      type = numeric(5,0)
+    }
+    column "tiempohab" {
+      type = numeric(3,0)
+    }
+    column "tiempourg" {
+      type = numeric(3,0)
+    }
+    column "aliasdetermina" {
+      type = character varying(100)
+    }
+  )
+}
+
+foreignKey "public"."establecimiento_determinacion"."fk_establecimiento_determinacion_coddetermina" {
+  columns = [
+    "coddetermina"
+  ]
+  referencedTable = "public"."determinaciones"
+  referencedColumns = [
+    "coddetermina"
+  ]
+}
+
+foreignKey "public"."establecimiento_determinacion"."fk_establecimiento_determinacion_codresultado" {
+  columns = [
+    "codresultado"
+  ]
+  referencedTable = "public"."resultadocodificado"
+  referencedColumns = [
+    "codresultado"
+  ]
+}
+
+foreignKey "public"."establecimiento_determinacion"."fk_establecimiento_determinacion_codumedida" {
+  columns = [
+    "codumedida"
+  ]
+  referencedTable = "public"."unidadmedida"
+  referencedColumns = [
+    "codumedida"
+  ]
+}
+

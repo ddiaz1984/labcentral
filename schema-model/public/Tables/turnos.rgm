@@ -53,6 +53,20 @@ table "public"."turnos" {
   )
 }
 
+foreignKey "public"."turnos"."fk_turnos_codturno" {
+  columns = [
+    "codservicio"
+    "codarea"
+    "codturno"
+  ]
+  referencedTable = "public"."tiposturnos"
+  referencedColumns = [
+    "codservicio"
+    "codarea"
+    "codturno"
+  ]
+}
+
 foreignKey "public"."turnos"."fk_turnos_nropaciente" {
   columns = [
     "nropaciente"

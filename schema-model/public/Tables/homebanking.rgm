@@ -51,3 +51,33 @@ table "public"."homebanking" {
   )
 }
 
+foreignKey "public"."homebanking"."fk_homebanking_codbco" {
+  columns = [
+    "codbco"
+  ]
+  referencedTable = "public"."bancos"
+  referencedColumns = [
+    "codbco"
+  ]
+}
+
+foreignKey "public"."homebanking"."fk_homebanking_codempresa" {
+  columns = [
+    "codempresa"
+  ]
+  referencedTable = "public"."empresas"
+  referencedColumns = [
+    "codempresa"
+  ]
+}
+
+foreignKey "public"."homebanking"."fk_homebanking_nroingreso" {
+  columns = [
+    "nroingreso"
+  ]
+  referencedTable = "public"."ingresocaja"
+  referencedColumns = [
+    "nroingreso"
+  ]
+}
+

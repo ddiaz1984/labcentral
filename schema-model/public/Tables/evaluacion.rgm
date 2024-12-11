@@ -86,3 +86,13 @@ table "public"."evaluacion" {
   )
 }
 
+foreignKey "public"."evaluacion"."fk_evaluacion_codsector" {
+  columns = [
+    "codsector"
+  ]
+  referencedTable = "public"."sectores"
+  referencedColumns = [
+    "codsector"
+  ]
+}
+

@@ -105,6 +105,26 @@ table "public"."ordtrabajo" {
   )
 }
 
+foreignKey "public"."ordtrabajo"."fk_ordtrabajo_codmedico" {
+  columns = [
+    "codmedico"
+  ]
+  referencedTable = "public"."medicos"
+  referencedColumns = [
+    "codmedico"
+  ]
+}
+
+foreignKey "public"."ordtrabajo"."fk_ordtrabajo_codorigen" {
+  columns = [
+    "codorigen"
+  ]
+  referencedTable = "public"."origenpaciente"
+  referencedColumns = [
+    "codorigen"
+  ]
+}
+
 foreignKey "public"."ordtrabajo"."fk_ordtrabajo_codusu" {
   columns = [
     "codusu"
@@ -112,6 +132,18 @@ foreignKey "public"."ordtrabajo"."fk_ordtrabajo_codusu" {
   referencedTable = "public"."usuarios"
   referencedColumns = [
     "codusu"
+  ]
+}
+
+foreignKey "public"."ordtrabajo"."fk_ordtrabajo_nroturno" {
+  columns = [
+    "nroturno"
+    "codservicio"
+  ]
+  referencedTable = "public"."turnos"
+  referencedColumns = [
+    "nroturno"
+    "codservicio"
   ]
 }
 

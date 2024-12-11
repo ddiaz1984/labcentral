@@ -23,3 +23,13 @@ table "public"."evaluaciondetestu" {
   )
 }
 
+foreignKey "public"."evaluaciondetestu"."fk_evaluaciondetestu_codestudio" {
+  columns = [
+    "codestudio"
+  ]
+  referencedTable = "public"."estudios"
+  referencedColumns = [
+    "codestudio"
+  ]
+}
+

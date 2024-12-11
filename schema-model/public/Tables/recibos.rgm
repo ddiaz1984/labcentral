@@ -41,3 +41,23 @@ table "public"."recibos" {
   )
 }
 
+foreignKey "public"."recibos"."fk_recibos_codarancel" {
+  columns = [
+    "codarancel"
+  ]
+  referencedTable = "public"."aranceles"
+  referencedColumns = [
+    "codarancel"
+  ]
+}
+
+foreignKey "public"."recibos"."fk_recibos_nroingreso" {
+  columns = [
+    "nroingreso"
+  ]
+  referencedTable = "public"."ingresocaja"
+  referencedColumns = [
+    "nroingreso"
+  ]
+}
+

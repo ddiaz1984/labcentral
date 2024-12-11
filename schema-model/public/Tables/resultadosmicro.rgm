@@ -1,9 +1,9 @@
 table "public"."resultadosmicro" {
   primaryKey = {
     columns = [
+      "nro_orden"
       "nroestudio"
       "idmuestra"
-      "item"
     ]
     name = "pk_resultadosmicro"
     objectType = primaryKey
@@ -99,10 +99,100 @@ table "public"."resultadosmicro" {
     column "envio_dgvs" {
       type = numeric(1,0)
     }
-    column "item" {
-      type = integer
+    column "nro_orden" {
+      type = character varying(15)
       null = NOT NULL
     }
   )
+}
+
+foreignKey "public"."resultadosmicro"."fk_resultadosmicro_coddetermina" {
+  columns = [
+    "coddetermina"
+  ]
+  referencedTable = "public"."determinaciones"
+  referencedColumns = [
+    "coddetermina"
+  ]
+}
+
+foreignKey "public"."resultadosmicro"."fk_resultadosmicro_codequipo" {
+  columns = [
+    "codequipo"
+  ]
+  referencedTable = "public"."equipos"
+  referencedColumns = [
+    "codequipo"
+  ]
+}
+
+foreignKey "public"."resultadosmicro"."fk_resultadosmicro_codestado" {
+  columns = [
+    "codestado"
+  ]
+  referencedTable = "public"."estadoresultado"
+  referencedColumns = [
+    "codestado"
+  ]
+}
+
+foreignKey "public"."resultadosmicro"."fk_resultadosmicro_codestudio" {
+  columns = [
+    "codestudio"
+  ]
+  referencedTable = "public"."estudios"
+  referencedColumns = [
+    "codestudio"
+  ]
+}
+
+foreignKey "public"."resultadosmicro"."fk_resultadosmicro_codmetodo" {
+  columns = [
+    "codmetodo"
+  ]
+  referencedTable = "public"."metodos"
+  referencedColumns = [
+    "codmetodo"
+  ]
+}
+
+foreignKey "public"."resultadosmicro"."fk_resultadosmicro_codresultado" {
+  columns = [
+    "codresultado"
+  ]
+  referencedTable = "public"."resultadocodificado"
+  referencedColumns = [
+    "codresultado"
+  ]
+}
+
+foreignKey "public"."resultadosmicro"."fk_resultadosmicro_codsector" {
+  columns = [
+    "codsector"
+  ]
+  referencedTable = "public"."sectores"
+  referencedColumns = [
+    "codsector"
+  ]
+}
+
+foreignKey "public"."resultadosmicro"."fk_resultadosmicro_codumedida" {
+  columns = [
+    "codumedida"
+  ]
+  referencedTable = "public"."unidadmedida"
+  referencedColumns = [
+    "codumedida"
+  ]
+}
+
+foreignKey "public"."resultadosmicro"."fk_resultadosmicro_nroestudio" {
+  columns = [
+    "nroestudio"
+  ]
+  referencedTable = "public"."estrealizar"
+  referencedColumns = [
+    "nroestudio"
+  ]
 }
 

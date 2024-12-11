@@ -61,7 +61,7 @@ table "public"."usuarios" {
       type = character varying(30)
     }
     column "codempresa" {
-      type = character varying(10)
+      type = integer
     }
     column "laboratorio" {
       type = bigint
@@ -70,6 +70,26 @@ table "public"."usuarios" {
       type = character varying(10)
     }
   )
+}
+
+foreignKey "public"."usuarios"."fk_usuarios_codempresa" {
+  columns = [
+    "codempresa"
+  ]
+  referencedTable = "public"."empresas"
+  referencedColumns = [
+    "codempresa"
+  ]
+}
+
+foreignKey "public"."usuarios"."fk_usuarios_codrol" {
+  columns = [
+    "codrol"
+  ]
+  referencedTable = "public"."roles"
+  referencedColumns = [
+    "codrol"
+  ]
 }
 
 trigger "public"."usuarios"."audit_log_trigger" {

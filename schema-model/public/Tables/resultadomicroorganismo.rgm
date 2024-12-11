@@ -1,9 +1,9 @@
 table "public"."resultadomicroorganismo" {
   primaryKey = {
     columns = [
+      "nro_orden"
       "nroestudio"
       "idmuestra"
-      "item"
     ]
     name = "pk_resultadomicroorganismo"
     objectType = primaryKey
@@ -51,10 +51,60 @@ table "public"."resultadomicroorganismo" {
     column "codestudiobio" {
       type = character varying(10)
     }
-    column "item" {
-      type = integer
+    column "nro_orden" {
+      type = character varying(15)
       null = NOT NULL
     }
   )
+}
+
+foreignKey "public"."resultadomicroorganismo"."fk_resultadomicroorganismo_codantibiogr" {
+  columns = [
+    "codantibiogr"
+  ]
+  referencedTable = "public"."antibiogramas"
+  referencedColumns = [
+    "codantibiogr"
+  ]
+}
+
+foreignKey "public"."resultadomicroorganismo"."fk_resultadomicroorganismo_codestudio" {
+  columns = [
+    "codestudio"
+  ]
+  referencedTable = "public"."estudios"
+  referencedColumns = [
+    "codestudio"
+  ]
+}
+
+foreignKey "public"."resultadomicroorganismo"."fk_resultadomicroorganismo_codmetodo" {
+  columns = [
+    "codmetodo"
+  ]
+  referencedTable = "public"."metodos"
+  referencedColumns = [
+    "codmetodo"
+  ]
+}
+
+foreignKey "public"."resultadomicroorganismo"."fk_resultadomicroorganismo_codsector" {
+  columns = [
+    "codsector"
+  ]
+  referencedTable = "public"."sectores"
+  referencedColumns = [
+    "codsector"
+  ]
+}
+
+foreignKey "public"."resultadomicroorganismo"."fk_resultadomicroorganismo_codumedida" {
+  columns = [
+    "codumedida"
+  ]
+  referencedTable = "public"."unidadmedida"
+  referencedColumns = [
+    "codumedida"
+  ]
 }
 

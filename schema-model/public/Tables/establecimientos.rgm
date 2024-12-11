@@ -1,4 +1,11 @@
 table "public"."establecimientos" {
+  primaryKey = {
+    columns = [
+      "codservicio"
+    ]
+    name = "pk_establecimiento"
+    objectType = primaryKey
+  }
   owner = postgres
   columns = (
     column "codservicio" {

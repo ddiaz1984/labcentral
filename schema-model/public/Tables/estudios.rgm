@@ -21,20 +21,11 @@ table "public"."estudios" {
     column "abreviatura" {
       type = character varying(20)
     }
-    column "dias" {
-      type = numeric(2,0)
-    }
     column "codsector" {
       type = character varying(10)
     }
     column "codtmuestra" {
       type = character varying(10)
-    }
-    column "cantetiq" {
-      type = numeric(2,0)
-    }
-    column "factor" {
-      type = numeric(10,3)
     }
     column "microbiologia" {
       type = numeric(1,0)
@@ -51,15 +42,6 @@ table "public"."estudios" {
     column "obs" {
       type = character varying(250)
     }
-    column "codmetodo" {
-      type = character varying(10)
-    }
-    column "posicion" {
-      type = numeric(5,0)
-    }
-    column "index" {
-      type = boolean
-    }
     column "perfil" {
       type = numeric(1,0)
       default = 2
@@ -67,17 +49,25 @@ table "public"."estudios" {
   )
 }
 
-trigger "public"."estudios"."audit_log_trigger" {
-  timing = BEFORE
-  events = [
-    DELETE
-    UPDATE
-    INSERT
+foreignKey "public"."estudios"."fk_estudios_codsector" {
+  columns = [
+    "codsector"
   ]
-  level = ROW
-  function = public.audit_trigger
-  functionArguments = [
+  referencedTable = "public"."sectores"
+  referencedColumns = [
+    "codsector"
   ]
-  constraint = False
+}
+
+foreignKey "public"."estudios"."fk_estudios_codtmuestra" {
+  columns = [
+    "codtmuestra"
+    "codestudio"
+  ]
+  referencedTable = "public"."tmuestraestudio"
+  referencedColumns = [
+    "codtmuestra"
+    "codestudio"
+  ]
 }
 

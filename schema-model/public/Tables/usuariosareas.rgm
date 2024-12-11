@@ -45,6 +45,16 @@ table "public"."usuariosareas" {
   )
 }
 
+foreignKey "public"."usuariosareas"."fk_usuariosareas_codrol" {
+  columns = [
+    "codrol"
+  ]
+  referencedTable = "public"."roles"
+  referencedColumns = [
+    "codrol"
+  ]
+}
+
 foreignKey "public"."usuariosareas"."fk_usuariosareas_codusu" {
   columns = [
     "codusu"

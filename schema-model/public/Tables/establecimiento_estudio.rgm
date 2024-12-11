@@ -1,0 +1,65 @@
+table "public"."establecimiento_estudio" {
+  primaryKey = {
+    columns = [
+      "codestudio"
+      "codservicio"
+    ]
+    name = "pk_establecimiento_estudio"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "codestudio" {
+      type = character varying(10)
+      null = NOT NULL
+    }
+    column "codservicio" {
+      type = character varying(10)
+      null = NOT NULL
+    }
+    column "dias" {
+      type = numeric(2,0)
+    }
+    column "codtmuestra" {
+      type = character varying(10)
+    }
+    column "cantetiq" {
+      type = numeric(2,0)
+    }
+    column "codmetodo" {
+      type = character varying(10)
+    }
+    column "factor" {
+      type = numeric(10,3)
+    }
+    column "posicion" {
+      type = numeric(5,0)
+    }
+    column "index" {
+      type = boolean
+    }
+  )
+}
+
+foreignKey "public"."establecimiento_estudio"."fk_establecimiento_estudio_codestudio" {
+  columns = [
+    "codestudio"
+  ]
+  referencedTable = "public"."estudios"
+  referencedColumns = [
+    "codestudio"
+  ]
+}
+
+foreignKey "public"."establecimiento_estudio"."fk_establecimiento_estudio_codtmuestra" {
+  columns = [
+    "codtmuestra"
+    "codestudio"
+  ]
+  referencedTable = "public"."tmuestraestudio"
+  referencedColumns = [
+    "codtmuestra"
+    "codestudio"
+  ]
+}
+

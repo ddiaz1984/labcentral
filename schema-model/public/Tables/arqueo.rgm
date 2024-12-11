@@ -95,6 +95,18 @@ table "public"."arqueo" {
   )
 }
 
+foreignKey "public"."arqueo"."fk_arqueo_codcaja" {
+  columns = [
+    "codcaja"
+    "codservicio"
+  ]
+  referencedTable = "public"."cajas"
+  referencedColumns = [
+    "codcaja"
+    "codservicio"
+  ]
+}
+
 foreignKey "public"."arqueo"."fk_arqueo_codusu" {
   columns = [
     "codusu"

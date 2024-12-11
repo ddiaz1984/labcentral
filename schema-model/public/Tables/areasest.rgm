@@ -26,3 +26,13 @@ table "public"."areasest" {
   )
 }
 
+foreignKey "public"."areasest"."fk_areasest_codsector" {
+  columns = [
+    "codsector"
+  ]
+  referencedTable = "public"."sectores"
+  referencedColumns = [
+    "codsector"
+  ]
+}
+

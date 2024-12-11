@@ -23,6 +23,26 @@ table "public"."antibioticoantibiograma" {
   )
 }
 
+foreignKey "public"."antibioticoantibiograma"."fk_antibioticoantibiograma_codantibiogr" {
+  columns = [
+    "codantibiogr"
+  ]
+  referencedTable = "public"."antibiogramas"
+  referencedColumns = [
+    "codantibiogr"
+  ]
+}
+
+foreignKey "public"."antibioticoantibiograma"."fk_antibioticoantibiograma_codantibiot" {
+  columns = [
+    "codantibiot"
+  ]
+  referencedTable = "public"."antibioticos"
+  referencedColumns = [
+    "codantibiot"
+  ]
+}
+
 trigger "public"."antibioticoantibiograma"."audit_log_trigger" {
   timing = BEFORE
   events = [

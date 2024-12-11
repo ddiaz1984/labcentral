@@ -29,3 +29,13 @@ table "public"."rangoedad" {
   )
 }
 
+foreignKey "public"."rangoedad"."fk_rangoedad_cgrupoedad" {
+  columns = [
+    "cgrupoedad"
+  ]
+  referencedTable = "public"."tiporangoedad"
+  referencedColumns = [
+    "cgrupoedad"
+  ]
+}
+

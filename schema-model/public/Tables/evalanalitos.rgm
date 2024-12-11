@@ -15,7 +15,7 @@ table "public"."evalanalitos" {
       null = NOT NULL
     }
     column "codempresa" {
-      type = character varying(20)
+      type = integer
       null = NOT NULL
     }
     column "marcaeq" {
@@ -50,5 +50,15 @@ table "public"."evalanalitos" {
       null = NOT NULL
     }
   )
+}
+
+foreignKey "public"."evalanalitos"."fk_evalanalitos_codempresa" {
+  columns = [
+    "codempresa"
+  ]
+  referencedTable = "public"."empresas"
+  referencedColumns = [
+    "codempresa"
+  ]
 }
 

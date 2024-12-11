@@ -18,7 +18,7 @@ table "public"."plantrabajo" {
       null = NOT NULL
     }
     column "nroestudio" {
-      type = character varying(20)
+      type = integer
     }
     column "codusu" {
       type = character varying(20)
@@ -42,6 +42,16 @@ foreignKey "public"."plantrabajo"."fk_estrealizar_nroorden" {
   ]
 }
 
+foreignKey "public"."plantrabajo"."fk_plantrabajo_codsector" {
+  columns = [
+    "codsector"
+  ]
+  referencedTable = "public"."sectores"
+  referencedColumns = [
+    "codsector"
+  ]
+}
+
 foreignKey "public"."plantrabajo"."fk_plantrabajo_codusu" {
   columns = [
     "codusu"
@@ -49,6 +59,16 @@ foreignKey "public"."plantrabajo"."fk_plantrabajo_codusu" {
   referencedTable = "public"."usuarios"
   referencedColumns = [
     "codusu"
+  ]
+}
+
+foreignKey "public"."plantrabajo"."fk_plantrabajo_nroestudio" {
+  columns = [
+    "nroestudio"
+  ]
+  referencedTable = "public"."estrealizar"
+  referencedColumns = [
+    "nroestudio"
   ]
 }
 

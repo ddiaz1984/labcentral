@@ -46,6 +46,26 @@ table "public"."respuestaparti" {
   )
 }
 
+foreignKey "public"."respuestaparti"."fk_respuestaparti_coddetermina" {
+  columns = [
+    "coddetermina"
+  ]
+  referencedTable = "public"."determinaciones"
+  referencedColumns = [
+    "coddetermina"
+  ]
+}
+
+foreignKey "public"."respuestaparti"."fk_respuestaparti_codestudio" {
+  columns = [
+    "codestudio"
+  ]
+  referencedTable = "public"."estudios"
+  referencedColumns = [
+    "codestudio"
+  ]
+}
+
 foreignKey "public"."respuestaparti"."fk_respuestaparti_codusu" {
   columns = [
     "codusu"

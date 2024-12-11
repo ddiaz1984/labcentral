@@ -1,4 +1,11 @@
 table "public"."datoagrupado" {
+  primaryKey = {
+    columns = [
+      "grupo"
+    ]
+    name = "pk_datoagrupado"
+    objectType = primaryKey
+  }
   owner = postgres
   columns = (
     column "grupo" {
@@ -44,6 +51,16 @@ table "public"."datoagrupado" {
       type = character varying(15)
     }
   )
+}
+
+foreignKey "public"."datoagrupado"."fk_datoagrupado_codcourier" {
+  columns = [
+    "codcourier"
+  ]
+  referencedTable = "public"."courier"
+  referencedColumns = [
+    "codcourier"
+  ]
 }
 
 foreignKey "public"."datoagrupado"."fk_datoagrupado_codusu" {

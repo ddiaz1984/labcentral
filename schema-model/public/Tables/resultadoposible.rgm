@@ -1,8 +1,18 @@
 table "public"."resultadoposible" {
+  primaryKey = {
+    columns = [
+      "codestudio"
+      "coddetermina"
+      "codresultado"
+    ]
+    name = "pk_resultadoposible"
+    objectType = primaryKey
+  }
   owner = postgres
   columns = (
     column "codestudio" {
       type = character varying(10)
+      null = NOT NULL
     }
     column "coddetermina" {
       type = character varying(10)
@@ -13,5 +23,35 @@ table "public"."resultadoposible" {
       null = NOT NULL
     }
   )
+}
+
+foreignKey "public"."resultadoposible"."fk_resultadoposible_coddetermina" {
+  columns = [
+    "coddetermina"
+  ]
+  referencedTable = "public"."determinaciones"
+  referencedColumns = [
+    "coddetermina"
+  ]
+}
+
+foreignKey "public"."resultadoposible"."fk_resultadoposible_codestudio" {
+  columns = [
+    "codestudio"
+  ]
+  referencedTable = "public"."estudios"
+  referencedColumns = [
+    "codestudio"
+  ]
+}
+
+foreignKey "public"."resultadoposible"."fk_resultadoposible_codresultado" {
+  columns = [
+    "codresultado"
+  ]
+  referencedTable = "public"."resultadocodificado"
+  referencedColumns = [
+    "codresultado"
+  ]
 }
 

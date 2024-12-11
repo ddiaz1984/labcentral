@@ -23,6 +23,26 @@ table "public"."opcionroles" {
   )
 }
 
+foreignKey "public"."opcionroles"."fk_opcionroles_codopc" {
+  columns = [
+    "codopc"
+  ]
+  referencedTable = "public"."opciones"
+  referencedColumns = [
+    "codopc"
+  ]
+}
+
+foreignKey "public"."opcionroles"."fk_opcionroles_codrol" {
+  columns = [
+    "codrol"
+  ]
+  referencedTable = "public"."roles"
+  referencedColumns = [
+    "codrol"
+  ]
+}
+
 trigger "public"."opcionroles"."audit_log_trigger" {
   timing = BEFORE
   events = [

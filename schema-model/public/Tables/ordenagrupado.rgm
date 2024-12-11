@@ -31,6 +31,16 @@ foreignKey "public"."ordenagrupado"."fk_estrealizar_nroorden" {
   ]
 }
 
+foreignKey "public"."ordenagrupado"."fk_ordenagrupado_codestudio" {
+  columns = [
+    "codestudio"
+  ]
+  referencedTable = "public"."estudios"
+  referencedColumns = [
+    "codestudio"
+  ]
+}
+
 foreignKey "public"."ordenagrupado"."fk_ordenagrupado_codusu" {
   columns = [
     "codusu"

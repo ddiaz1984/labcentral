@@ -42,6 +42,18 @@ table "public"."apertura_cierre_caja" {
   )
 }
 
+foreignKey "public"."apertura_cierre_caja"."fk_apertura_cierre_caja_codcaja" {
+  columns = [
+    "codcaja"
+    "codservicio"
+  ]
+  referencedTable = "public"."cajas"
+  referencedColumns = [
+    "codcaja"
+    "codservicio"
+  ]
+}
+
 foreignKey "public"."apertura_cierre_caja"."fk_apertura_cierre_caja_codusu" {
   columns = [
     "codusu"

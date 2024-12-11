@@ -20,3 +20,13 @@ table "public"."resultadoposiblemaster" {
   )
 }
 
+foreignKey "public"."resultadoposiblemaster"."fk_resultadoposiblemaster_coddetermina" {
+  columns = [
+    "coddetermina"
+  ]
+  referencedTable = "public"."determinaciones"
+  referencedColumns = [
+    "coddetermina"
+  ]
+}
+

@@ -75,17 +75,3 @@ table "public"."equipos" {
   )
 }
 
-trigger "public"."equipos"."audit_log_trigger" {
-  timing = BEFORE
-  events = [
-    DELETE
-    UPDATE
-    INSERT
-  ]
-  level = ROW
-  function = public.audit_trigger
-  functionArguments = [
-  ]
-  constraint = False
-}
-

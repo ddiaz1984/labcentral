@@ -1,13 +1,4 @@
 table "public"."resultadoantibiotico" {
-  primaryKey = {
-    columns = [
-      "nroestudio"
-      "idmuestra"
-      "item"
-    ]
-    name = "pk_resultadoantibiotico"
-    objectType = primaryKey
-  }
   owner = postgres
   columns = (
     column "nroestudio" {
@@ -51,10 +42,60 @@ table "public"."resultadoantibiotico" {
     column "obs" {
       type = character varying(250)
     }
-    column "item" {
-      type = integer
+    column "nro_orden" {
+      type = character varying(15)
       null = NOT NULL
     }
   )
+}
+
+foreignKey "public"."resultadoantibiotico"."fk_resultadoantibiotico_codantibiot" {
+  columns = [
+    "codantibiot"
+  ]
+  referencedTable = "public"."antibioticos"
+  referencedColumns = [
+    "codantibiot"
+  ]
+}
+
+foreignKey "public"."resultadoantibiotico"."fk_resultadoantibiotico_codestudio" {
+  columns = [
+    "codestudio"
+  ]
+  referencedTable = "public"."estudios"
+  referencedColumns = [
+    "codestudio"
+  ]
+}
+
+foreignKey "public"."resultadoantibiotico"."fk_resultadoantibiotico_codmetodo" {
+  columns = [
+    "codmetodo"
+  ]
+  referencedTable = "public"."metodos"
+  referencedColumns = [
+    "codmetodo"
+  ]
+}
+
+foreignKey "public"."resultadoantibiotico"."fk_resultadoantibiotico_codsector" {
+  columns = [
+    "codsector"
+  ]
+  referencedTable = "public"."sectores"
+  referencedColumns = [
+    "codsector"
+  ]
+}
+
+foreignKey "public"."resultadoantibiotico"."fk_resultadoantibiotico_codumedida" {
+  columns = [
+    "codumedida"
+  ]
+  referencedTable = "public"."unidadmedida"
+  referencedColumns = [
+    "codumedida"
+  ]
 }
 

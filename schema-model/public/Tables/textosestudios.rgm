@@ -23,3 +23,23 @@ table "public"."textosestudios" {
   )
 }
 
+foreignKey "public"."textosestudios"."fk_textosestudios_codestudio" {
+  columns = [
+    "codestudio"
+  ]
+  referencedTable = "public"."estudios"
+  referencedColumns = [
+    "codestudio"
+  ]
+}
+
+foreignKey "public"."textosestudios"."fk_textosestudios_codtexto" {
+  columns = [
+    "codtexto"
+  ]
+  referencedTable = "public"."textos"
+  referencedColumns = [
+    "codtexto"
+  ]
+}
+

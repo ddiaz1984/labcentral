@@ -23,3 +23,13 @@ table "public"."tmuestraestudio" {
   )
 }
 
+foreignKey "public"."tmuestraestudio"."fk_tmuestraestudio_codestudio" {
+  columns = [
+    "codestudio"
+  ]
+  referencedTable = "public"."estudios"
+  referencedColumns = [
+    "codestudio"
+  ]
+}
+

@@ -41,3 +41,23 @@ table "public"."evaluaciondeterminacion" {
   )
 }
 
+foreignKey "public"."evaluaciondeterminacion"."fk_evaluaciondeterminacion_coddetermina" {
+  columns = [
+    "coddetermina"
+  ]
+  referencedTable = "public"."determinaciones"
+  referencedColumns = [
+    "coddetermina"
+  ]
+}
+
+foreignKey "public"."evaluaciondeterminacion"."fk_evaluaciondeterminacion_codestudio" {
+  columns = [
+    "codestudio"
+  ]
+  referencedTable = "public"."estudios"
+  referencedColumns = [
+    "codestudio"
+  ]
+}
+
