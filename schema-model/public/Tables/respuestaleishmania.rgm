@@ -41,3 +41,13 @@ foreignKey "public"."respuestaleishmania"."fk_respuestaleishmania_codusu" {
   ]
 }
 
+foreignKey "public"."respuestaleishmania"."fk_respuestaleishmania_nroeval" {
+  columns = [
+    "nroeval"
+  ]
+  referencedTable = "public"."evaluacion"
+  referencedColumns = [
+    "nroeval"
+  ]
+}
+

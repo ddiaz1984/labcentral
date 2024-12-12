@@ -42,3 +42,13 @@ table "public"."pregunta" {
   )
 }
 
+foreignKey "public"."pregunta"."fk_pregunta_nroeval" {
+  columns = [
+    "nroeval"
+  ]
+  referencedTable = "public"."evaluacion"
+  referencedColumns = [
+    "nroeval"
+  ]
+}
+

@@ -61,3 +61,13 @@ foreignKey "public"."evaluaciondeterminacion"."fk_evaluaciondeterminacion_codest
   ]
 }
 
+foreignKey "public"."evaluaciondeterminacion"."fk_evaluaciondeterminacion_nroeval" {
+  columns = [
+    "nroeval"
+  ]
+  referencedTable = "public"."evaluacion"
+  referencedColumns = [
+    "nroeval"
+  ]
+}
+

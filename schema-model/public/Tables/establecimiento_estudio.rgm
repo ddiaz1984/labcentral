@@ -38,7 +38,20 @@ table "public"."establecimiento_estudio" {
     column "index" {
       type = boolean
     }
+    column "coddetermina" {
+      type = character varying(10)
+    }
   )
+}
+
+foreignKey "public"."establecimiento_estudio"."fk_establecimiento_estudio_coddetermina" {
+  columns = [
+    "coddetermina"
+  ]
+  referencedTable = "public"."determinaciones"
+  referencedColumns = [
+    "coddetermina"
+  ]
 }
 
 foreignKey "public"."establecimiento_estudio"."fk_establecimiento_estudio_codestudio" {

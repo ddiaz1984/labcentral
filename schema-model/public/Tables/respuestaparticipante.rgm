@@ -65,3 +65,13 @@ foreignKey "public"."respuestaparticipante"."fk_respuestaparticipante_codusu" {
   ]
 }
 
+foreignKey "public"."respuestaparticipante"."fk_respuestaparticipante_nroeval" {
+  columns = [
+    "nroeval"
+  ]
+  referencedTable = "public"."evaluacion"
+  referencedColumns = [
+    "nroeval"
+  ]
+}
+

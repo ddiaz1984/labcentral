@@ -59,15 +59,3 @@ foreignKey "public"."estudios"."fk_estudios_codsector" {
   ]
 }
 
-foreignKey "public"."estudios"."fk_estudios_codtmuestra" {
-  columns = [
-    "codtmuestra"
-    "codestudio"
-  ]
-  referencedTable = "public"."tmuestraestudio"
-  referencedColumns = [
-    "codtmuestra"
-    "codestudio"
-  ]
-}
-

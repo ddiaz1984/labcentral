@@ -32,6 +32,16 @@ table "public"."distritos" {
   )
 }
 
+foreignKey "public"."distritos"."fk_distritos_coddpto" {
+  columns = [
+    "coddpto"
+  ]
+  referencedTable = "public"."departamentos"
+  referencedColumns = [
+    "coddpto"
+  ]
+}
+
 index "public"."idistritos" {
   table = "public"."distritos"
   type = btree
