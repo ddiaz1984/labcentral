@@ -1,0 +1,42 @@
+table "public"."estudio_determinaciones" {
+  primaryKey = {
+    columns = [
+      "codestudio"
+      "coddetermina"
+    ]
+    name = "pk_estudio_determinaciones"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "codestudio" {
+      type = character varying(10)
+      null = NOT NULL
+    }
+    column "coddetermina" {
+      type = character varying(10)
+      null = NOT NULL
+    }
+  )
+}
+
+foreignKey "public"."estudio_determinaciones"."fk_estudio_determinaciones_ccoddetermina" {
+  columns = [
+    "coddetermina"
+  ]
+  referencedTable = "public"."determinaciones"
+  referencedColumns = [
+    "coddetermina"
+  ]
+}
+
+foreignKey "public"."estudio_determinaciones"."fk_estudio_determinaciones_codestudio" {
+  columns = [
+    "codestudio"
+  ]
+  referencedTable = "public"."estudios"
+  referencedColumns = [
+    "codestudio"
+  ]
+}
+

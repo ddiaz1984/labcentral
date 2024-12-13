@@ -48,23 +48,3 @@ foreignKey "public"."establecimiento_determinacion"."fk_establecimiento_determin
   ]
 }
 
-foreignKey "public"."establecimiento_determinacion"."fk_establecimiento_determinacion_codresultado" {
-  columns = [
-    "codresultado"
-  ]
-  referencedTable = "public"."resultadocodificado"
-  referencedColumns = [
-    "codresultado"
-  ]
-}
-
-foreignKey "public"."establecimiento_determinacion"."fk_establecimiento_determinacion_codumedida" {
-  columns = [
-    "codumedida"
-  ]
-  referencedTable = "public"."unidadmedida"
-  referencedColumns = [
-    "codumedida"
-  ]
-}
-
